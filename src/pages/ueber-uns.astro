@@ -1,0 +1,196 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+---
+
+<PageLayout
+  title="Über uns"
+  description="Das Parachute Festival Lindern gibt es seit dem Jahr 2000 – ehrenamtlich, non-profit, von der Community für die Community."
+>
+  <!-- Page Header -->
+  <section
+    class="py-20 text-center relative"
+    style="background: var(--color-bg-section); border-bottom: 1px solid var(--color-border);"
+  >
+    <div class="container">
+      <p class="eyebrow mb-4">Wer wir sind</p>
+      <h1 class="font-heading text-6xl md:text-8xl text-white">Über uns</h1>
+    </div>
+  </section>
+
+  <!-- Das Parachute Festival -->
+  <section class="section">
+    <div class="container max-w-4xl">
+      <SectionHeading
+        eyebrow="Seit 2000"
+        title="Das Parachute Festival"
+        align="left"
+      />
+
+      <div class="space-y-5 text-base leading-relaxed" style="color: var(--color-text-muted);">
+        <p>
+          Das Parachute Festival Lindern gibt es seit dem Jahr 2000 – und seitdem ist eigentlich
+          alles gleich geblieben: Wir sind ein Haufen musikverrückter Jugendlicher und junger
+          Erwachsener, die einfach Bock haben, ein eigenes Festival auf die Beine zu stellen.
+          Ohne großen Plan am Anfang, aber mit umso mehr Leidenschaft.
+        </p>
+        <p>
+          <span class="text-white font-semibold">Perfekt durchorganisiert? Ganz sicher nicht.</span>
+          Und genau das ist auch gut so. Das Parachute Festival ist kein durchgetaktetes Großevent,
+          sondern ein Festival, bei dem Spaß, Spontanität und Improvisation manchmal wichtiger sind
+          als der perfekte Ablauf. Kabelbinder statt Eventagentur, Teamwork statt Dienstleister –
+          und wenn mal was schiefgeht, lachen wir drüber und machen weiter.
+        </p>
+        <p>
+          Was uns aber immer extrem wichtig ist: dass sich unsere Gäste und unsere Bands rundum
+          wohlfühlen. Faire Bedingungen für die Acts, entspannte Atmosphäre für die Crowd, kurze
+          Wege, offene Leute und ein Miteinander auf Augenhöhe. Bei uns ist niemand nur „Kunde"
+          oder „Programmpunkt" – alle gehören dazu.
+        </p>
+        <p>
+          Das Ganze passiert komplett <span class="text-white font-semibold">ehrenamtlich und non-profit.</span>
+          Niemand verdient hier Geld, wir machen das aus Überzeugung. Jeder Euro fließt zurück ins
+          Festival, in Technik, Bands, Infrastruktur – und vor allem in die nächste Ausgabe. Und ja:
+          Wir versuchen jedes Jahr ein kleines Stück besser zu werden, ohne dabei unseren DIY-Spirit
+          zu verlieren.
+        </p>
+        <p>
+          Musikalisch sind wir mit Rock und Punk gestartet – und das ist bis heute unser Kern. Aber
+          wir waren nie dogmatisch: Über die Jahre standen auch Alternative-, Indie- oder sogar
+          Hip-Hop- und Rap-Acts bei uns auf der Bühne. Hauptsache ehrlich, laut oder einfach gut.
+        </p>
+      </div>
+
+      <!-- Kurz gesagt -->
+      <div
+        class="mt-12 p-8 rounded-sm"
+        style="border-left: 4px solid var(--color-primary); background: var(--color-bg-card);"
+      >
+        <p class="font-heading text-3xl text-white mb-4">Kurz gesagt:</p>
+        <p class="text-base leading-relaxed" style="color: var(--color-text-muted);">
+          Das Parachute Festival ist kein perfektes Festival.<br />
+          Aber es ist ein <span class="text-white font-semibold">echtes.</span><br />
+          Handgemacht. Ehrenamtlich. Von der Community für die Community.<br />
+          Und genau darauf sind wir verdammt stolz. 🤘
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container max-w-4xl"><div class="divider-primary"></div></div>
+
+  <!-- Unsere Geschichte -->
+  <section class="section">
+    <div class="container max-w-4xl">
+      <SectionHeading
+        eyebrow="Von 2000 bis heute"
+        title="Unsere Geschichte"
+        align="left"
+      />
+
+      <div class="space-y-0">
+        <!-- Timeline entries -->
+        {[
+          {
+            era: 'Die Anfänge',
+            label: 'Ab 2000',
+            color: 'primary',
+            text: 'Gestartet sind wir ganz klein – bei einem Wirt im Hinterhof. Kein großes Konzept, keine Erfahrung, aber jede Menge Enthusiasmus. Einfach machen.',
+          },
+          {
+            era: 'Wachstum',
+            label: 'Reithalle',
+            color: 'secondary',
+            text: 'Von der Hinterhof-Bühne in die Reithalle. Mehr Platz, mehr Bands, mehr Menschen – aber immer noch dieselbe Energie und derselbe Geist.',
+          },
+          {
+            era: 'Heute',
+            label: 'Schützenplatz',
+            color: 'primary',
+            text: 'Unser aktuelles Zuhause: der Schützenplatz in Lindern. Ein Festival auf Wanderschaft – und genau das gehört zu unserer Geschichte. Wir nehmen, was wir kriegen, und machen das Beste draus.',
+          },
+          {
+            era: 'Eine neue Ära',
+            label: 'Von Osterrock zu Parachute',
+            color: 'primary',
+            text: 'Fast 20 Jahre lang war unser Festival unter dem Namen „Osterrock Festival" bekannt. 2019 war es Zeit für einen Neustart: Wir haben uns umbenannt – zum Parachute Festival Lindern. Der Name kommt von dem Lastenfallschirm, den wir jedes Jahr über das Gelände spannen. Der Geist blieb derselbe, das Kapitel wurde neu aufgeschlagen.',
+          },
+          {
+            era: 'Hindernisse',
+            label: 'Bürokratie & Corona',
+            color: 'secondary',
+            text: 'Was uns dabei nie aufgehalten hat: deutsche Bürokratie, Anträge, Auflagen, Genehmigungen. Wir schlagen uns jedes Jahr wieder durch Formulare, Sicherheitskonzepte und Paragrafen. Nur Corona hat uns kurz außer Gefecht gesetzt – aber selbst das hat uns nicht dauerhaft stoppen können.',
+          },
+        ].map(({ era, label, color, text }) => (
+          <div class="flex gap-6 pb-10 relative">
+            <!-- Line -->
+            <div class="flex flex-col items-center">
+              <div
+                class="w-3 h-3 rounded-full shrink-0 mt-1.5"
+                style={`background: var(--color-${color});`}
+              ></div>
+              <div class="w-px flex-1 mt-2" style="background: var(--color-border);"></div>
+            </div>
+            <!-- Content -->
+            <div class="pb-2">
+              <p class="eyebrow mb-1" style={`color: var(--color-${color});`}>{era}</p>
+              <h3 class="font-heading text-2xl text-white mb-2">{label}</h3>
+              <p class="text-sm leading-relaxed" style="color: var(--color-text-muted);">{text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="container max-w-4xl"><div class="divider-primary"></div></div>
+
+  <!-- Das Team -->
+  <section class="section">
+    <div class="container max-w-4xl">
+      <SectionHeading
+        eyebrow="Hinter den Kulissen"
+        title="Das Team"
+        subtitle="Ein Haufen Musikverrückter, die jedes Jahr freiwillig ihr Wochenende opfern – und es absolut nicht bereuen."
+        align="left"
+      />
+
+      <div class="space-y-5 text-base leading-relaxed" style="color: var(--color-text-muted);">
+        <p>
+          Hinter dem Parachute Festival steckt ein Haufen Musikverrückter aus der
+          <span class="text-white font-semibold">Teestube Lindern e.V.</span> –
+          in Kooperation mit dem
+          <span class="text-white font-semibold">Projektunterstützungsverein Lindern e.V.</span>
+          Zwei Vereine, eine Leidenschaft: ein Festival auf die Beine zu stellen, das wirklich
+          was bedeutet.
+        </p>
+        <p>
+          Jedes Jahr stecken diese Menschen unfassbar viel Zeit, Energie und Herzblut in dieses
+          Projekt – neben Job, Schule und allem anderen, was das Leben so mitbringt. Kein Budget
+          für Agenturen, keine bezahlten Profis. Stattdessen: echte Menschen, die wirklich wollen.
+          Die Bühne aufbauen, Kabel verlegen, Bands koordinieren, Genehmigungen einholen,
+          Getränke kühlen – und am Ende des Tages trotzdem als Erste auf der Tanzfläche stehen.
+        </p>
+        <p>
+          Dafür ein riesiges Dankeschön an alle, die Jahr für Jahr dabei sind und dieses Festival
+          möglich machen. Ihr seid der Grund, warum das Parachute Festival seit über 20 Jahren
+          existiert. 🤘
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--color-bg-section);">
+    <div class="container text-center">
+      <p class="font-heading text-5xl text-white mb-2">Neugierig?</p>
+      <p class="mb-8 text-lg" style="color: var(--color-text-muted);">
+        Komm vorbei und überzeug dich selbst.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/tickets" class="btn-primary">Tickets holen</a>
+        <a href="/kontakt" class="btn-outline">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

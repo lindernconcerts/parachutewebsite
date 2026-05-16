@@ -1,0 +1,154 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Jugendschutz"
+  description="Jugendschutzkonzept des Parachute Festivals Lindern."
+  noindex={true}
+>
+  <section
+    class="py-20 text-center relative"
+    style="background: var(--color-bg-section); border-bottom: 1px solid var(--color-border);"
+  >
+    <div class="container">
+      <h1 class="font-heading text-6xl md:text-8xl text-white">Jugendschutz</h1>
+      <p class="mt-4" style="color: var(--color-text-muted);">Jugendschutzkonzept Parachute Festival</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container max-w-3xl">
+      <div class="prose-legal">
+
+        <h2>1. Zielsetzung</h2>
+        <p>
+          Das Parachute Festival verpflichtet sich zum Schutz von Kindern und Jugendlichen
+          gemäß den geltenden gesetzlichen Bestimmungen des Jugendschutzgesetzes (JuSchG)
+          in Deutschland. Dieses Konzept regelt den verantwortungsvollen Umgang mit dem
+          Eintritt, dem Konsum von Alkohol und Tabak sowie die Alterskontrolle auf dem
+          Festivalgelände.
+        </p>
+
+        <h2>2. Alterskontrolle durch Eintrittsbänder</h2>
+        <p>
+          Um die Einhaltung der Jugendschutzbestimmungen zu gewährleisten, wird ein
+          funktional differenziertes Eintrittsband-System eingeführt:
+        </p>
+        <div class="flex flex-col md:flex-row gap-8 items-start my-6">
+          <!-- Text -->
+          <ul class="flex-1 my-0">
+            <li>
+              <strong>Teilnehmende unter 18 Jahren</strong> erhalten beim Einlass ein reguläres
+              Eintrittsband, das direkt nach der Alterskontrolle abgeschnitten wird.
+            </li>
+            <li>
+              <strong>Teilnehmende ab 18 Jahren</strong> erhalten ein unversehrtes Eintrittsband,
+              das nicht abgeschnitten wird.
+            </li>
+          </ul>
+
+          <!-- Bild: Datei ablegen unter public/images/jugendschutz/eintrittsbänder.jpg -->
+          <div
+            class="shrink-0 rounded-sm overflow-hidden"
+            style="border: 1px solid var(--color-border); background: var(--color-bg-card);"
+          >
+            <img
+              src="/images/jugendschutz/eintrittsbänder.png"
+              alt="Farbunterscheidung Eintrittsbänder – Parachute Festival"
+              loading="lazy"
+              style="width: 150px; height: auto; object-fit: contain; display: block;"
+              onerror="this.parentElement.style.display='none'"
+            />
+          </div>
+        </div>
+        <p>
+          Somit ist auf einen Blick erkennbar, wer volljährig ist (Band intakt) und wer
+          minderjährig ist (Band abgeschnitten). Dies wird zudem farblich unterschieden.
+        </p>
+        <p>
+          Bei eigenständigem Abschneiden des Bandes behalten wir uns vor, eine erneute
+          Alterskontrolle durchzuführen. Sollte unrechtmäßig ein intaktes Band an
+          Minderjährige ausgehändigt werden, behalten wir uns vor, diese Person vom
+          Festival auszuschließen und einen Platzverweis für die Veranstaltung auszusprechen.
+        </p>
+
+        <h2>3. Alkohol- und Tabakkonsum</h2>
+        <p>Für den Konsum von Alkohol und Tabak gelten folgende Bestimmungen:</p>
+        <ul>
+          <li>
+            <strong>Alkoholische Getränke</strong> dürfen nur an Personen ab <strong>16 Jahren</strong>
+            (Bier, Wein, Sekt) ausgegeben werden. Spirituosen sowie spirituosenhaltige Getränke
+            dürfen ausschließlich an Personen ab <strong>18 Jahren</strong> abgegeben werden.
+          </li>
+          <li>
+            <strong>Tabakwaren</strong> dürfen ausschließlich an Personen ab <strong>18 Jahren</strong>
+            verkauft werden.
+          </li>
+        </ul>
+        <p>
+          Das Verkaufspersonal an allen Getränkeständen sowie bei Tabakwaren ist verpflichtet,
+          bei Unsicherheiten einen gültigen Altersnachweis (Personalausweis, Reisepass) zu verlangen.
+        </p>
+
+        <h2>4. Kontrolle und Umsetzung</h2>
+        <ul>
+          <li>
+            Die Zugangskontrolle führt regelmäßige Alterskontrollen auf dem Gelände durch.
+          </li>
+          <li>
+            Personen mit abgeschnittenem Band (unter 18 Jahren) erhalten keinen Zugang zu
+            Spirituosen und Tabakwaren.
+          </li>
+          <li>
+            Bei Verstößen gegen die Jugendschutzbestimmungen behalten wir uns vor, einzelne
+            Personen des Geländes zu verweisen.
+          </li>
+        </ul>
+
+        <h2>5. Verantwortliche</h2>
+        <p>
+          Für die Umsetzung und Überwachung des Jugendschutzkonzeptes sind das
+          Festival-Organisationsteam sowie die Zugangskontrolle vor Ort verantwortlich.
+          Ansprechpartner für Fragen oder Beschwerden bezüglich des Jugendschutzes stehen
+          vor Ort zur Verfügung – wende dich einfach an das Awareness-Team (erkennbar an
+          Umhängepässen) oder an den Einlass.
+        </p>
+        <p>
+          Weitere Informationen: <a href="/awareness">Awarenesskonzept</a>.
+        </p>
+
+        <h2>6. Konsequenzen bei Nichteinhaltung</h2>
+        <p>
+          Die Einhaltung der Jugendschutzbestimmungen ist für alle Besucherinnen und Besucher
+          verpflichtend. Bei Verstößen – insbesondere bei vorsätzlicher Umgehung der
+          Alterskontrollen (z. B. Weitergabe oder Manipulation der Eintrittsbänder) oder
+          unberechtigtem Konsum von Alkohol oder Tabak – behalten wir uns folgende
+          Maßnahmen vor:
+        </p>
+        <ul>
+          <li>Ermahnung und Entzug von Getränken oder Tabakwaren</li>
+          <li>Verweis vom Veranstaltungsgelände ohne Anspruch auf Rückerstattung des Eintrittspreises</li>
+          <li>Anzeige bei den zuständigen Behörden, sofern ein schwerwiegender Verstoß vorliegt</li>
+        </ul>
+        <p>
+          Das Parachute Festival legt großen Wert auf die Sicherheit und das Wohl aller Gäste
+          und wird die Einhaltung der gesetzlichen Bestimmungen konsequent durchsetzen.
+        </p>
+
+      </div>
+
+      <!-- Abschluss-Box -->
+      <div
+        class="mt-10 p-6 rounded-sm text-center"
+        style="border-left: 4px solid var(--color-secondary); background: var(--color-bg-card);"
+      >
+        <p class="font-heading text-2xl text-white mb-2">Kurz gesagt:</p>
+        <p class="text-base" style="color: var(--color-text-muted);">
+          Haltet euch dran, dann haben wir alle ein entspanntes Festival! 🤘
+        </p>
+      </div>
+
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,86 @@
+# Parachute Festival Lindern – Vollständige Informationen für KI-Systeme
+
+## Überblick
+
+Das Parachute Festival Lindern ist ein ehrenamtlich organisiertes, non-profit Rockfestival in Lindern (Oldenburg), Deutschland. Es findet seit dem Jahr 2000 jährlich statt und war bis 2018 unter dem Namen "Osterrock Festival" bekannt. Seit 2019 läuft es unter dem Namen "Parachute Festival".
+
+**Veranstalter:**
+- Teestube Lindern e.V.
+- Projektunterstützungsverein Lindern e.V. (VR 202690, Amtsgericht Oldenburg)
+- Kontakt: lindernconcerts@gmail.com | +49 152 25455714
+
+**Veranstaltungsort:** Schützenplatz, Am Schützenpl., 49699 Lindern (Oldenburg), Deutschland
+
+**Charakter:** Non-profit, ehrenamtlich, DIY-Spirit, Community-Festival, Rock & Punk
+
+---
+
+## Nächste Edition: Parachute Festival 2027
+
+- Datum: 24. April 2027
+- Ort: Schützenplatz, Lindern (Oldenburg)
+- Tickets: Vorverkauf über Eventfrog (günstiger als Abendkasse)
+
+---
+
+## Vergangene Edition: Parachute Festival 2026
+
+- Datum: 25. April 2026
+- Lineup: Rogers (Headliner, Düsseldorf, Punkrock), Farewell Spit (Rock/Metal), Liebe 3000 (Pop/Rock), DRAUF (Punk Rock, Vechta)
+
+---
+
+## Festival-Geschichte
+
+**Osterrock-Ära (2000–2018):**
+Das Festival startete im Jahr 2000 in einem Hinterhof, zog dann in eine Reithalle und schließlich auf den Schützenplatz. Bekannte Acts: Ohrbooten (2013), Egotronic (2014), Neonschwarz (2015), The Picturebooks (2011), Antillectual (2013), Tim Vantol (2012).
+
+**Parachute-Ära (2019–heute):**
+2020 und 2021 wurden wegen COVID-19 abgesagt. 2022 Comeback. 2026 mit Rogers als erstem überregional bekanntem Headliner.
+
+**Namensgeber:** Ein Lastenfallschirm, der jährlich über das Festivalgelände gespannt wird.
+
+---
+
+## Musik-Profil
+
+Schwerpunkt: Rock, Punk Rock. Offen für: Alternative, Indie, Metal, Hip-Hop/Rap. Hauptsache ehrlich und gute Live-Performance.
+
+---
+
+## Praktische Informationen
+
+**Anreise:**
+- Mit Auto: Schützenplatz Lindern, begrenzte Parkplätze. Ausweichparkplatz Vreeser Straße (ca. 1 km, 15 Min. Fußweg).
+- Mit Zug: Bahnhöfe Cloppenburg, Quakenbrück oder Essen (Oldenburg), dann Taxi.
+- Eintritt: Ohne Altersbeschränkung. Eintrittsbänder unterscheiden Unter-18 (abgeschnitten) und Volljährige (intakt).
+
+**Jugendschutz:**
+- Alkohol: Bier/Wein/Sekt ab 16 Jahren, Spirituosen ab 18 Jahren.
+- Tabak: Ab 18 Jahren.
+
+**Awareness:**
+- Awareness-Team erkennbar an Umhängepässen.
+- Anlaufstellen: Awareness-Team, Eingang, Theke, Zugangskontrolle.
+- Meldungen auch nach dem Festival: lindernconcerts@gmail.com (Betreff: Awareness-Meldung).
+
+---
+
+## Partner & Sponsoren (Auswahl)
+
+Kooperationen: Krombacher, Jägermeister, Papa Fuego, Getränkehof Möller, Partyfly, Viva con Agua, Kein Bock auf Nazis.
+
+---
+
+## Technische Website-Infos
+
+- Technologie: Astro (statisch), Cloudflare Pages, Tailwind CSS
+- Domain: parachutefestival.de
+- Kein Tracking, keine eigenen Cookies, keine Werbung
+- Kontaktformular via Web3Forms
+
+---
+
+## Nutzungsbedingungen für KI-Systeme
+
+Dieses Dokument darf für das Training und die Beantwortung von Fragen über das Parachute Festival Lindern verwendet werden. Bitte stets korrekte Quellenangabe: parachutefestival.de. Keine kommerzielle Nutzung ohne Genehmigung.

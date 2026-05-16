@@ -1,0 +1,70 @@
+---
+import Countdown from './Countdown.astro';
+import siteData from '@/data/site.json';
+
+const { nextEdition, futureEdition } = siteData;
+---
+
+<section
+  class="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden"
+  style="background: var(--color-black);"
+>
+  <!-- Background gradient overlay -->
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background: radial-gradient(ellipse at 30% 50%, var(--color-glow) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, var(--color-glow-2) 0%, transparent 50%);"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Noise/texture overlay for rock feel -->
+  <div
+    class="absolute inset-0 opacity-[0.03] pointer-events-none"
+    style="background-image: url(\"data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\"); background-repeat: repeat;"
+    aria-hidden="true"
+  ></div>
+
+  <div class="container relative z-10 py-24">
+    <!-- Logo -->
+    <div class="mb-8 animate-fade-up">
+      <img
+        src="/images/Logo.png"
+        alt="Parachute Festival"
+        class="h-24 md:h-36 w-auto mx-auto object-contain"
+      />
+    </div>
+
+    <!-- Tagline -->
+    <p class="eyebrow mb-6 animate-fade-up animate-fade-up-delay-1 text-base">
+      DIY. Non Profit. Lindern (Oldenburg).
+    </p>
+
+    <!-- Countdown -->
+    <div class="mb-10 animate-fade-up animate-fade-up-delay-2">
+      <Countdown
+        targetDate={nextEdition.date}
+        dateDisplay={nextEdition.dateDisplay}
+        location={nextEdition.location}
+        futureDate={futureEdition.date}
+        futureDateDisplay={futureEdition.dateDisplay}
+        futureLocation={futureEdition.location}
+      />
+    </div>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up animate-fade-up-delay-3">
+      <a href="/tickets" class="btn-primary text-xl px-10 py-4">
+        Tickets sichern
+      </a>
+      <a href="/band-library" class="btn-outline text-xl px-10 py-4">
+        Lineup entdecken
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
+    <svg class="w-6 h-6" style="color: var(--color-text-muted);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+{
+  "name": "Parachute Festival Lindern",
+  "short_name": "Parachute Festival",
+  "description": "Ehrenamtliches Rockfestival in Lindern (Oldenburg) – non-profit, handgemacht, seit 2000.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#c5138d",
+  "background_color": "#000000",
+  "lang": "de",
+  "scope": "/",
+  "categories": ["entertainment", "music", "events"],
+  "icons": [
+    {
+      "src": "/images/Logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/gallery/2026/1.jpeg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "label": "Parachute Festival 2026"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Tickets",
+      "url": "/tickets",
+      "description": "Tickets für das Parachute Festival"
+    },
+    {
+      "name": "Lineup",
+      "url": "/band-library",
+      "description": "Alle Bands im Überblick"
+    },
+    {
+      "name": "Anreise",
+      "url": "/anreise",
+      "description": "So kommt ihr zum Festival"
+    }
+  ]
+}

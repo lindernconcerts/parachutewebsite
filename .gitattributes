@@ -1,0 +1,12 @@
+# Einheitliche Zeilenenden für das gesamte Projekt
+* text=auto eol=lf
+
+# Binärdateien nicht umwandeln
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.JPG binary
+*.ico binary
+*.svg text eol=lf
+*.woff binary
+*.woff2 binary

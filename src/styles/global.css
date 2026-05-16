@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Base --- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-page);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-dark); }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 3px; }
+
+/* --- Focus ring --- */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+/* --- Container --- */
+@layer components {
+  .container {
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .section {
+    padding-top: var(--section-py);
+    padding-bottom: var(--section-py);
+  }
+
+  /* --- Buttons --- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-heading text-lg tracking-widest uppercase px-8 py-3 transition-all duration-200 rounded-sm;
+  }
+  .btn-primary {
+    @apply btn bg-primary text-white hover:brightness-110 hover:shadow-[0_0_20px_var(--color-glow)];
+  }
+  .btn-secondary {
+    @apply btn bg-secondary text-black hover:brightness-110;
+  }
+  .btn-outline {
+    @apply btn border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+  .btn-ghost {
+    @apply btn border border-[var(--color-border)] text-[var(--color-text-muted)] hover:border-primary hover:text-primary;
+  }
+
+  /* --- Card --- */
+  .card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+  }
+
+  /* --- Badge --- */
+  .badge {
+    @apply inline-block text-xs px-2 py-0.5 rounded-full font-body font-semibold uppercase tracking-wide;
+  }
+  .badge-primary {
+    @apply badge;
+    background: rgba(197, 19, 141, 0.2);
+    color: var(--color-primary);
+  }
+  .badge-secondary {
+    @apply badge;
+    background: rgba(111, 194, 157, 0.2);
+    color: var(--color-secondary);
+  }
+}
+
+/* --- Animations --- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-fade-up-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.animate-fade-up-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.animate-fade-up-delay-3 { animation-delay: 0.3s; opacity: 0; }
+
+/* --- Divider with glow --- */
+.divider-primary {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+}
+
+/* --- Section Eyebrow --- */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+/* --- Legal pages typography --- */
+.prose-legal h2 {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0;
+}
+
+.prose-legal h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0;
+}
+
+.prose-legal p {
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.prose-legal ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.prose-legal a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.prose-legal strong {
+  color: var(--color-white);
+}

@@ -1,0 +1,259 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Awareness"
+  description="Das Awarenesskonzept des Parachute Festivals Lindern – für ein sicheres und respektvolles Festival."
+>
+  <!-- Page Header -->
+  <section
+    class="py-20 text-center relative"
+    style="background: var(--color-bg-section); border-bottom: 1px solid var(--color-border);"
+  >
+    <div class="container">
+      <p class="eyebrow mb-4">Sicher. Respektvoll. Gemeinsam.</p>
+      <h1 class="font-heading text-6xl md:text-8xl text-white">Awareness</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container max-w-3xl">
+      <div class="prose-legal">
+
+        <!-- Intro -->
+        <p>
+          Das Parachute Festival 2026 steht für ein sicheres, respektvolles Miteinander.
+          Dieses Konzept beschreibt Strukturen, Zuständigkeiten und Handlungsabläufe
+          zum Schutz aller Beteiligten.
+        </p>
+
+        <!-- Leitprinzipien -->
+        <h2>Unsere Leitprinzipien</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+        {[
+          { title: 'Niedrigschwelligkeit', text: 'Hilfe ist jederzeit und ohne Hürden zugänglich.' },
+          { title: 'Vertraulichkeit',      text: 'Vorfälle werden diskret und vertraulich behandelt.' },
+          { title: 'Parteinahme',          text: 'Im Zweifel auf der Seite der betroffenen Person.' },
+          { title: 'Konsequenz',           text: 'Grenzverletzungen führen zu sofortigen Maßnahmen.' },
+          { title: 'Deeskalation',         text: 'Ruhiges, professionelles Handeln hat Vorrang.' },
+        ].map(({ title, text }) => (
+          <div
+            class="p-5 rounded-sm"
+            style="background: var(--color-bg-card); border-left: 3px solid var(--color-primary);"
+          >
+            <p class="font-heading text-xl text-white mb-1">{title}</p>
+            <p class="text-sm leading-relaxed" style="color: var(--color-text-muted);">{text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose-legal">
+
+        <!-- Awareness-Wort -->
+        <h2>Das Awareness-Wort</h2>
+        <div
+          class="p-6 rounded-sm my-6"
+          style="background: var(--color-bg-card); border: 2px dashed var(--color-primary);"
+        >
+          <p class="font-heading text-2xl text-primary mb-2">Platzhalter</p>
+          <p style="color: var(--color-text-muted);">
+            Unser Awareness-Wort wird kurz vor dem Festival bekannt gegeben. Mit diesem Wort
+            signalisierst du dem Team diskret, dass du Unterstützung benötigst – ohne dich
+            erklären zu müssen. Schau kurz vor dem Festival auf unsere Social-Media-Kanäle.
+          </p>
+        </div>
+
+        <!-- Anlaufstellen -->
+        <h2>Anlaufstellen für Besucher:innen</h2>
+        <p>
+          Du kannst dich jederzeit und ohne Voranmeldung oder Begründung an folgende
+          Stellen wenden:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+        {[
+          {
+            title: 'Awareness-Team',
+            text: 'Erkennbar an Umhängepässen – jederzeit ansprechbar, ohne Voranmeldung oder Begründung. Erste Anlaufstelle für alle Anliegen.',
+            highlight: true,
+          },
+          {
+            title: 'Eingang',
+            text: 'Am Ein- und Ausgangsbereich des Festivals. Das Team dort leitet dich direkt an das Awareness-Team weiter.',
+            highlight: false,
+          },
+          {
+            title: 'Theke',
+            text: 'An allen Theken- und Ausgabebereichen. Auch hier kannst du dich melden – diskret und ohne Aufsehen.',
+            highlight: false,
+          },
+          {
+            title: 'Zugangskontrolle',
+            text: 'An allen Zugangspositionen auf dem Gelände. Das Team nimmt Meldungen entgegen und leitet sie weiter.',
+            highlight: false,
+          },
+        ].map(({ title, text, highlight }) => (
+          <div
+            class="p-5 rounded-sm"
+            style={`background: var(--color-bg-card); border: 1px solid ${highlight ? 'var(--color-primary)' : 'var(--color-border)'};${highlight ? ' box-shadow: 0 0 15px var(--color-glow);' : ''}`}
+          >
+            <p class="font-heading text-xl mb-2" style={`color: ${highlight ? 'var(--color-primary)' : 'white'};`}>{title}</p>
+            <p class="text-sm leading-relaxed" style="color: var(--color-text-muted);">{text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose-legal">
+
+        <!-- Struktur & Zuständigkeiten -->
+        <h2>Awarenessstruktur & Zuständigkeiten</h2>
+
+        <h3>Awareness-Team</h3>
+        <ul>
+          <li>Erkennbar durch Umhängepässe</li>
+          <li>Aktive Präsenz auf dem Gelände</li>
+          <li>Erste Anlaufstelle für Betroffene</li>
+          <li>Erst-Intervention & Deeskalation</li>
+          <li>Begleitung zu weiteren Angeboten</li>
+          <li>Vorfallsdokumentation & Weitergabe</li>
+        </ul>
+
+        <h3>Zugangskontrolle</h3>
+        <ul>
+          <li>Verteilt über das gesamte Gelände</li>
+          <li>Meldungen entgegennehmen</li>
+          <li>Weiterleitung an Awareness-/OG-Team</li>
+          <li>Körperliche Sicherheit gewährleisten</li>
+          <li>Trennung von Konfliktparteien</li>
+          <li>Eskalation schwerer Vorfälle</li>
+        </ul>
+
+        <h3>Eingang & Theke</h3>
+        <ul>
+          <li>Ergänzende Anlaufstellen</li>
+          <li>Weiterleitung an das Awareness-Team</li>
+          <li>Proaktive Beobachtung des Geländes</li>
+          <li>Meldung auffälligen Verhaltens</li>
+        </ul>
+
+        <h3>OG-Team (Leitung)</h3>
+        <ul>
+          <li>Operative Gesamtverantwortung</li>
+          <li>Sofortige Maßnahmeneinleitung</li>
+          <li>Koordination aller Beteiligten</li>
+          <li>Entscheid über Platzverweis / Hausverbot</li>
+          <li>Übergabe an Behörden bei Bedarf</li>
+          <li>Lückenlose Dokumentation</li>
+        </ul>
+
+        <!-- Eskalationsstruktur -->
+        <h2>Eskalationsstruktur</h2>
+      </div>
+
+      <div class="space-y-3 mb-12">
+        {[
+          { step: '1', title: 'Erstmeldung',         text: 'Awareness-Team, Zugangskontrolle, Eingang oder Theke nehmen die Meldung entgegen.' },
+          { step: '2', title: 'Erstintervention',    text: 'Das Awareness-Team führt Deeskalation durch und begleitet die betroffene Person.' },
+          { step: '3', title: 'OG-Team',             text: 'Wird informiert und leitet umgehend geeignete Maßnahmen ein.' },
+          { step: '4', title: 'Externe Eskalation',  text: 'Sanitätsdienst, Polizei oder Krisenintervention werden hinzugezogen.' },
+        ].map(({ step, title, text }) => (
+          <div
+            class="flex gap-5 p-5 rounded-sm"
+            style="background: var(--color-bg-card); border: 1px solid var(--color-border);"
+          >
+            <div
+              class="shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-heading text-lg"
+              style="background: var(--color-primary); color: white;"
+            >
+              {step}
+            </div>
+            <div>
+              <p class="font-heading text-xl text-white mb-1">{title}</p>
+              <p class="text-sm leading-relaxed" style="color: var(--color-text-muted);">{text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose-legal">
+
+        <!-- Mögliche Maßnahmen -->
+        <h2>Mögliche Maßnahmen des OG-Teams</h2>
+        <ul>
+          <li>Vermittlungs- oder Deeskalationsgespräch zwischen Beteiligten</li>
+          <li>Örtliche Trennung von betroffener und beschuldigter Person</li>
+          <li>Befristeter oder dauerhafter Platzverweis vom Gelände</li>
+          <li>Dauerhaftes Hausverbot für zukünftige Veranstaltungen</li>
+          <li>Übergabe an Strafverfolgungsbehörden</li>
+        </ul>
+
+        <!-- Verhaltensregeln -->
+        <h2>Verhaltensregeln</h2>
+        <p>Damit das Festival für alle schön bleibt, bitten wir euch:</p>
+        <ul>
+          <li><strong>Nein heißt Nein</strong> – respektiert Grenzen, ohne wenn und aber.</li>
+          <li><strong>Konsens ist Pflicht</strong> – Tanzen, Berühren, Fotografieren: immer erst fragen.</li>
+          <li><strong>Schaut aufeinander</strong> – wenn ihr seht, dass jemand Hilfe braucht, handelt. Sprecht Betroffene an, holt Hilfe, bleibt bei der Person.</li>
+          <li><strong>Nicht wegschauen</strong> – traut euch einzugreifen oder Hilfe zu holen.</li>
+          <li><strong>Keine Diskriminierung</strong> – rassistische, sexistische, homophobe oder transfeindliche Äußerungen werden nicht toleriert und können zum Platzverweis führen.</li>
+        </ul>
+
+        <!-- Fotografieren & Social Media -->
+        <h2>Fotografieren und Social Media</h2>
+        <p>
+          Auf dem Festival werden Fotos und Videos gemacht. Bitte fragt Personen, bevor ihr
+          sie fotografiert, und respektiert es, wenn jemand nicht fotografiert werden möchte.
+        </p>
+        <p>
+          Achtet beim Posten auf Social Media darauf, keine Personen erkennbar zu zeigen,
+          die das nicht möchten. Wer Aufnahmen von sich entfernt haben möchte, kann sich
+          jederzeit an uns wenden – wir handeln schnell und unbürokratisch.
+        </p>
+
+        <!-- Alkohol & Drogen -->
+        <h2>Alkohol und Drogen</h2>
+        <p>
+          Der Konsum von Alkohol ist auf dem Festivalgelände im Rahmen der gesetzlichen
+          Jugendschutzbestimmungen erlaubt. Wer unter Einfluss von Alkohol oder Drogen
+          auffällig wird oder anderen gefährlich werden könnte, wird des Platzes verwiesen.
+        </p>
+        <p>
+          Wenn jemand eine Überdosis oder eine akute Notsituation durch Substanzkonsum hat,
+          ruft bitte sofort unser Team oder den Rettungsdienst. <strong>Niemand wird dafür
+          bestraft, Erste Hilfe zu holen.</strong>
+        </p>
+
+        <!-- Meldung nach dem Festival -->
+        <h2>Meldung von Vorfällen</h2>
+        <p>
+          Vorfälle können auch noch nach dem Festival gemeldet werden. Schreibt uns an:
+        </p>
+        <p>
+          <a href="mailto:lindernconcerts@gmail.com">lindernconcerts@gmail.com</a>
+          mit dem Betreff <strong>„Awareness-Meldung"</strong>.
+        </p>
+        <p>
+          Alle Meldungen werden vertraulich behandelt. Ihr entscheidet selbst, wie viel
+          ihr mitteilt und welche weiteren Schritte ihr unternehmen möchtet.
+        </p>
+
+        <!-- Platzverweis -->
+        <h2>Verweis des Geländes</h2>
+        <p>
+          Bei Verstößen gegen diese Grundsätze behält sich das Parachute Festival das Recht
+          vor, Personen ohne Rückerstattung des Ticketpreises des Geländes zu verweisen.
+          Bei strafrechtlich relevanten Vorfällen wird die Polizei hinzugezogen.
+        </p>
+
+        <p>
+          <strong>Danke, dass ihr dieses Festival zu einem sicheren Ort für alle macht. 🤘</strong>
+        </p>
+
+      </div>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,179 @@
+---
+const navLinks = [
+  { href: '/',             label: 'Start' },
+  { href: '/ueber-uns',   label: 'Über uns' },
+  { href: '/tickets',     label: 'Tickets' },
+  { href: '/anreise',     label: 'Anreise' },
+  { href: '/historie',    label: 'Historie' },
+  { href: '/band-library', label: 'Band Library' },
+  { href: '/galerie',     label: 'Galerie' },
+  { href: '/faq',         label: 'FAQ' },
+  { href: '/partner',     label: 'Partner' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<!-- Announcement Bar: Save the Date 2027 -->
+<div
+  id="announcement-bar"
+  class="fixed top-0 left-0 right-0 z-50"
+  style="background: var(--color-secondary); color: #000;"
+>
+  <div class="container flex items-center justify-center gap-3 py-2 text-center">
+    <span class="text-sm font-body font-bold tracking-wide">
+      🤘 <span class="hidden sm:inline">Save the Date —</span>
+      Parachute Festival 2027 · 24. April 2027
+      <span class="hidden md:inline">· Vorbereitungen laufen!</span>
+    </span>
+    <a
+      href="/tickets"
+      class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-sm transition-colors shrink-0"
+      style="background: rgba(0,0,0,0.15); color: #000;"
+      onmouseover="this.style.background='rgba(0,0,0,0.3)'"
+      onmouseout="this.style.background='rgba(0,0,0,0.15)'"
+    >
+      Mehr erfahren
+    </a>
+    <button
+      id="close-announcement"
+      class="absolute right-3 top-1/2 -translate-y-1/2 p-1 opacity-60 hover:opacity-100 transition-opacity"
+      aria-label="Schließen"
+    >
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<header
+  id="main-header"
+  class="fixed left-0 right-0 z-40 transition-all duration-300"
+  style="background: transparent; top: 36px;"
+>
+  <div class="container flex items-center justify-between h-16 md:h-20">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 shrink-0">
+      <img
+        src="/images/Logo.png"
+        alt="Parachute Festival"
+        class="h-10 md:h-12 w-auto object-contain"
+      />
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-1" aria-label="Hauptnavigation">
+      {navLinks.map(({ href, label }) => {
+        const isActive = currentPath === href || (href !== '/' && currentPath.startsWith(href));
+        return (
+          <a
+            href={href}
+            class={`px-3 py-2 text-sm font-body font-semibold uppercase tracking-widest transition-colors duration-200 rounded-sm ${
+              isActive
+                ? 'text-primary'
+                : 'text-white/80 hover:text-primary'
+            }`}
+          >
+            {label}
+          </a>
+        );
+      })}
+    </nav>
+
+    <!-- Tickets CTA (Desktop) -->
+    <a href="/tickets" class="hidden lg:inline-flex btn-primary text-base px-6 py-2">
+      Tickets
+    </a>
+
+    <!-- Hamburger (Mobile) -->
+    <button
+      id="menu-toggle"
+      class="lg:hidden p-2 text-white"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+    >
+      <svg id="icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg id="icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="lg:hidden hidden"
+    style="background: var(--color-dark); border-top: 1px solid var(--color-border);"
+  >
+    <nav class="container py-4 flex flex-col gap-1" aria-label="Mobile Navigation">
+      {navLinks.map(({ href, label }) => {
+        const isActive = currentPath === href || (href !== '/' && currentPath.startsWith(href));
+        return (
+          <a
+            href={href}
+            class={`px-4 py-3 font-body font-semibold uppercase tracking-widest text-sm transition-colors rounded-sm ${
+              isActive ? 'text-primary bg-primary/10' : 'text-white/80 hover:text-primary'
+            }`}
+          >
+            {label}
+          </a>
+        );
+      })}
+      <a href="/tickets" class="btn-primary mt-3 text-center">
+        Tickets kaufen
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header           = document.getElementById('main-header')!;
+  const announcementBar  = document.getElementById('announcement-bar')!;
+  const closeBtn         = document.getElementById('close-announcement')!;
+  const toggle           = document.getElementById('menu-toggle')!;
+  const mobileMenu       = document.getElementById('mobile-menu')!;
+  const iconOpen         = document.getElementById('icon-open')!;
+  const iconClose        = document.getElementById('icon-close')!;
+
+  // Announcement bar height helper
+  function barHeight() {
+    return announcementBar.style.display === 'none' ? 0 : announcementBar.offsetHeight;
+  }
+
+  // Scroll: dark bg after scrolling past bar + 40px
+  window.addEventListener('scroll', () => {
+    const threshold = barHeight() + 40;
+    if (window.scrollY > threshold) {
+      header.style.background = 'var(--color-dark)';
+      header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.5)';
+    } else {
+      header.style.background = 'transparent';
+      header.style.boxShadow = 'none';
+    }
+  }, { passive: true });
+
+  // Close announcement bar
+  closeBtn.addEventListener('click', () => {
+    announcementBar.style.display = 'none';
+    header.style.top = '0';
+    sessionStorage.setItem('announcementClosed', '1');
+  });
+
+  // Restore closed state from sessionStorage
+  if (sessionStorage.getItem('announcementClosed')) {
+    announcementBar.style.display = 'none';
+    header.style.top = '0';
+  }
+
+  // Mobile menu toggle
+  toggle.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden', !isOpen);
+    iconClose.classList.toggle('hidden', isOpen);
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+</script>

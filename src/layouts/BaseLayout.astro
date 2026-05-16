@@ -1,0 +1,77 @@
+---
+import '@/styles/theme.css';
+import '@/styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  jsonLd?: object;
+}
+
+const {
+  title,
+  description = 'Ehrenamtliches Rockfestival in Lindern (Oldenburg) – non-profit, handgemacht, seit 2000.',
+  ogImage = '/images/Logo.png',
+  noindex = false,
+  jsonLd,
+} = Astro.props;
+
+const siteUrl = 'https://parachutefestival.de';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const fullTitle = title === 'Parachute Festival' ? title : `${title} | Parachute Festival`;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <title>{fullTitle}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+    <link rel="canonical" href={canonicalUrl} />
+    <!-- Browser-Tab & Lesezeichen -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <!-- iOS Home Screen & Apple Touch -->
+    <link rel="apple-touch-icon" href="/images/Logo.png" />
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#c5138d" />
+
+    <!-- JSON-LD Structured Data -->
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
+
+    <!-- Google Fonts — CI 2025: Bebas Neue + Inter -->
+    <!-- Jährlicher CI-Tausch: diese Links anpassen wenn andere Fonts gewählt werden -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

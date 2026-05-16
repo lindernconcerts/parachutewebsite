@@ -1,0 +1,24 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '@/components/layout/Header.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  heroFullBleed?: boolean;
+}
+
+const { heroFullBleed = false, ...rest } = Astro.props;
+---
+
+<BaseLayout {...rest}>
+  <Header />
+  <!-- pt accounts for: announcement bar (~36px) + nav (~64px md:~80px) -->
+  <main class={heroFullBleed ? '' : 'pt-[100px] md:pt-[116px]'}>
+    <slot />
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,45 @@
+/* =====================================================
+   PARACHUTE FESTIVAL — CI THEME
+   Jährlicher CI-Tausch: nur diese Datei anpassen.
+   Letzte Aktualisierung: 2025
+   ===================================================== */
+
+:root {
+  /* --- Brand Colors 2025 --- */
+  --color-primary:     #c5138d;
+  --color-secondary:   #6fc29d;
+  --color-dark:        #2c282a;
+  --color-black:       #000000;
+  --color-white:       #ffffff;
+
+  /* --- Semantic Tokens --- */
+  --color-bg-page:     var(--color-black);
+  --color-bg-section:  var(--color-dark);
+  --color-bg-card:     #1a1718;
+  --color-text:        var(--color-white);
+  --color-text-muted:  #a09aa0;
+  --color-border:      #3a343a;
+  --color-glow:        rgba(197, 19, 141, 0.35);
+  --color-glow-2:      rgba(111, 194, 157, 0.25);
+
+  /* --- Gradient --- */
+  --gradient-hero: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-black) 50%,
+    var(--color-secondary) 100%
+  );
+  --gradient-card: linear-gradient(
+    135deg,
+    rgba(197, 19, 141, 0.12),
+    rgba(111, 194, 157, 0.05)
+  );
+
+  /* --- Fonts --- */
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  /* --- Spacing --- */
+  --section-py: 5rem;
+  --container-max: 1280px;
+}

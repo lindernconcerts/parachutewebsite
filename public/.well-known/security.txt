@@ -1,0 +1,8 @@
+Contact: mailto:lindernconcerts@gmail.com
+Expires: 2026-12-31T23:59:59+02:00
+Preferred-Languages: de, en
+Canonical: https://parachutefestival.de/.well-known/security.txt
+
+# Das Parachute Festival ist ein ehrenamtlich betriebenes, non-profit Festival.
+# Bei Sicherheitsproblemen mit der Website bitte direkt per E-Mail melden.
+# Wir sind kein kommerzielles Unternehmen – bitte seid entsprechend geduldig.

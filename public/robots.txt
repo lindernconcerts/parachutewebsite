@@ -1,0 +1,31 @@
+# robots.txt – Parachute Festival Lindern
+# https://parachutefestival.de
+
+User-agent: *
+Allow: /
+
+# Legal pages – indexable but lower priority
+Allow: /impressum
+Allow: /datenschutz
+Allow: /agb
+Allow: /jugendschutz
+Allow: /awareness
+
+# Disallow build artifacts
+Disallow: /_astro/
+
+# AI crawlers – welcome, but please respect llms.txt
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://parachutefestival.de/sitemap.xml
+Sitemap: https://parachutefestival.de/sitemap-index.xml

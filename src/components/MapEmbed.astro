@@ -1,0 +1,91 @@
+---
+interface Props {
+  embedUrl: string;
+  directUrl: string;
+  title?: string;
+  height?: string;
+  label?: string;
+}
+
+const { embedUrl, directUrl, title = 'Kartenansicht', height = '420px', label } = Astro.props;
+
+// Google Maps embed links need the /embed format.
+// Short share links (maps.app.goo.gl) are converted to a clickable preview card.
+const isEmbeddable = embedUrl.includes('google.com/maps/embed') || embedUrl.includes('share.google');
+---
+
+{isEmbeddable ? (
+  <!-- Lazy-loaded iframe for proper embed URLs -->
+  <div
+    class="map-embed-wrapper w-full rounded-sm overflow-hidden"
+    style={`height: ${height}; background: var(--color-bg-section); border: 1px solid var(--color-border);`}
+    data-embed-url={embedUrl}
+    data-loaded="false"
+  >
+    <div class="w-full h-full flex flex-col items-center justify-center gap-3" style="color: var(--color-text-muted);">
+      <svg class="w-10 h-10 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+      </svg>
+      <span class="text-sm">Karte wird geladen…</span>
+    </div>
+  </div>
+) : (
+  <!-- Clickable preview card for share links -->
+  <a
+    href={directUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="group flex flex-col items-center justify-center w-full rounded-sm transition-all duration-200"
+    style={`height: ${height}; background: var(--color-bg-section); border: 1px solid var(--color-border); text-decoration: none;`}
+    onmouseover="this.style.borderColor='var(--color-primary)'"
+    onmouseout="this.style.borderColor='var(--color-border)'"
+  >
+    <div class="flex flex-col items-center gap-4 text-center px-8">
+      <svg
+        class="w-12 h-12 transition-colors group-hover:text-primary"
+        style="color: var(--color-text-muted);"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+      </svg>
+      {label && (
+        <p class="font-heading text-2xl text-white">{label}</p>
+      )}
+      <span
+        class="text-sm font-semibold uppercase tracking-widest transition-colors group-hover:text-primary"
+        style="color: var(--color-text-muted);"
+      >
+        In Google Maps öffnen →
+      </span>
+    </div>
+  </a>
+)}
+
+<script>
+  const wrappers = document.querySelectorAll<HTMLElement>('.map-embed-wrapper');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.target instanceof HTMLElement && entry.target.dataset.loaded === 'false') {
+        const url = entry.target.dataset.embedUrl!;
+        const iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.width = '100%';
+        iframe.height = '100%';
+        iframe.style.border = 'none';
+        iframe.allowFullscreen = true;
+        iframe.loading = 'lazy';
+        iframe.title = 'Google Maps';
+        iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+        entry.target.innerHTML = '';
+        entry.target.appendChild(iframe);
+        entry.target.dataset.loaded = 'true';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '200px' });
+  wrappers.forEach(el => observer.observe(el));
+</script>

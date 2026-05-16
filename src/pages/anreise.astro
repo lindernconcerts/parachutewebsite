@@ -1,0 +1,222 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import MapEmbed from '@/components/MapEmbed.astro';
+import siteData from '@/data/site.json';
+
+const { maps, nextEdition } = siteData;
+
+const taxiCompanies = [
+  {
+    city: 'Lindern (Oldenburg)',
+    entries: [
+      { name: 'Taxi kl. Lamping GmbH', phone: '05957 / 794' },
+    ],
+  },
+  {
+    city: 'Lastrup',
+    entries: [
+      { name: 'Taxi Bornemann Lastrup', phone: '04472 / 940394' },
+    ],
+  },
+  {
+    city: 'Löningen',
+    entries: [
+      { name: 'Sandra Freese Taxiunternehmen', phone: '05432 / 58885' },
+      { name: 'J. u. M. Warns GbR', phone: '05432 / 2795' },
+    ],
+  },
+  {
+    city: 'Quakenbrück',
+    entries: [
+      { name: 'Taxi am Bahnhof (Michael Rubow)', phone: '05431 / 905905' },
+      { name: 'Artland Taxidienst', phone: '05431 / 9070707' },
+      { name: 'Taxi im Artland', phone: '05431 / 9039100' },
+    ],
+  },
+  {
+    city: 'Cloppenburg',
+    entries: [
+      { name: 'Siemer Mietwagen GmbH', phone: '04471 / 2770' },
+      { name: 'Taxi Preuth GmbH', phone: '04471 / 3434' },
+    ],
+  },
+];
+---
+
+<PageLayout
+  title="Anreise"
+  description="Anreise zum Parachute Festival 2026 – Schützenplatz, 49699 Lindern (Oldenburg). Alle Infos zu Parken, Zug und Taxi."
+>
+  <!-- Page Header -->
+  <section
+    class="py-20 text-center relative"
+    style="background: var(--color-bg-section); border-bottom: 1px solid var(--color-border);"
+  >
+    <div class="container">
+      <p class="eyebrow mb-4">So findet ihr uns</p>
+      <h1 class="font-heading text-6xl md:text-8xl text-white">Anreise</h1>
+      <p class="mt-4 text-lg font-semibold text-white">{maps.address}</p>
+      <p class="mt-1" style="color: var(--color-text-muted);">
+        Das Parachute Festival {nextEdition.dateDisplay.split(' ').pop()} findet auf dem Schützenplatz
+        in 49699 Lindern (Oldenburg) statt.
+      </p>
+    </div>
+  </section>
+
+  <!-- Festival Standort -->
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Veranstaltungsort"
+        title="Standort des Festivals"
+      />
+
+      <div class="max-w-4xl mx-auto">
+        <MapEmbed
+          embedUrl={maps.embedUrl}
+          directUrl={maps.directionsUrl}
+          label="Schützenplatz Lindern (Oldenburg)"
+          height="420px"
+        />
+        <div class="text-center mt-5">
+          <a
+            href={maps.directionsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-outline"
+          >
+            Route in Google Maps öffnen
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anreisewege -->
+  <section class="section" style="background: var(--color-bg-section);">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Wie ihr anreist"
+        title="Anreisemöglichkeiten"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <!-- Auto -->
+        <div class="card p-8">
+          <div class="text-4xl mb-4">🚗</div>
+          <h3 class="font-heading text-3xl text-white mb-3">Mit dem Auto</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--color-text-muted);">
+            Parkplätze sind direkt am Veranstaltungsort begrenzt vorhanden. In Lindern gibt es
+            weitere öffentliche Parkplätze in der Gemeinde — zum Beispiel am Parkplatz Vreeser Straße
+            (ca. 1 km / 15 Minuten Fußweg).
+          </p>
+        </div>
+
+        <!-- Zug + Taxi -->
+        <div class="card p-8">
+          <div class="text-4xl mb-4">🚆</div>
+          <h3 class="font-heading text-3xl text-white mb-3">Mit dem Zug</h3>
+          <p class="text-sm leading-relaxed mb-3" style="color: var(--color-text-muted);">
+            Klingt komisch – aber nicht unmöglich! Am besten die Bahnhöfe in
+            <strong class="text-white">Cloppenburg</strong>,
+            <strong class="text-white">Quakenbrück</strong> oder
+            <strong class="text-white">Essen (Oldenburg)</strong> ansteuern.
+            Von dort gibt es örtliche Taxiunternehmen, die euch zum Schützenplatz bringen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Taxi -->
+  <section class="section">
+    <div class="container max-w-4xl">
+      <SectionHeading
+        eyebrow="Vom Bahnhof zum Festival"
+        title="Taxiunternehmen"
+        subtitle="Nach der letzten Zugverbindung gebt ihr einfach eines der lokalen Taxiunternehmen an."
+      />
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {taxiCompanies.map(({ city, entries }) => (
+          <div class="card p-6">
+            <h3 class="font-heading text-xl text-secondary mb-4">{city}</h3>
+            <div class="space-y-3">
+              {entries.map(({ name, phone }) => (
+                <div>
+                  <p class="text-sm text-white font-semibold leading-tight">{name}</p>
+                  <a
+                    href={`tel:${phone.replace(/[\s/]/g, '')}`}
+                    class="text-sm transition-colors hover:text-primary"
+                    style="color: var(--color-text-muted);"
+                  >
+                    {phone}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Parken -->
+  <section class="section" style="background: var(--color-bg-section);">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Wo ihr euer Auto lasst"
+        title="Parken"
+        subtitle="Direkt am Festivalgelände sind nur begrenzt Plätze verfügbar — kommt früh oder nutzt den Ausweichparkplatz."
+      />
+
+      <div class="max-w-4xl mx-auto space-y-8">
+        <!-- Parkplatz 1 -->
+        <div>
+          <div
+            class="flex items-center gap-3 mb-4 px-4 py-3 rounded-sm"
+            style="background: var(--color-bg-card); border: 1px solid var(--color-border);"
+          >
+            <span class="text-2xl">P</span>
+            <div>
+              <p class="text-white font-semibold">Schützenplatz (Festivalgelände)</p>
+              <p class="text-sm" style="color: var(--color-text-muted);">Begrenzte Plätze direkt vor Ort</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ausweichparkplatz -->
+        <div>
+          <div
+            class="flex items-center gap-3 mb-4 px-4 py-3 rounded-sm"
+            style="background: var(--color-bg-card); border: 1px solid var(--color-border);"
+          >
+            <span class="text-2xl">P</span>
+            <div>
+              <p class="text-white font-semibold">Ausweichparkplatz Vreeser Straße</p>
+              <p class="text-sm" style="color: var(--color-text-muted);">ca. 1 km zum Veranstaltungsplatz · ~15 Minuten Fußweg</p>
+            </div>
+          </div>
+
+          <MapEmbed
+            embedUrl={maps.parkingEmbedUrl}
+            directUrl={maps.parkingDirectionsUrl}
+            label="Parkplatz Vreeser Straße"
+            height="360px"
+          />
+          <div class="text-center mt-5">
+            <a
+              href={maps.parkingDirectionsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-outline"
+            >
+              Parkplatz in Google Maps öffnen
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

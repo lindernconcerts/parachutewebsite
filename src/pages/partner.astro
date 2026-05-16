@@ -1,0 +1,153 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import partnersData from '@/data/partners.json';
+import siteData from '@/data/site.json';
+
+const kooperationen = partnersData.filter(p => p.tier === 'kooperation');
+const partner       = partnersData.filter(p => p.tier === 'partner');
+---
+
+<PageLayout
+  title="Unsere Partner"
+  description="Ohne Partner kein Festival! Alle Unterstützer und Kooperationspartner des Parachute Festivals Lindern."
+>
+  <!-- Page Header -->
+  <section
+    class="py-20 text-center relative"
+    style="background: var(--color-bg-section); border-bottom: 1px solid var(--color-border);"
+  >
+    <div class="container">
+      <p class="eyebrow mb-4">Danke!</p>
+      <h1 class="font-heading text-6xl md:text-8xl text-white">Unsere Partner</h1>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container max-w-4xl">
+      <div class="space-y-5 text-base leading-relaxed" style="color: var(--color-text-muted);">
+        <h2 class="font-heading text-4xl text-white">Ohne Partner kein Festival!</h2>
+        <p>
+          Ein Festival wie das Parachute Festival Lindern entsteht nicht einfach so. Hinter jeder
+          Bühne, jedem Kabel, jedem Bier und jedem Ton Licht steckt nicht nur unser ehrenamtliches
+          Team – sondern auch starke Partner, die uns unterstützen und an uns glauben.
+        </p>
+        <p>
+          Ohne regionale Unternehmen, Vereine, Sponsoren und Unterstützer waere ein ehrenamtliches
+          Festival in dieser Form schlicht nicht möglich. Ob Technik, Infrastruktur, Materialien,
+          Know-how oder finanzielle Hilfe: Unsere Partner sind ein fester Teil des Parachute und
+          tragen entscheidend dazu bei, dass wir jedes Jahr wieder ein ehrliches, handgemachtes
+          Rockfestival auf die Beine stellen können.
+        </p>
+        <p>
+          Was uns dabei besonders wichtig ist: Die Zusammenarbeit auf Augenhöhe. Keine anonyme
+          Werbung, keine reinen Logosammlungen – sondern echte Partnerschaften mit Menschen und
+          Unternehmen aus der Region, die unseren DIY-Spirit teilen und Bock auf Musik, Kultur
+          und Community haben.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kooperationen -->
+  <section class="section" style="background: var(--color-bg-section);">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Kooperationen"
+        title="Kooperationspartner"
+        subtitle="Diese Partner unterstützen uns mit Produkten, Dienstleistungen und Know-how."
+      />
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        {kooperationen.map(p => (
+          <div
+            class={`card p-5 flex items-center justify-center text-center min-h-[80px] ${p.url ? 'cursor-pointer' : ''}`}
+            onclick={p.url ? `window.open('${p.url}','_blank')` : undefined}
+            style={p.url ? 'cursor:pointer;' : ''}
+          >
+            {p.logo ? (
+              <img
+                src={p.logo}
+                alt={p.name}
+                loading="lazy"
+                class="h-10 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                onerror={`this.style.display='none';this.nextElementSibling.style.display='block'`}
+              />
+            ) : null}
+            <span
+              class="font-body font-semibold text-sm text-white text-center leading-tight"
+              style={p.logo ? 'display:none;' : ''}
+            >
+              {p.name}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner -->
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow={`${partner.length} Unterstützer`}
+        title="Partner"
+        subtitle="Regionale Unternehmen und Privatpersonen, die das Parachute Festival möglich machen."
+      />
+
+      <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+        {partner.map(p => {
+          const Tag = p.url ? 'a' : 'div';
+          const linkProps = p.url ? {
+            href: p.url,
+            target: '_blank',
+            rel: 'noopener noreferrer',
+          } : {};
+          return (
+            <Tag
+              {...linkProps}
+              class={`flex items-center gap-3 px-4 py-3 rounded-sm text-sm font-body break-words transition-all duration-200 ${p.url ? 'hover:text-primary' : ''}`}
+              style="background: var(--color-bg-card); border: 1px solid var(--color-border); color: var(--color-text-muted); min-height: 48px;"
+              onmouseover={p.url ? "this.style.borderColor='var(--color-primary)'" : undefined}
+              onmouseout={p.url ? "this.style.borderColor='var(--color-border)'" : undefined}
+            >
+              {p.logo && (
+                <img
+                  src={p.logo}
+                  alt={p.name}
+                  loading="lazy"
+                  class="h-6 w-auto object-contain shrink-0 filter grayscale opacity-60"
+                />
+              )}
+              <span>{p.name}</span>
+            </Tag>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner werden CTA -->
+  <section class="section" style="background: var(--color-bg-section);">
+    <div class="container max-w-3xl">
+      <div
+        class="p-8 md:p-12 rounded-sm text-center"
+        style="border: 2px solid var(--color-primary); box-shadow: 0 0 30px var(--color-glow);"
+      >
+        <h2 class="font-heading text-4xl md:text-5xl text-white mb-4">Du willst uns unterstützen?</h2>
+        <p class="text-base leading-relaxed mb-3" style="color: var(--color-text-muted);">
+          Mega! Wir freuen uns immer über neue Partner und Unterstützer – egal ob als Unternehmen,
+          Verein oder Privatperson. Gemeinsam finden wir eine Form der Zusammenarbeit, die für
+          beide Seiten passt.
+        </p>
+        <p class="text-base leading-relaxed mb-6" style="color: var(--color-text-muted);">
+          Denn am Ende gilt: Je mehr Support, desto besser das Festival. 🤘
+        </p>
+        <a href="/kontakt" class="btn-primary text-lg">
+          Jetzt Kontakt aufnehmen
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

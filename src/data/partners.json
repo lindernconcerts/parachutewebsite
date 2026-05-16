@@ -1,0 +1,450 @@
+[
+  {
+    "id": "krombacher",
+    "name": "Krombacher",
+    "logo": "/images/partners/krombacher.svg",
+    "url": "",
+    "tier": "kooperation"
+  },
+  {
+    "id": "papa-fuego",
+    "name": "Papa Fuego",
+    "logo": "/images/partners/papa-fuego.svg",
+    "url": "",
+    "tier": "kooperation"
+  },
+  {
+    "id": "getraenkehof-moeller",
+    "name": "Getränkehof Möller",
+    "logo": "/images/partners/getraenkehof-moeller.svg",
+    "url": "",
+    "tier": "kooperation"
+  },
+  {
+    "id": "partyfly",
+    "name": "Partyfly",
+    "logo": "/images/partners/partyfly.svg",
+    "url": "",
+    "tier": "kooperation"
+  },
+  {
+    "id": "viva-con-agua",
+    "name": "Viva con Agua",
+    "logo": "/images/partners/viva-con-agua.svg",
+    "url": "https://www.vivaconagua.org/",
+    "tier": "kooperation"
+  },
+  {
+    "id": "tewes-dachdeckerbetrieb",
+    "name": "Tewes Dachdeckerbetrieb GmbH",
+    "logo": "",
+    "url": "",
+    "tier": "kooperation"
+  },
+  {
+    "id": "kein-bock-auf-nazis",
+    "name": "Kein Bock auf Nazis",
+    "logo": "/images/partners/kein-bock-auf-nazis.svg",
+    "url": "https://www.keinbockaufnazis.de/",
+    "tier": "kooperation"
+  },
+  {
+    "id": "jaegermeister",
+    "name": "Jägermeister",
+    "logo": "/images/partners/jaegermeister.svg",
+    "url": "",
+    "tier": "kooperation"
+  },
+  {
+    "id": "hans-gehlenborg",
+    "name": "Hans Gehlenborg GmbH",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "schuetzenverein-lindern",
+    "name": "Schützenverein der Gemeinde Lindern e.V.",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "hubert-bahlmann",
+    "name": "Hubert Bahlmann GmbH & Co.",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "fahrschule-niehoff",
+    "name": "Fahrschule Timm Niehoff",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "bernhard-luebbers",
+    "name": "Bernhard Lübbers Lohnunternehmen",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "adl-baumanagement",
+    "name": "ADL-Baumanagement",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "allianz-lueken",
+    "name": "Allianz Lüken",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "bedoga-lindern",
+    "name": "BeDogA Lindern",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "beko-wohnungsbau",
+    "name": "Beko-Wohnungsbau GmbH & Co KG",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "gartenservice-lueken",
+    "name": "Gartenservice Lüken",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "biermann-lindern",
+    "name": "Biermann Lindern",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "brundiers-lindern",
+    "name": "Brundiers Lindern",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "brinker",
+    "name": "Brinker GmbH & Co. KG",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "therapiezentrum-burrichter",
+    "name": "Therapiezentrum Burrichter",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "epm-elektrotechnik",
+    "name": "EPM Elektrotechnik",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "fischer-fenster-tueren",
+    "name": "Fischer Fenster- und Türenwerk",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "gerdes-haustechnik",
+    "name": "W. Gerdes Haustechnik GmbH & Co.",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "gerd-glasa",
+    "name": "Gerd Glasa",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "physioproaxis-goetting",
+    "name": "Physioproaxis Anke Götting",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "hj-agrartechnik",
+    "name": "H&J Agrartechnik",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "kh-thomas",
+    "name": "K-H Thomas GmbH",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "autokorte",
+    "name": "AUTOteam Korte GmbH & Co. KG",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "kraft-curing",
+    "name": "Kraft Curing",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "meyers-kiosk",
+    "name": "Meyer's Kiosk Lindern",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "niemann-foerdertechnik",
+    "name": "Niemann Anlagenbau und Fördertechnik GmbH",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "pl-schaedlingsbekaempfung",
+    "name": "P&L Schädlingsbekämpfungsservice GmbH & Co. KG",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "pflegeberatung-moorkamp",
+    "name": "Pflegeberatung Moorkamp",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "malerbetrieb-pleiter",
+    "name": "Malerbetrieb Pleiter Lindern",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "august-raker",
+    "name": "August Raker Landhandel",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "tischlerei-remmers",
+    "name": "Tischlerei Remmers",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "rode-bedachungen",
+    "name": "Meisterbetrieb Rode Bedachungen",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "friseursalon-hoommen",
+    "name": "Friseursalon Hoommen",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "hubert-tellmann",
+    "name": "Hubert Tellmann Autohaus",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "manfred-thien",
+    "name": "Manfred Thien Lindern",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "ingenieurbüro-glaser",
+    "name": "Ingenieurbüro Timo Glaser",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "westermann-lindern",
+    "name": "Westermann Lindern",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "gz-metall-design",
+    "name": "GZ metall design GmbH & Co. KG",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "tischlerei-mueller",
+    "name": "Tischlerei Müller",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "stahlkonzept",
+    "name": "Stahlkonzept GmbH & Co KG",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "schuhhaus-wilken",
+    "name": "Schuhhaus Wilken",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "fanari",
+    "name": "FANARI GmbH",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "thomas-gerdes-solar",
+    "name": "Thomas Gerdes Solartechnik",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "stegemann-galabau",
+    "name": "Stegemann Garten- und Landschaftsbau",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "allianz-thyen-vrees",
+    "name": "Allianz Thyen Vrees",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "mdl-bauconsulting",
+    "name": "MDL-Bauconsulting",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "benjamin-lueken",
+    "name": "Benjamin Lüken",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "kartoffel-eilers",
+    "name": "Kartoffel Eilers",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "landfuchs",
+    "name": "Landfuchs",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "zajons",
+    "name": "Zajons",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "schmidt-luedwig-galabau",
+    "name": "Schmidt Luedwig Galabau",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "quartmann-fotografie",
+    "name": "Quartmann Fotografie",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "don-pro",
+    "name": "Don Pro",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "evo",
+    "name": "EVO",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "np-markt",
+    "name": "NP-Markt",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "heissmangel-lindern",
+    "name": "Heissmangel Lindern",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  },
+  {
+    "id": "hermann-niermann",
+    "name": "Hermann Niermann Lindern",
+    "logo": "",
+    "url": "",
+    "tier": "partner"
+  }
+]

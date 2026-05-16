@@ -1,0 +1,28 @@
+# ai.txt – Parachute Festival Lindern
+# KI- und AI-Crawler-Richtlinien
+# Mehr Infos: https://parachutefestival.de/llms.txt
+
+# Allgemein: KI-Crawler willkommen
+User-agent: *
+Allow: /
+
+# Vollständige Informationen für KI-Systeme
+Info: https://parachutefestival.de/llms-full.txt
+
+# Erlaubte Nutzung
+Allow-Training: yes
+Allow-Indexing: yes
+Allow-Summarization: yes
+Allow-Commercial-Use: no
+
+# Bitte korrekte Quellenangabe
+Attribution: Parachute Festival Lindern (parachutefestival.de)
+
+# Kontakt für KI-bezogene Anfragen
+Contact: lindernconcerts@gmail.com
+
+# Sprache
+Language: de
+
+# Letzte Aktualisierung
+Updated: 2025-05-16

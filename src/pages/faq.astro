@@ -1,0 +1,91 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import faqData from '@/data/faq.json';
+
+const categories = [...new Set(faqData.map(f => f.category))];
+
+const categoryIcons: Record<string, string> = {
+  'Das Festival':            '🎸',
+  'Organisation':            '🤘',
+  'Vor Ort':                 '📍',
+  'Jugendschutz & Awareness': '💛',
+};
+---
+
+<PageLayout
+  title="FAQ"
+  description="Haeufig gestellte Fragen zum Parachute Festival Lindern – alles was du wissen musst."
+>
+  <!-- Page Header -->
+  <section
+    class="py-20 text-center relative"
+    style="background: var(--color-bg-section); border-bottom: 1px solid var(--color-border);"
+  >
+    <div class="container">
+      <p class="eyebrow mb-4">Du fragst, wir antworten</p>
+      <h1 class="font-heading text-6xl md:text-8xl text-white">FAQ</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container max-w-3xl">
+
+      {categories.map(category => (
+        <div class="mb-14">
+          <!-- Category heading -->
+          <div class="flex items-center gap-3 mb-6 pb-3" style="border-bottom: 2px solid var(--color-primary);">
+            <span class="text-2xl">{categoryIcons[category] ?? '📌'}</span>
+            <h2 class="font-heading text-4xl text-white">{category}</h2>
+          </div>
+
+          <!-- Accordions -->
+          <div>
+            {faqData
+              .filter(f => f.category === category)
+              .map(faq => (
+                <details
+                  id={faq.id}
+                  class="group border-b"
+                  style="border-color: var(--color-border);"
+                >
+                  <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none">
+                    <span class="font-body font-semibold text-base text-white group-open:text-primary transition-colors">
+                      {faq.question}
+                    </span>
+                    <span
+                      class="shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-transform duration-300 group-open:rotate-45"
+                      style="background: var(--color-primary); color: white;"
+                    >
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4"/>
+                      </svg>
+                    </span>
+                  </summary>
+                  <div
+                    class="pb-5 text-sm leading-relaxed"
+                    style="color: var(--color-text-muted);"
+                    set:html={faq.answer}
+                  />
+                </details>
+              ))
+            }
+          </div>
+        </div>
+      ))}
+
+      <!-- Contact CTA -->
+      <div
+        class="mt-4 p-8 rounded-sm text-center"
+        style="background: var(--color-bg-card); border: 1px solid var(--color-border);"
+      >
+        <p class="font-heading text-3xl text-white mb-2">Noch Fragen offen?</p>
+        <p class="mb-6" style="color: var(--color-text-muted);">
+          Kein Problem – schreib uns einfach direkt!
+        </p>
+        <a href="/kontakt" class="btn-primary">Kontakt aufnehmen</a>
+      </div>
+
+    </div>
+  </section>
+</PageLayout>

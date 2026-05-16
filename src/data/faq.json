@@ -1,0 +1,116 @@
+[
+  {
+    "id": "faq-was-ist",
+    "category": "Das Festival",
+    "question": "Was ist das Parachute Festival Lindern?",
+    "answer": "Das Parachute Festival Lindern ist ein ehrenamtlich organisiertes Rockfestival aus Lindern (Oldenburg). Seit dem Jahr 2000 bringen wir regionale und nationale Bands auf die Bühne – handgemacht, non-profit und mit jeder Menge DIY-Spirit."
+  },
+  {
+    "id": "faq-wann",
+    "category": "Das Festival",
+    "question": "Wann findet das Festival statt?",
+    "answer": "Das nächste Parachute Festival findet am 24. April 2027 statt."
+  },
+  {
+    "id": "faq-wo",
+    "category": "Das Festival",
+    "question": "Wo findet das Festival statt?",
+    "answer": "Aktuell auf dem Schützenplatz in Lindern (Oldenburg) – aber wir sind traditionell ein bisschen flexibel. In unserer Geschichte waren wir schon im Hinterhof eines Wirts, in der Reithalle und an anderen Locations. Stillstand ist nicht so unser Ding."
+  },
+  {
+    "id": "faq-musik",
+    "category": "Das Festival",
+    "question": "Welche Musik laeuft beim Parachute Festival?",
+    "answer": "Unser Herz schlägt für Rock und Punk. Aber wir sind offen für alles, was ehrlich ist: Alternative, Indie, Metal – und auch Hip-Hop/Rap war bei uns schon am Start. Hauptsache gute Musik und starke Live-Performance."
+  },
+  {
+    "id": "faq-name",
+    "category": "Das Festival",
+    "question": "Warum heisst das Festival Parachute?",
+    "answer": "Weil wir jedes Jahr einen Lastenfallschirm über das Gelände spannen. Der sorgt für ordentlich Atmosphaere – schuetzt aber leider nur bedingt vor Regen. Sieht dafür umso cooler aus."
+  },
+  {
+    "id": "faq-wer",
+    "category": "Organisation",
+    "question": "Wer organisiert das Festival?",
+    "answer": "Organisiert wird das Parachute Festival von den Vereinen Projektunterstützungsverein Lindern e.V. und Teestube Lindern e.V. Dahinter steht ein Team aus Jugendlichen und jungen Erwachsenen, komplett ehrenamtlich. Keine Agentur, kein Konzern, keine bezahlten Eventmanager – nur Menschen mit Bock auf Musik und Festivals."
+  },
+  {
+    "id": "faq-kommerziell",
+    "category": "Organisation",
+    "question": "Ist das Festival kommerziell?",
+    "answer": "Nein. Das Parachute Festival ist non-profit. Alle Einnahmen fliessen direkt wieder ins Festival: Bands, Technik, Infrastruktur, Sicherheit, Licht, Sound – alles für ein besseres Erlebnis, nicht für Gewinne."
+  },
+  {
+    "id": "faq-helfen",
+    "category": "Organisation",
+    "question": "Kann ich beim Festival mithelfen?",
+    "answer": "Unbedingt! Wir freuen uns immer über neue Helfer:innen – egal ob beim Aufbau, Abbau, an der Theke oder hinter den Kulissen. Schreib uns einfach über Social Media oder per Mail."
+  },
+  {
+    "id": "faq-unterstützen",
+    "category": "Organisation",
+    "question": "Kann ich das Festival finanziell unterstützen?",
+    "answer": "Ja, sehr gerne – und das hilft uns wirklich weiter. Da wir das Festival komplett ehrenamtlich und non-profit organisieren, sind wir auf Support aus der Community angewiesen. Auf Wunsch können wir auch Spendenquittungen ausstellen. Jeder Beitrag – egal wie gross oder klein – fliesst direkt ins Festival. Schreib uns einfach direkt an. ❤️🤘"
+  },
+  {
+    "id": "faq-band",
+    "category": "Organisation",
+    "question": "Wie kann ich als Band beim Parachute Festival spielen?",
+    "answer": "Schickt uns einfach eure Bewerbung mit Hoerbeispielen über unsere Kanaele. Wir bekommen viele Anfragen, können nicht allen antworten – aber wir hoeren uns alles an. Versprochen."
+  },
+  {
+    "id": "faq-tickets",
+    "category": "Vor Ort",
+    "question": "Wo gibt es Tickets?",
+    "answer": "Tickets gibt es im Online-Vorverkauf über Eventfrog – guenstiger als an der Abendkasse und du bist auf der sicheren Seite. Die Abendkasse ist nur solange der Vorrat reicht. Alle Infos findest du auf unserer Tickets-Seite."
+  },
+  {
+    "id": "faq-essen",
+    "category": "Vor Ort",
+    "question": "Gibt es Essen & Getraenke?",
+    "answer": "Ja, natuerlich. Von kalten Drinks bis zu warmem Essen – alles zu fairen Preisen. Wir arbeiten dabei hauptsaechlich mit regionalen Partnern zusammen."
+  },
+  {
+    "id": "faq-camping",
+    "category": "Vor Ort",
+    "question": "Gibt es Camping?",
+    "answer": "In der Regel nein, da es ein Tagesfestival ist. Rund um Lindern gibt es aber Übernachtungsmöglichkeiten. Infos dazu gibt's kurz vor dem Festival auf unseren Kanaelen."
+  },
+  {
+    "id": "faq-wetter",
+    "category": "Vor Ort",
+    "question": "Was passiert bei schlechtem Wetter?",
+    "answer": "Wir sind ein Rockfestival, kein Schönwetterausflug. Regen hält uns nicht auf – nur extreme Wetterlagen könnten zu Änderungen fuehren. Updates gibt's dann über unsere Socials."
+  },
+  {
+    "id": "faq-warum",
+    "category": "Vor Ort",
+    "question": "Warum sollte ich zum Parachute Festival kommen?",
+    "answer": "Weil es kein Hochglanz-Festival ist. Sondern ein ehrliches, lautes, handgemachtes Rockfestival mit Herz, Community und DIY-Spirit. Oder kurz: Weil's echt ist. 🤘"
+  },
+  {
+    "id": "faq-alter",
+    "category": "Jugendschutz & Awareness",
+    "question": "Ab welchem Alter ist das Festival?",
+    "answer": "Das Festival ist ohne Altersbeschraenkung zugaenglich. Beim Einlass wird per Eintrittsband unterschieden: Unter-18-Jaehrige erhalten ein abgeschnittenes Band, Volljährige ein intaktes – so ist auf einen Blick erkennbar, wer welche Angebote nutzen darf. Für Alkohol gilt: Bier, Wein und Sekt ab 16 Jahren, Spirituosen und Tabak ausschliesslich ab 18 Jahren. Alle Details findest du in unserem <a href=\"/jugendschutz\" class=\"text-primary hover:underline\">Jugendschutzkonzept</a>."
+  },
+  {
+    "id": "faq-barrierefrei",
+    "category": "Jugendschutz & Awareness",
+    "question": "Ist das Festival barrierefrei?",
+    "answer": "Ja, grundsaetzlich ist unser Festival barrierefrei. Sanitaere Anlagen für Menschen mit Einschränkungen können euch am Einlass gesondert gezeigt werden. Sprecht uns einfach an – wir helfen gern."
+  },
+  {
+    "id": "faq-awareness",
+    "category": "Jugendschutz & Awareness",
+    "question": "Was tut ihr für ein sicheres Festival?",
+    "answer": "Awareness ist uns ein echtes Herzensanliegen – kein Pflichtprogramm. Unser Awareness-Team ist auf dem Gelände unterwegs und erkennbar an Umhängepässen. Weitere Anlaufstellen sind der Eingang, die Theke und die Zugangskontrolle. Mehr dazu in unserem <a href=\"/awareness\" class=\"text-primary hover:underline\">Awarenesskonzept</a>."
+  },
+  {
+    "id": "faq-unwohl",
+    "category": "Jugendschutz & Awareness",
+    "question": "An wen wende ich mich, wenn ich mich unwohl fuehle?",
+    "answer": "Sprich einfach jemanden mit Umhängepass an – das ist unser Awareness-Team. Du kannst dich auch am Eingang, an der Theke oder bei der Zugangskontrolle melden. Kein Anliegen ist zu klein, niemand muss sich erklaeren. Wir sind da. Alle Details: <a href=\"/awareness\" class=\"text-primary hover:underline\">Awarenesskonzept</a>."
+  }
+]

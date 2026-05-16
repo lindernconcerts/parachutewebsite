@@ -1,0 +1,109 @@
+---
+interface Props {
+  targetDate: string;
+  dateDisplay: string;
+  location: string;
+  futureDate: string;
+  futureDateDisplay: string;
+  futureLocation: string;
+}
+
+const { targetDate, dateDisplay, location, futureDate, futureDateDisplay, futureLocation } = Astro.props;
+---
+
+<div
+  class="w-full"
+  id="countdown-wrapper"
+  data-target={targetDate}
+  data-future={futureDate}
+  data-future-display={futureDateDisplay}
+  data-future-location={futureLocation}
+>
+  <!-- Countdown display -->
+  <div id="countdown-live" class="flex flex-wrap justify-center gap-4 md:gap-8">
+    {['Tage', 'Stunden', 'Minuten', 'Sekunden'].map((label) => (
+      <div class="text-center">
+        <div
+          class="font-heading text-6xl md:text-8xl lg:text-9xl leading-none text-white tabular-nums"
+          id={`cd-${label.toLowerCase()}`}
+        >
+          --
+        </div>
+        <div class="eyebrow mt-1 text-xs md:text-sm">{label}</div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Date & Location -->
+  <p id="countdown-meta" class="text-center mt-8 font-body text-lg md:text-xl" style="color: var(--color-text-muted);">
+    <span id="countdown-date" class="text-white font-semibold">{dateDisplay}</span>
+    &nbsp;·&nbsp;
+    <span id="countdown-location">{location}</span>
+  </p>
+</div>
+
+<script>
+  const wrapper = document.getElementById('countdown-wrapper')!;
+  const primaryTarget = new Date(wrapper.dataset.target!);
+  const futureTarget  = new Date(wrapper.dataset.future!);
+
+  const elDays    = document.getElementById('cd-tage')!;
+  const elHours   = document.getElementById('cd-stunden')!;
+  const elMins    = document.getElementById('cd-minuten')!;
+  const elSecs    = document.getElementById('cd-sekunden')!;
+  const elDate    = document.getElementById('countdown-date')!;
+  const elLoc     = document.getElementById('countdown-location')!;
+  const elLive    = document.getElementById('countdown-live')!;
+  const elMeta    = document.getElementById('countdown-meta')!;
+
+  const futureDateDisplay  = wrapper.dataset.futureDisplay!;
+  const futureLocation     = wrapper.dataset.futureLocation!;
+
+  const pad = (n: number) => String(n).padStart(2, '0');
+
+  function renderCountdown(target: Date) {
+    const diff = target.getTime() - Date.now();
+    if (diff <= 0) return false;
+
+    const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    elDays.textContent  = String(days);
+    elHours.textContent = pad(hours);
+    elMins.textContent  = pad(minutes);
+    elSecs.textContent  = pad(seconds);
+    return true;
+  }
+
+  function switchToFuture() {
+    // Update meta text
+    elDate.textContent = futureDateDisplay;
+    elLoc.textContent  = futureLocation;
+
+    // Add a "Next up" eyebrow above the meta
+    if (!document.getElementById('cd-next-label')) {
+      const label = document.createElement('p');
+      label.id        = 'cd-next-label';
+      label.className = 'eyebrow text-center mb-4';
+      label.textContent = 'Bis zum nächsten Jahr';
+      elLive.parentElement!.insertBefore(label, elLive);
+    }
+  }
+
+  function tick() {
+    if (renderCountdown(primaryTarget)) return; // still counting down to 2026
+
+    // 2026 is past — switch to 2027
+    switchToFuture();
+
+    if (!renderCountdown(futureTarget)) {
+      // 2027 is also past — shouldn't happen for a while
+      elLive.innerHTML = `<p class="font-heading text-6xl text-primary text-center">Wir sehen uns 2028!</p>`;
+    }
+  }
+
+  tick();
+  setInterval(tick, 1000);
+</script>

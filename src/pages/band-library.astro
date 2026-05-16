@@ -1,0 +1,194 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import BandCard from '@/components/bands/BandCard.astro';
+import bandsData from '@/data/bands.json';
+
+const sorted = [...bandsData].sort((a, b) => a.name.localeCompare(b.name, 'de'));
+const letters = [...new Set(sorted.map(b => b.name[0].toUpperCase()))].sort();
+const allYears = [...new Set(sorted.flatMap(b => b.parachuteFestivals))].sort((a, b) => b - a);
+---
+
+<PageLayout
+  title="Band Library"
+  description="Alle Bands die beim Parachute Festival und Osterrock Lindern auf der Bühne standen – alphabetisch durchsuchbar, nach Jahr filterbar."
+>
+  <!-- Page Header -->
+  <section
+    class="py-20 text-center relative"
+    style="background: var(--color-bg-section); border-bottom: 1px solid var(--color-border);"
+  >
+    <div class="container">
+      <p class="eyebrow mb-4">Seit 2000</p>
+      <h1 class="font-heading text-6xl md:text-8xl text-white">Band Library</h1>
+      <p class="mt-4 text-lg" style="color: var(--color-text-muted);">
+        {sorted.length} Bands. Alle, die je in Lindern auf der Bühne standen.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- Inline band data for client-side search -->
+      <script id="band-data" type="application/json" set:html={JSON.stringify(sorted)} />
+
+      <!-- Search -->
+      <div class="max-w-xl mx-auto mb-8">
+        <div class="relative">
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 pointer-events-none" style="color:var(--color-text-muted);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <input
+            id="band-search-input"
+            type="search"
+            placeholder="Band suchen…"
+            class="w-full pl-12 pr-4 py-4 rounded-sm font-body text-white placeholder-[var(--color-text-muted)] bg-[var(--color-bg-card)] border focus:outline-none transition-colors"
+            style="border-color: var(--color-border);"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <!-- Jahr-Filter -->
+      <div class="mb-6">
+        <p class="eyebrow mb-3 text-center">Nach Jahr filtern</p>
+        <div class="flex flex-wrap justify-center gap-2" id="year-nav">
+          <button class="year-btn px-3 py-1.5 text-sm font-bold rounded transition-colors" data-year="all" style="background:var(--color-primary);color:white;">
+            Alle
+          </button>
+          {allYears.map(year => (
+            <button class="year-btn px-3 py-1.5 text-sm font-bold rounded transition-colors" data-year={year} style="background:var(--color-bg-card);color:var(--color-text-muted);">
+              {year}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- A-Z Jump -->
+      <div class="flex flex-wrap justify-center gap-1 mb-10" id="az-nav">
+        <button class="az-btn px-3 py-1.5 text-sm font-bold rounded transition-colors" data-letter="all" style="background:var(--color-bg-card);color:var(--color-text-muted);">
+          A–Z
+        </button>
+        {letters.map(letter => (
+          <button class="az-btn w-9 h-9 text-sm font-bold rounded transition-colors" data-letter={letter} style="background:var(--color-bg-card);color:var(--color-text-muted);">
+            {letter}
+          </button>
+        ))}
+      </div>
+
+      <!-- Results count -->
+      <p id="band-results-info" class="text-sm mb-6" style="color:var(--color-text-muted);">
+        {sorted.length} Bands
+      </p>
+
+      <!-- Grid -->
+      <div id="band-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {sorted.map(band => (
+          <div
+            class="band-card-wrapper"
+            data-id={band.id}
+            data-name={band.name.toLowerCase()}
+            data-letter={band.name[0].toUpperCase()}
+            data-years={band.parachuteFestivals.join(',')}
+            data-genre={band.genre.join(' ').toLowerCase()}
+            data-bio={band.bio.toLowerCase()}
+          >
+            <BandCard band={band} />
+          </div>
+        ))}
+      </div>
+
+      <!-- No results -->
+      <p id="band-no-results" class="hidden text-center py-16 text-lg" style="color:var(--color-text-muted);">
+        Keine Bands gefunden.
+      </p>
+    </div>
+  </section>
+</PageLayout>
+
+<script>
+  // @ts-ignore
+  import Fuse from 'fuse.js';
+
+  type Band = { id: string; name: string; genre: string[]; bio: string; parachuteFestivals: number[] };
+  const bands: Band[] = JSON.parse(document.getElementById('band-data')!.textContent || '[]');
+
+  const fuse = new Fuse(bands, {
+    keys: [{ name: 'name', weight: 0.6 }, { name: 'genre', weight: 0.2 }, { name: 'bio', weight: 0.2 }],
+    threshold: 0.35,
+    minMatchCharLength: 2,
+  });
+
+  const input       = document.getElementById('band-search-input') as HTMLInputElement;
+  const grid        = document.getElementById('band-grid')!;
+  const noResults   = document.getElementById('band-no-results')!;
+  const resultsInfo = document.getElementById('band-results-info')!;
+  const azButtons   = document.querySelectorAll<HTMLButtonElement>('.az-btn');
+  const yearButtons = document.querySelectorAll<HTMLButtonElement>('.year-btn');
+
+  let currentLetter = 'all';
+  let currentYear   = 'all';
+  let currentQuery  = '';
+
+  function setActive(buttons: NodeListOf<HTMLButtonElement>, active: HTMLButtonElement, primary = true) {
+    buttons.forEach(b => {
+      const isActive = b === active;
+      b.style.background = isActive ? (primary ? 'var(--color-primary)' : 'var(--color-secondary)') : 'var(--color-bg-card)';
+      b.style.color       = isActive ? 'white' : 'var(--color-text-muted)';
+    });
+  }
+
+  function applyFilters() {
+    const wrappers = grid.querySelectorAll<HTMLElement>('.band-card-wrapper');
+    let visible = 0;
+
+    let matchingIds: Set<string> | null = null;
+    if (currentQuery.length >= 2) {
+      matchingIds = new Set(fuse.search(currentQuery).map((r: { item: Band }) => r.item.id));
+    }
+
+    wrappers.forEach(wrapper => {
+      let show = true;
+      if (currentLetter !== 'all' && wrapper.dataset.letter !== currentLetter) show = false;
+      if (currentYear !== 'all' && !wrapper.dataset.years!.split(',').includes(currentYear)) show = false;
+      if (matchingIds !== null && !matchingIds.has(wrapper.dataset.id!)) show = false;
+      wrapper.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    noResults.classList.toggle('hidden', visible > 0);
+    resultsInfo.textContent = `${visible} Band${visible !== 1 ? 's' : ''}`;
+  }
+
+  input.addEventListener('input', () => {
+    currentQuery  = input.value.trim();
+    currentLetter = 'all';
+    currentYear   = 'all';
+    setActive(azButtons, azButtons[0]!, true);
+    setActive(yearButtons, yearButtons[0]!, true);
+    applyFilters();
+  });
+  input.addEventListener('focus', () => (input.style.borderColor = 'var(--color-primary)'));
+  input.addEventListener('blur',  () => (input.style.borderColor = 'var(--color-border)'));
+
+  azButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentLetter = btn.dataset.letter!;
+      currentQuery  = '';
+      input.value   = '';
+      setActive(azButtons, btn, true);
+      applyFilters();
+    });
+  });
+
+  yearButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentYear  = btn.dataset.year!;
+      currentQuery = '';
+      input.value  = '';
+      currentLetter = 'all';
+      setActive(azButtons, azButtons[0]!, true);
+      setActive(yearButtons, btn, false);
+      applyFilters();
+    });
+  });
+</script>

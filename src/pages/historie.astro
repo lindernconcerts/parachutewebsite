@@ -1,0 +1,273 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import Countdown from '@/components/home/Countdown.astro';
+import historieData from '@/data/historie.json';
+import siteData from '@/data/site.json';
+
+const sorted = [...historieData].sort((a, b) => b.year - a.year);
+const upcoming = sorted.find(e => e.upcoming);
+const parachute = sorted.filter(e => e.era === 'parachute' && !e.upcoming);
+const osterrock = sorted.filter(e => e.era === 'osterrock');
+
+const { nextEdition, futureEdition } = siteData;
+---
+
+<PageLayout
+  title="Festival Historie"
+  description="Parachute Festival seit 2000 – ehemals bekannt als Osterrock Lindern. Alle Festivals von 2000 bis heute."
+>
+  <!-- Page Header -->
+  <section
+    class="py-20 text-center relative"
+    style="background: var(--color-bg-section); border-bottom: 1px solid var(--color-border);"
+  >
+    <div class="container">
+      <p class="eyebrow mb-4">Seit dem Jahr 2000</p>
+      <h1 class="font-heading text-6xl md:text-8xl text-white">Festival Historie</h1>
+      <p class="mt-6 max-w-2xl mx-auto text-base leading-relaxed" style="color: var(--color-text-muted);">
+        Parachute Festival seit 2000! Ehemals bekannt als Osterrock Lindern hat unser Festival
+        nun schon eine Tradition. Hier ein Überblick über unsere Festivals.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2027: Nächstes Festival mit Countdown -->
+  {upcoming && (
+    <section
+      class="py-16 relative overflow-hidden"
+      style="background: var(--color-bg-section); border-bottom: 1px solid var(--color-border);"
+    >
+      <div
+        class="absolute inset-0 pointer-events-none"
+        style="background: radial-gradient(ellipse at 50% 100%, var(--color-glow) 0%, transparent 60%);"
+        aria-hidden="true"
+      ></div>
+      <div class="container relative z-10 text-center">
+        <span class="badge-primary mb-6 inline-block text-base px-4 py-1">Das nächste Festival</span>
+        <h2 class="font-heading text-5xl md:text-7xl text-white mb-10">{upcoming.name}</h2>
+        <Countdown
+          targetDate={futureEdition.date}
+          dateDisplay={futureEdition.dateDisplay}
+          location={futureEdition.location}
+          futureDate={futureEdition.date}
+          futureDateDisplay={futureEdition.dateDisplay}
+          futureLocation={futureEdition.location}
+        />
+        <div class="mt-10">
+          <a href="/tickets" class="btn-primary">Tickets sichern</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Parachute Era -->
+  <section class="section">
+    <div class="container max-w-5xl">
+      <SectionHeading
+        eyebrow="2019 – heute"
+        title="Parachute Festival"
+        align="left"
+      />
+
+      <div class="space-y-6">
+        {parachute.map(edition => (
+          <div
+            class={`rounded-sm overflow-hidden ${
+              edition.cancelled
+                ? 'opacity-60'
+                : edition.coronaNote
+                ? ''
+                : ''
+            }`}
+            style={`border: 1px solid ${edition.cancelled ? 'var(--color-border)' : 'var(--color-border)'};`}
+          >
+            <div class={`grid ${(edition.poster && !edition.missing) ? 'grid-cols-1 md:grid-cols-[280px_1fr]' : 'grid-cols-1'}`}>
+
+              <!-- Poster -->
+              {edition.poster && !edition.missing && (
+                <div
+                  class="relative flex items-center justify-center shrink-0"
+                  style="background: var(--color-bg-card); width: 280px; height: 320px;"
+                >
+                  <img
+                    src={edition.poster}
+                    alt={`Plakat ${edition.name}`}
+                    loading="lazy"
+                    class="w-full h-full object-contain p-3"
+                    onerror="this.style.display='none'; this.parentElement.querySelector('.poster-fallback').style.display='flex'"
+                  />
+                  <div
+                    class="poster-fallback w-full h-full absolute inset-0 items-center justify-center"
+                    style="display:none;"
+                  >
+                    <span class="font-heading text-6xl opacity-10 text-primary">{edition.year}</span>
+                  </div>
+                </div>
+              )}
+
+              <!-- Content -->
+              <div class="p-6 md:p-8" style="background: var(--color-bg-card);">
+                <div class="flex flex-wrap items-baseline gap-3 mb-3">
+                  <span class="font-heading text-4xl md:text-5xl text-white">{edition.name}</span>
+                  {edition.cancelled && (
+                    <span class="badge" style="background: rgba(255,80,80,0.15); color: #ff8080;">Abgesagt</span>
+                  )}
+                  {edition.coronaNote && (
+                    <span class="badge" style="background: rgba(255,200,0,0.15); color: #ffc800;">Corona-Edition</span>
+                  )}
+                </div>
+
+                {(edition.date || edition.location) && (
+                  <p class="text-sm mb-3" style="color: var(--color-text-muted);">
+                    {edition.date && <span>📅 {edition.date}</span>}
+                    {edition.date && edition.location && <span>&nbsp;·&nbsp;</span>}
+                    {edition.location && <span>📍 {edition.location}</span>}
+                  </p>
+                )}
+
+                {edition.description && (
+                  <p class="text-sm leading-relaxed" style="color: var(--color-text-muted);">
+                    {edition.description}
+                  </p>
+                )}
+
+                {!edition.poster && !edition.cancelled && !edition.description && (
+                  <p class="text-sm italic" style="color: var(--color-text-muted);">
+                    Infos folgen…
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider with era transition -->
+  <div class="container max-w-5xl">
+    <div class="relative py-4">
+      <div class="divider-primary"></div>
+      <div
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-6 py-2 rounded-full font-heading text-xl tracking-widest"
+        style="background: var(--color-dark); color: var(--color-secondary);"
+      >
+        Früher bekannt als
+      </div>
+    </div>
+  </div>
+
+  <!-- Osterrock Era -->
+  <section class="section">
+    <div class="container max-w-5xl">
+      <SectionHeading
+        eyebrow="2000 – 2018"
+        title="Osterrock Festival"
+        subtitle="Bevor es Parachute hieß, rockte Lindern unter dem Namen Osterrock."
+        align="left"
+      />
+
+      <div class="space-y-4">
+        {osterrock.map(edition => (
+          <div
+            class="rounded-sm overflow-hidden"
+            style={`border: 1px solid ${edition.missing ? 'var(--color-border)' : 'var(--color-border)'}; opacity: ${edition.missing && !edition.bands.length && !edition.description ? '0.5' : '1'};`}
+          >
+            <div class={`grid ${(edition.poster && !edition.missing) ? 'grid-cols-1 md:grid-cols-[280px_1fr]' : 'grid-cols-1'}`}>
+
+              <!-- Poster -->
+              {edition.poster && !edition.missing && (
+                <div
+                  class="relative flex items-center justify-center shrink-0"
+                  style="background: var(--color-bg-card); width: 280px; height: 320px;"
+                >
+                  <img
+                    src={edition.poster}
+                    alt={`Plakat ${edition.name}`}
+                    loading="lazy"
+                    class="w-full h-full object-contain p-3"
+                    onerror="this.style.display='none'; this.parentElement.querySelector('.poster-fallback').style.display='flex'"
+                  />
+                  <div
+                    class="poster-fallback w-full h-full absolute inset-0 items-center justify-center"
+                    style="display:none;"
+                  >
+                    <span class="font-heading text-6xl opacity-10 text-secondary">{edition.year}</span>
+                  </div>
+                </div>
+              )}
+
+              <!-- Content -->
+              <div class="p-6" style="background: var(--color-bg-card);">
+                <div class="flex flex-wrap items-baseline gap-3 mb-2">
+                  <span class="font-heading text-3xl md:text-4xl text-white">{edition.name}</span>
+                  {edition.missing && (
+                    <span class="text-xs italic" style="color: var(--color-text-muted);">wird noch vermisst</span>
+                  )}
+                </div>
+
+                {(edition.date || edition.location) && (
+                  <p class="text-sm mb-3" style="color: var(--color-text-muted);">
+                    {edition.date && <span>📅 {edition.date}</span>}
+                    {edition.date && edition.location && <span>&nbsp;·&nbsp;</span>}
+                    {edition.location && <span>📍 {edition.location}</span>}
+                  </p>
+                )}
+
+                {edition.description && (
+                  <p class="text-sm leading-relaxed mb-4" style="color: var(--color-text-muted);">
+                    {edition.description}
+                  </p>
+                )}
+
+                <!-- Band list (simple names, e.g. 2007) -->
+                {Array.isArray(edition.bands) && edition.bands.length > 0 && typeof edition.bands[0] === 'string' && (
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    {(edition.bands as string[]).map(b => (
+                      <span class="badge-secondary">{b}</span>
+                    ))}
+                  </div>
+                )}
+
+                <!-- Band list with descriptions (e.g. 2004, 2002) -->
+                {Array.isArray(edition.bands) && edition.bands.length > 0 && typeof edition.bands[0] === 'object' && (
+                  <div class="space-y-4 mt-4">
+                    {(edition.bands as {name:string; genre:string; description:string}[]).map((band, i) => (
+                      <div class="flex gap-4">
+                        <div
+                          class="shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
+                          style="background: var(--color-primary); color: white;"
+                        >
+                          {i + 1}
+                        </div>
+                        <div>
+                          <div class="flex flex-wrap items-baseline gap-2 mb-1">
+                            <span class="font-heading text-xl text-white">{band.name}</span>
+                            {band.genre && (
+                              <span class="text-xs" style="color: var(--color-secondary);">{band.genre}</span>
+                            )}
+                          </div>
+                          <p class="text-xs leading-relaxed" style="color: var(--color-text-muted);">{band.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--color-bg-section);">
+    <div class="container text-center">
+      <p class="font-heading text-5xl text-white mb-2">Teil der Geschichte werden?</p>
+      <p class="mb-8" style="color: var(--color-text-muted);">Dann schnapp dir ein Ticket für 2026!</p>
+      <a href="/tickets" class="btn-primary">Tickets sichern</a>
+    </div>
+  </section>
+</PageLayout>

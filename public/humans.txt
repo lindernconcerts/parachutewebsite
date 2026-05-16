@@ -1,0 +1,15 @@
+/* TEAM */
+  Festival Organisation: Teestube Lindern e.V. & Projektunterstützungsverein Lindern e.V.
+  Kontakt: lindernconcerts@gmail.com
+  Standort: Lindern (Oldenburg), Deutschland
+
+/* DANKE */
+  An alle ehrenamtlichen Helfer:innen, die das Parachute Festival
+  seit 2000 jedes Jahr möglich machen. 🤘
+
+/* SITE */
+  Letzte Aktualisierung: 2025
+  Technologie: Astro, Tailwind CSS, Cloudflare Pages
+  Sprache: Deutsch
+  Doctype: HTML5
+  IDE: VS Code

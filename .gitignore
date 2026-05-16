@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables (never commit these!)
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+.idea/
+
+# Astro
+.astro/
+
+# Logs
+npm-debug.log*
+*.log
+
+# Claude Code (local only)
+.claude/settings.local.json

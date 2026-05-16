@@ -1,0 +1,36 @@
+---
+interface Props {
+  question: string;
+  id?: string;
+}
+
+const { question, id } = Astro.props;
+---
+
+<details
+  id={id}
+  class="group border-b"
+  style="border-color: var(--color-border);"
+>
+  <summary
+    class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none"
+  >
+    <span class="font-body font-semibold text-base text-white group-open:text-primary transition-colors">
+      {question}
+    </span>
+    <span
+      class="shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-transform duration-300 group-open:rotate-45"
+      style="background: var(--color-primary); color: white;"
+    >
+      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4"/>
+      </svg>
+    </span>
+  </summary>
+  <div
+    class="pb-5 text-sm leading-relaxed"
+    style="color: var(--color-text-muted);"
+  >
+    <slot />
+  </div>
+</details>

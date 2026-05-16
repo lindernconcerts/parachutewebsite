@@ -1,0 +1,272 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import Hero from '@/components/home/Hero.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+
+const lineup2026 = [
+  {
+    name: 'Rogers',
+    role: 'Headliner',
+    genre: 'Punkrock',
+    origin: 'Düsseldorf',
+    image: '/images/bands/rogers.jpg',
+    description:
+      'Die Düsseldorfer Punkrock-Legende kommt nach Lindern! Nach einem erfolgreichen Festivalsommer und dem Chart-Erfolg von „Rambazamba & Randale" bringen Rogers genau die explosive Live-Energie auf unsere Bühne, für die sie seit Jahren bekannt sind. Unter dem Motto „Das war ein geiler Abend!" schaffen sie unvergessliche Konzertmomente voller Leidenschaft, Schweiß und ehrlichem Punkrock.',
+    links: {
+      instagram: 'https://www.instagram.com/rogersband/',
+      spotify: 'https://open.spotify.com/artist/rogers',
+    },
+    highlight: true,
+  },
+  {
+    name: 'Farewell Spit',
+    role: 'Support',
+    genre: 'Rock / Metal',
+    origin: '',
+    image: '/images/bands/farewell-spit.jpg',
+    description:
+      'Farewell Spit spricht für all diejenigen, die sich in einer Welt voller Herausforderungen verloren fühlen. Ihre Musik – eine Mischung aus Rock, poppigen Elektro-Parts und Metal-Sound – umhüllt die Seele mit Trost und Freude. Jeder Song erzählt eine emotionale Geschichte vom unaufhörlichen Drang der Veränderung und der Selbstfindung.',
+    links: {},
+    highlight: false,
+  },
+  {
+    name: 'Liebe 3000',
+    role: 'Support',
+    genre: 'Pop / Rock',
+    origin: '',
+    image: '/images/bands/liebe-3000.jpg',
+    description:
+      'Ali Amore, Malibu Markus, Schiessbuden Bernie, Michi Moschus und Andi Acapulco reiten souverän die Sinuswelle der Romantik. Liebe 3000 ist musikalische Begehrlichkeit: Ohrwurm-Hits mit der Extraportion Herz. Unkomplizierte Arrangements treffen auf ehrliche Worte – und ein Lächeln für alle inklusive.',
+    links: {},
+    highlight: false,
+  },
+  {
+    name: 'DRAUF',
+    role: 'Support',
+    genre: 'Punk Rock',
+    origin: 'Vechta',
+    image: '/images/bands/drauf.jpg',
+    description:
+      'Deutschsprachiger Punk Rock, der direkt ins Ohr und mitten ins Herz geht. Seit 2017 machen sie klar: Kein Platz für rechte Parolen – stattdessen klare Kante gegen Faschismus, Gesellschaftskritik und ganz viel Spaß. Mit ihrem aktuellen Album „Sternzeichen Zigarette" (Oktober 2024) zeigen sie einmal mehr wofür DRAUF stehen: laut sein, Haltung zeigen, gemeinsam feiern.',
+    links: {},
+    highlight: false,
+  },
+];
+---
+
+<PageLayout
+  title="Parachute Festival"
+  description="Kein Kommerz, kein Schnickschnack – das Parachute Festival Lindern. Ehrlicher Rock, ehrenamtlich organisiert, von der Community getragen. Am 24. April 2027 in Lindern (Oldenburg)."
+  heroFullBleed={true}
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "MusicEvent",
+    "name": "Parachute Festival 2027",
+    "description": "Ehrenamtliches Rockfestival in Lindern (Oldenburg). Non-profit, handgemacht, seit 2000.",
+    "startDate": "2027-04-24T17:00:00+02:00",
+    "endDate": "2027-04-25T02:00:00+02:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Schützenplatz Lindern",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Am Schützenpl.",
+        "addressLocality": "Lindern",
+        "postalCode": "49699",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.8446,
+        "longitude": 7.7671
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Projektunterstützungsverein Lindern e.V.",
+      "url": "https://parachutefestival.de",
+      "email": "lindernconcerts@gmail.com"
+    },
+    "performer": [
+      { "@type": "MusicGroup", "name": "Rogers" },
+      { "@type": "MusicGroup", "name": "Farewell Spit" },
+      { "@type": "MusicGroup", "name": "Liebe 3000" },
+      { "@type": "MusicGroup", "name": "DRAUF" }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "url": "https://parachutefestival.de/tickets",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "EUR"
+    },
+    "image": "https://parachutefestival.de/images/Logo.png",
+    "url": "https://parachutefestival.de"
+  }}
+>
+  <!-- Hero + Countdown -->
+  <Hero />
+
+  <!-- Highlights Strip -->
+  <section style="background: var(--color-primary);">
+    <div class="container py-5">
+      <div class="flex flex-wrap justify-center gap-6 md:gap-14 text-center">
+        {[
+          { icon: '🎸', label: 'Live Bands' },
+          { icon: '🍺', label: 'Kalte Drinks' },
+          { icon: '🤘', label: 'Non Profit' },
+          { icon: '📍', label: 'Lindern (Oldenburg)' },
+        ].map(({ icon, label }) => (
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">{icon}</span>
+            <span class="font-heading text-xl text-black tracking-widest uppercase">{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text -->
+  <section class="section">
+    <div class="container max-w-4xl text-center">
+      <p class="eyebrow mb-6">Was wir sind</p>
+      <h2 class="font-heading text-5xl md:text-7xl text-white mb-8 leading-none">
+        DIY statt Konzern.<br />
+        <span style="color: var(--color-primary);">Leidenschaft</span> statt Profit.
+      </h2>
+      <div class="space-y-5 text-left md:text-center">
+        <p class="text-base md:text-lg leading-relaxed" style="color: var(--color-text-muted);">
+          Kein Kommerz, kein Schnickschnack – das Parachute Festival Lindern ist ehrlicher Rock,
+          handgemacht in Lindern (Oldenburg). Ehrenamtlich organisiert, von der Community getragen
+          und mit jeder Menge Herzblut auf die Beine gestellt, steht unser Festival für genau das,
+          was in der Szene manchmal fehlt: <span class="text-white font-semibold">Authentizität.</span>
+        </p>
+        <p class="text-base md:text-lg leading-relaxed" style="color: var(--color-text-muted);">
+          Hier zählt nicht, wie groß dein Name auf dem Plakat ist, sondern wie sehr du die Bühne
+          zum Beben bringst. Mit regionalen und nationalen Rockbands, kurzen Wegen, kalten Drinks
+          und einer familiären Crowd feiern wir jedes Jahr ein Festival, das bewusst anders ist.
+        </p>
+        <p class="text-lg md:text-xl font-semibold text-white">
+          Am 24. April 2027 ist es wieder so weit.
+        </p>
+        <p class="text-base" style="color: var(--color-primary);">
+          #NonProfit 🤘
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lineup 2026 -->
+  <section class="section" style="background: var(--color-bg-section);">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Lineup 2026"
+        title="Die Bands"
+        subtitle="Diese Künstler brachten am 25. April 2026 den Schützenplatz Lindern zum Beben."
+      />
+
+      <!-- Headliner -->
+      {lineup2026.filter(b => b.highlight).map(band => (
+        <div
+          class="mb-10 rounded-sm overflow-hidden"
+          style="border: 2px solid var(--color-primary); box-shadow: 0 0 40px var(--color-glow);"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-2">
+            <!-- Image placeholder -->
+            <div
+              class="relative aspect-video lg:aspect-auto flex items-center justify-center"
+              style="background: var(--color-bg-card); min-height: 280px;"
+            >
+              <img
+                src={band.image}
+                alt={band.name}
+                loading="lazy"
+                class="w-full h-full object-cover absolute inset-0"
+                onerror="this.style.display='none'"
+              />
+              <span class="font-heading text-8xl md:text-9xl relative z-10 opacity-10 text-primary select-none">
+                {band.name[0]}
+              </span>
+            </div>
+
+            <!-- Content -->
+            <div class="p-8 md:p-10 flex flex-col justify-center">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge-primary">Headliner</span>
+                <span class="badge-secondary">{band.genre}</span>
+                {band.origin && (
+                  <span class="text-sm" style="color: var(--color-text-muted);">📍 {band.origin}</span>
+                )}
+              </div>
+              <h3 class="font-heading text-6xl md:text-7xl text-white mb-5">{band.name}</h3>
+              <p class="text-base leading-relaxed mb-6" style="color: var(--color-text-muted);">
+                {band.description}
+              </p>
+              <p class="text-sm font-semibold" style="color: var(--color-primary);">
+                Es wird laut. Es wird wild. Und es wird garantiert ein geiler Abend. 🤘
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      <!-- Support Acts -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {lineup2026.filter(b => !b.highlight).map(band => (
+          <div class="card flex flex-col">
+            <!-- Image placeholder -->
+            <div
+              class="relative aspect-video flex items-center justify-center overflow-hidden"
+              style="background: var(--color-bg-card);"
+            >
+              <img
+                src={band.image}
+                alt={band.name}
+                loading="lazy"
+                class="w-full h-full object-cover absolute inset-0"
+                onerror="this.style.display='none'"
+              />
+              <span class="font-heading text-6xl opacity-10 text-secondary select-none relative z-10">
+                {band.name[0]}
+              </span>
+            </div>
+
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="badge-secondary">{band.genre}</span>
+                {band.origin && (
+                  <span class="text-xs" style="color: var(--color-text-muted);">📍 {band.origin}</span>
+                )}
+              </div>
+              <h3 class="font-heading text-3xl text-white mb-3">{band.name}</h3>
+              <p class="text-sm leading-relaxed flex-1" style="color: var(--color-text-muted);">
+                {band.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/band-library" class="btn-outline">
+          Alle Bands in der Band Library
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tickets CTA -->
+  <section class="section">
+    <div class="container text-center">
+      <SectionHeading
+        eyebrow="Dabei sein"
+        title="Tickets"
+        subtitle="Sei dabei bevor es ausverkauft ist — das Parachute Festival macht sich schnell rar."
+      />
+      <a href="/tickets" class="btn-primary text-xl px-12 py-5">
+        Jetzt Tickets sichern
+      </a>
+    </div>
+  </section>
+</PageLayout>

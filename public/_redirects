@@ -1,0 +1,22 @@
+# Redirects – Parachute Festival Lindern
+
+# Old URL structure from previous website
+/lineup          /band-library    301
+/history         /historie        301
+/gallery         /galerie         301
+/galleries       /galerie         301
+/partners        /partner         301
+/sponsor         /partner         301
+/contact         /kontakt         301
+/privacy         /datenschutz     301
+/about           /ueber-uns       301
+/travel          /anreise         301
+
+# Common typos / English variants
+/bands           /band-library    301
+/lineup          /band-library    301
+/artists         /band-library    301
+/photos          /galerie         301
+
+# Sitemap alias
+/sitemap         /sitemap.xml     301

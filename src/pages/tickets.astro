@@ -1,0 +1,125 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import Countdown from '@/components/home/Countdown.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import siteData from '@/data/site.json';
+
+const { nextEdition, futureEdition } = siteData;
+---
+
+<PageLayout
+  title="Tickets"
+  description="Tickets für das Parachute Festival 2026 – jetzt im Vorverkauf über Eventfrog sichern. Online günstiger als an der Abendkasse!"
+>
+  <!-- Page Header with Countdown -->
+  <section
+    class="py-20 text-center relative overflow-hidden"
+    style="background: var(--color-bg-section); border-bottom: 1px solid var(--color-border);"
+  >
+    <!-- Glow -->
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="background: radial-gradient(ellipse at 50% 100%, var(--color-glow) 0%, transparent 60%);"
+      aria-hidden="true"
+    ></div>
+
+    <div class="container relative z-10">
+      <p class="eyebrow mb-4">Dabei sein</p>
+      <h1 class="font-heading text-6xl md:text-8xl text-white mb-12">Tickets</h1>
+
+      <Countdown
+        targetDate={nextEdition.date}
+        dateDisplay={nextEdition.dateDisplay}
+        location={nextEdition.location}
+        futureDate={futureEdition.date}
+        futureDateDisplay={futureEdition.dateDisplay}
+        futureLocation={futureEdition.location}
+      />
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section class="section">
+    <div class="container max-w-3xl">
+      <SectionHeading
+        eyebrow="Ticketkauf"
+        title="So kommst du rein"
+        subtitle="Online ist günstiger – und sicherer. Also: nicht zu lange warten!"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <!-- Online VVK -->
+        <div class="card p-8 flex flex-col" style="border-color: var(--color-primary);">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🎟️</span>
+            <span class="badge-primary">Empfohlen</span>
+          </div>
+          <h3 class="font-heading text-3xl text-white mb-3">Online Vorverkauf</h3>
+          <p class="text-sm leading-relaxed flex-1" style="color: var(--color-text-muted);">
+            Günstiger als an der Abendkasse und du bist auf der sicheren Seite. Unsere Tickets
+            gibt es über das Onlineportal <span class="text-white font-semibold">Eventfrog</span>.
+            Es gelten die AGBs der Plattform sowie die
+            <a href="/agb" class="text-primary hover:underline">AGBs unserer Veranstaltung</a>.
+          </p>
+        </div>
+
+        <!-- Abendkasse -->
+        <div class="card p-8 flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🚪</span>
+            <span class="badge-secondary">Begrenzt</span>
+          </div>
+          <h3 class="font-heading text-3xl text-white mb-3">Abendkasse</h3>
+          <p class="text-sm leading-relaxed flex-1" style="color: var(--color-text-muted);">
+            Tickets an der Abendkasse sind <span class="text-white font-semibold">teurer</span> als
+            im Vorverkauf – und nur solange der Vorrat reicht. Wenn ihr sicher dabei sein wollt,
+            holt euch lieber ein Online-Ticket!
+          </p>
+        </div>
+      </div>
+
+      <!-- Eventfrog Embed Placeholder -->
+      <div
+        class="rounded-sm overflow-hidden"
+        style="border: 2px dashed var(--color-border);"
+      >
+        <div
+          class="flex flex-col items-center justify-center text-center py-20 px-8"
+          style="background: var(--color-bg-card);"
+        >
+          <div class="text-5xl mb-6">🎸</div>
+          <h3 class="font-heading text-4xl text-white mb-4">VVK startet bald!</h3>
+          <p class="text-base max-w-md leading-relaxed mb-6" style="color: var(--color-text-muted);">
+            Das Ticketportal wird hier eingebettet, sobald der Vorverkauf offiziell startet.
+            Folgt uns auf Social Media, um keinen Start zu verpassen!
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href={siteData.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-outline text-base px-6 py-3"
+            >
+              Instagram folgen
+            </a>
+            <a
+              href={siteData.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-ghost text-base px-6 py-3"
+            >
+              Facebook folgen
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hinweis -->
+      <p class="text-xs text-center mt-6" style="color: var(--color-text-muted);">
+        Durch den Kauf eines Tickets stimmst du unseren
+        <a href="/agb" class="text-primary hover:underline">AGB</a> und dem
+        <a href="/jugendschutz" class="text-primary hover:underline">Jugendschutzkonzept</a> zu.
+      </p>
+    </div>
+  </section>
+</PageLayout>
