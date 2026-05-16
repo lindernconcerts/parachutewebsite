@@ -63,12 +63,12 @@ const letters = [...new Set(sorted.map(b => b.name[0].toUpperCase()))].sort();
 
 <!-- Results info -->
 <p id="band-results-info" class="text-sm mb-6" style="color: var(--color-text-muted);">
-  {bands.filter(b => b.active).length} Bands
+  {bands.length} Bands
 </p>
 
 <!-- Band Grid -->
 <div id="band-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-  {sorted.filter(b => b.active).map(band => (
+  {sorted.map(band => (
     <div
       class="band-card-wrapper"
       data-name={band.name.toLowerCase()}
@@ -97,7 +97,7 @@ const letters = [...new Set(sorted.map(b => b.name[0].toUpperCase()))].sort();
   if (!rawData) throw new Error('band-data not found');
 
   type Band = { id: string; name: string; genre: string[]; bio: string; active: boolean };
-  const bands: Band[] = JSON.parse(rawData.textContent || '[]').filter((b: Band) => b.active);
+  const bands: Band[] = JSON.parse(rawData.textContent || '[]');
 
   const fuse = new Fuse(bands, {
     keys: [

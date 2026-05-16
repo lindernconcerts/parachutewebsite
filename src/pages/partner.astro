@@ -60,29 +60,31 @@ const partner       = partnersData.filter(p => p.tier === 'partner');
       />
 
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-        {kooperationen.map(p => (
-          <div
-            class={`card p-5 flex items-center justify-center text-center min-h-[80px] ${p.url ? 'cursor-pointer' : ''}`}
-            onclick={p.url ? `window.open('${p.url}','_blank')` : undefined}
-            style={p.url ? 'cursor:pointer;' : ''}
-          >
-            {p.logo ? (
-              <img
-                src={p.logo}
-                alt={p.name}
-                loading="lazy"
-                class="h-10 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
-                onerror={`this.style.display='none';this.nextElementSibling.style.display='block'`}
-              />
-            ) : null}
-            <span
-              class="font-body font-semibold text-sm text-white text-center leading-tight"
-              style={p.logo ? 'display:none;' : ''}
+        {kooperationen.map(p => {
+          const Tag = p.url ? 'a' : 'div';
+          const linkProps = p.url ? { href: p.url, target: '_blank', rel: 'noopener noreferrer' } : {};
+          return (
+            <Tag
+              {...linkProps}
+              class={`card p-5 flex flex-col items-center justify-center gap-3 text-center transition-all duration-200 ${p.url ? 'hover:border-primary' : ''}`}
+              style="min-height: 100px; text-decoration: none;"
+              onmouseover={p.url ? "this.style.borderColor='var(--color-primary)'" : undefined}
+              onmouseout={p.url ? "this.style.borderColor='var(--color-border)'" : undefined}
             >
-              {p.name}
-            </span>
-          </div>
-        ))}
+              {p.logo && (
+                <img
+                  src={p.logo}
+                  alt={p.name}
+                  loading="lazy"
+                  class="h-10 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                />
+              )}
+              <span class="font-body font-semibold text-sm text-white leading-tight">
+                {p.name}
+              </span>
+            </Tag>
+          );
+        })}
       </div>
     </div>
   </section>
@@ -96,19 +98,15 @@ const partner       = partnersData.filter(p => p.tier === 'partner');
         subtitle="Regionale Unternehmen und Privatpersonen, die das Parachute Festival möglich machen."
       />
 
-      <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+      <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         {partner.map(p => {
           const Tag = p.url ? 'a' : 'div';
-          const linkProps = p.url ? {
-            href: p.url,
-            target: '_blank',
-            rel: 'noopener noreferrer',
-          } : {};
+          const linkProps = p.url ? { href: p.url, target: '_blank', rel: 'noopener noreferrer' } : {};
           return (
             <Tag
               {...linkProps}
-              class={`flex items-center gap-3 px-4 py-3 rounded-sm text-sm font-body break-words transition-all duration-200 ${p.url ? 'hover:text-primary' : ''}`}
-              style="background: var(--color-bg-card); border: 1px solid var(--color-border); color: var(--color-text-muted); min-height: 48px;"
+              class={`card p-5 flex flex-col items-center justify-center gap-3 text-center transition-all duration-200 ${p.url ? 'hover:border-primary' : ''}`}
+              style="min-height: 100px; text-decoration: none;"
               onmouseover={p.url ? "this.style.borderColor='var(--color-primary)'" : undefined}
               onmouseout={p.url ? "this.style.borderColor='var(--color-border)'" : undefined}
             >
@@ -117,10 +115,12 @@ const partner       = partnersData.filter(p => p.tier === 'partner');
                   src={p.logo}
                   alt={p.name}
                   loading="lazy"
-                  class="h-6 w-auto object-contain shrink-0 filter grayscale opacity-60"
+                  class="h-10 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
                 />
               )}
-              <span>{p.name}</span>
+              <span class="font-body font-semibold text-sm text-white leading-tight">
+                {p.name}
+              </span>
             </Tag>
           );
         })}

@@ -5,10 +5,21 @@
     "genre": ["Tribute", "Punk Rock"],
     "image": "/images/bands/5-kleine-jaegermeister.jpg",
     "bio": "Die Toten Hosen, wie sie leibten und lebten - 5 Kleine Jägermeister sind eine der besten Toten Hosen Tribute-Bands Deutschlands. Mit über 10 Jahren Bühnenerfahrung bringen sie den Düsseldorfer Punkrock-Klassiker zum Leben.",
-    "links": { "website": "http://www.5kj.de/", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "http://www.5kj.de/", "spotify": "", "instagram": "https://www.instagram.com/5kleinejaegermeister/", "facebook": "https://www.facebook.com/hosencover", "youtube": "https://www.youtube.com/@5kleinejagermeister125" },
     "parachuteFestivals": [2023],
-    "headliner": false,
+    "headliner": true,
     "active": true
+  },
+  {
+    "id": "alex-im-hosenland",
+    "name": "Alex Im Hosenland",
+    "genre": ["Punk Rock"],
+    "image": "/images/bands/alex-im-hosenland.jpg",
+    "bio": "",
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
+    "parachuteFestivals": [2007],
+    "headliner": false,
+    "active": false
   },
   {
     "id": "alienated",
@@ -16,7 +27,7 @@
     "genre": ["Punk Rock"],
     "image": "/images/bands/alienated.jpg",
     "bio": "Alienated aus Lindern waren eine der Stammbands der frühen Osterrock-Ära und hatten beim Festival immer ein Heimspiel. Schneller, melodischer Punkrock mit Lokalkolorit.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "https://open.spotify.com/intl-de/artist/2CVhk4jfkzkgfUS8cbxqbV", "instagram": "https://www.instagram.com/alienated667", "facebook": "https://www.facebook.com/alienatedrocks", "youtube": "" },
     "parachuteFestivals": [2002],
     "headliner": false,
     "active": false
@@ -24,10 +35,10 @@
   {
     "id": "all-aboard",
     "name": "All Aboard",
-    "genre": ["Punk", "Ska"],
+    "genre": ["Punk"],
     "image": "/images/bands/all-aboard.jpg",
     "bio": "All Aboard brachten 2013 einen frischen Mix aus Punk und Ska-Einflüssen auf die Osterrock-Bühne. Tanzbar, laut und mit Energie, die sofort aufs Publikum überging.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://www.allaboardband.com/", "spotify": "https://open.spotify.com/intl-de/artist/1lNxh3LdujMbKcsXMJZIWV?si=s6w00lJ7T3aJ94ksAXOXOw", "instagram": "https://www.instagram.com/allaboard", "facebook": "https://www.facebook.com/allaboardnow", "youtube": "https://www.youtube.com/channel/UCVVR4CZkjiG6ecx_kBQ2Ktg" },
     "parachuteFestivals": [2013],
     "headliner": false,
     "active": false
@@ -37,8 +48,8 @@
     "name": "Antillectual",
     "genre": ["Punk Rock"],
     "image": "/images/bands/antillectual.jpg",
-    "bio": "Antillectual aus Nijmegen kombinieren seit 2000 90er-Skatepunk, Emo und modernen Orgcore mit politisch motivierten Texten. Als feste Größe der europäischen DIY-Punkszene touren sie seit Jahren durch den Kontinent.",
-    "links": { "website": "https://antillectual.com/", "spotify": "https://open.spotify.com/artist/1Z2XrFvat8f47ZaRfjTgZL", "instagram": "https://www.instagram.com/antillectual/", "facebook": "https://www.facebook.com/antillectual/" },
+    "bio": "",
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
     "parachuteFestivals": [2013],
     "headliner": false,
     "active": true
@@ -49,7 +60,7 @@
     "genre": ["Rock"],
     "image": "/images/bands/ass-radio-chicks.jpg",
     "bio": "Ass Radio Chicks rockten 2010 die Osterrock-Bühne und sorgten für ordentlich Stimmung. Eine Band, die die Show lieferte.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "", "instagram": "https://www.instagram.com/assradiochicks/", "facebook": "", "youtube": "" },
     "parachuteFestivals": [2010],
     "headliner": false,
     "active": false
@@ -60,8 +71,19 @@
     "genre": ["Rock"],
     "image": "/images/bands/audiosonix.jpg",
     "bio": "Audiosonix standen 2010 beim Osterrock auf der Bühne und überzeugten mit einem druckvollen Rocksound. Eine Band mit Energie und Spielfreude.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
     "parachuteFestivals": [2010],
+    "headliner": false,
+    "active": false
+  },
+  {
+    "id": "bandcontest-gewinner-2004",
+    "name": "Bandcontest-Gewinner",
+    "genre": ["Rock"],
+    "image": "/images/bands/bandcontest-gewinner-2004.jpg",
+    "bio": "Der Bandcontest-Gewinner eröffnete den Nachmittag mit ordentlich Spielfreude und sichtbar Bock auf die Bühne. Trotz frühem Slot legten sie sich richtig rein und holten sofort die ersten Fans nach vorne.",
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
+    "parachuteFestivals": [2004],
     "headliner": false,
     "active": false
   },
@@ -71,7 +93,7 @@
     "genre": ["Rock", "Punk"],
     "image": "/images/bands/bitume.jpg",
     "bio": "Bitume standen 2011 beim Osterrock auf der Bühne und lieferten einen kraftvollen Set mit rohem Rocksound. Die Band überzeugte mit Spielfreude und direkter Bühnenpräsenz.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://www.bitume.de/", "spotify": "https://open.spotify.com/intl-de/artist/2vBkirYYdOjFew3EwJiqT7?si=HJmuToM0QrWhkDhAPHiQVQ", "instagram": "https://www.instagram.com/bitume_official/", "facebook": "https://www.facebook.com/Bitume99", "youtube": "https://www.youtube.com/@bitumeofficial" },
     "parachuteFestivals": [2011],
     "headliner": false,
     "active": false
@@ -79,10 +101,10 @@
   {
     "id": "boozed",
     "name": "Boozed",
-    "genre": ["Rock n Roll"],
+    "genre": ["Rock"],
     "image": "/images/bands/boozed.jpg",
     "bio": "Boozed liefern schnellen, dreckigen Highspeed-Rock n Roll - laut, rotzig und immer mit Vollgas. Die Band spielte gleich zweimal beim Osterrock und hinterließ beide Male einen bleibenden Eindruck.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://laut.de/Boozed", "spotify": "", "instagram": "https://www.instagram.com/boozed_official/", "facebook": "https://www.facebook.com/boozedrocks", "youtube": "https://www.youtube.com/@BOOZEDROCKS" },
     "parachuteFestivals": [2004, 2018],
     "headliner": false,
     "active": true
@@ -90,11 +112,22 @@
   {
     "id": "bullsonparade",
     "name": "Bullsonparade",
-    "genre": ["Punk Rock"],
+    "genre": ["Punk Rock", "Tribute"],
     "image": "/images/bands/bullsonparade.jpg",
-    "bio": "Bullsonparade brachten 2011 ihr handgemachtes Punk-Rock-Programm auf die Osterrock-Bühne. Schnell, direkt und mit einem Gespür für eingängige Songs.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "bio": "Bulls On Parade ist eine europäische Tribute-Band, die sich auf Rage Against the Machine spezialisiert hat. Sie ist bekannt für energiegeladene Liveshows und spielt regelmäßig auf großen Festivals wie Graspop oder Dour. Die Band gilt als eine der bekanntesten RATM-Tribute-Acts in Europa.",
+    "links": { "website": "https://www.bullsonparade.be/", "spotify": "", "instagram": "", "facebook": "https://www.facebook.com/bullsonparadeband", "youtube": "https://www.youtube.com/@tomadde" },
     "parachuteFestivals": [2011],
+    "headliner": true,
+    "active": false
+  },
+  {
+    "id": "claus-grabke",
+    "name": "Claus Grabke",
+    "genre": ["Punk Rock"],
+    "image": "/images/bands/claus-grabke.jpg",
+    "bio": "",
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
+    "parachuteFestivals": [2007],
     "headliner": false,
     "active": false
   },
@@ -104,7 +137,7 @@
     "genre": ["Indie", "Pop Rock"],
     "image": "/images/bands/city-light-thief.jpg",
     "bio": "City Light Thief standen 2013 beim Osterrock auf der Bühne und brachten einen atmosphärischen Indie-Sound mit. Emotionale Songs, die zwischen Stille und Lärm balancieren.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://www.citylightthief.de/", "spotify": "https://open.spotify.com/intl-de/artist/2ZgNFQccsy2M3W04eVCXlm", "instagram": "https://www.instagram.com/citylightthief/", "facebook": "https://www.facebook.com/citylightthief/?locale=de_DE", "youtube": "https://www.youtube.com/@citylightthief_official" },
     "parachuteFestivals": [2013],
     "headliner": false,
     "active": false
@@ -115,7 +148,7 @@
     "genre": ["Punk Rock"],
     "image": "/images/bands/civil-courage.jpg",
     "bio": "Civil Courage aus Lähden waren beim Osterrock 2002 mit dabei und überzeugten mit einem rauen, kraftvollen Sound und intensiver Bühnenpräsenz. Direkter Punk, der keine Umwege macht.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "https://open.spotify.com/intl-de/artist/1p0FIRsjbz0OGMigS0bxlx", "instagram": "", "facebook": "https://www.facebook.com/civilcourageofficial/?locale=de_DE", "youtube": "https://www.youtube.com/channel/UCZo_ujwYA9fG-POVr_e8V4A/about" },
     "parachuteFestivals": [2002],
     "headliner": false,
     "active": false
@@ -126,7 +159,7 @@
     "genre": ["Punk"],
     "image": "/images/bands/cold-acid.jpg",
     "bio": "Cold Acid rockten 2013 die Osterrock-Bühne mit einem direkten Punksound. Schnell, laut und keine Kompromisse.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "https://www.facebook.com/coldacidmusic/", "youtube": "" },
     "parachuteFestivals": [2013],
     "headliner": false,
     "active": false
@@ -137,7 +170,7 @@
     "genre": ["Crossover"],
     "image": "/images/bands/d-fakt.jpg",
     "bio": "D-Fakt aus Löninger schoben beim Osterrock 2004 einen fetten Crossover-Sound auf die Bühne. Harte Gitarren, treibende Beats und viel Bewegung.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://bandliste.de/Bands/D_Fakt/11542/", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
     "parachuteFestivals": [2004],
     "headliner": false,
     "active": false
@@ -145,12 +178,12 @@
   {
     "id": "dampfmaschine",
     "name": "Dampfmaschine",
-    "genre": ["Noise Rock"],
-    "image": "/images/bands/dampfmaschine.jpg",
+    "genre": ["Rock"],
+    "image": "/images/bands/dampfmaschine.jpeg",
     "bio": "Dampfmaschine aus Osnabrück sind seit den späten 90ern für ihren abrasiven Noise-Rock-Sound bekannt. Mit über 300 Shows haben sie sich einen Kultstatus in der deutschen Underground-Szene erarbeitet.",
-    "links": { "website": "", "spotify": "https://open.spotify.com/artist/7oNydux16ezY31chSAMUsU", "instagram": "https://www.instagram.com/immerdampf/", "facebook": "" },
+    "links": { "website": "http://www.immerdampf.de/", "spotify": "https://open.spotify.com/artist/7oNydux16ezY31chSAMUsU", "instagram": "https://www.instagram.com/immerdampf/", "facebook": "https://www.facebook.com/Dampfmaschine/", "youtube": "" },
     "parachuteFestivals": [2017],
-    "headliner": false,
+    "headliner": true,
     "active": true
   },
   {
@@ -159,7 +192,7 @@
     "genre": ["Rock", "Punk"],
     "image": "/images/bands/december-peals.jpg",
     "bio": "December Peals aus Ibbenbüren stehen seit 1999 auf der Bühne - von rau und roh bis bluesig und still bis hin zu Hardrock ist bei ihnen alles dabei. Eine Band, die mit echter Leidenschaft spielt.",
-    "links": { "website": "http://www.decemberpeals.com/", "spotify": "https://open.spotify.com/artist/5CSYH5OmghuY2Lkkkx5IQ1", "instagram": "", "facebook": "https://www.facebook.com/decemberpeals" },
+    "links": { "website": "http://www.decemberpeals.com/", "spotify": "https://open.spotify.com/artist/5CSYH5OmghuY2Lkkkx5IQ1", "instagram": "https://www.instagram.com/pealsofficial/", "facebook": "https://www.facebook.com/decemberpeals", "youtube": "https://www.youtube.com/@pealsofficial" },
     "parachuteFestivals": [2018],
     "headliner": false,
     "active": true
@@ -170,29 +203,29 @@
     "genre": ["Rock"],
     "image": "/images/bands/desona.jpg",
     "bio": "Desona gehören zu den treuesten Stammgästen des Festivals und standen gleich dreimal auf der Bühne. Eine Band mit Substanz und echter Verbindung zur Linderner Festivalszene.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "https://open.spotify.com/artist/34nGajxcSt6NRuXcX57o6G", "instagram": "https://www.instagram.com/desonamusic/", "facebook": "https://www.facebook.com/desonamusic/?locale=de_DE", "youtube": "https://www.youtube.com/@desona1" },
     "parachuteFestivals": [2014, 2015, 2020],
     "headliner": false,
     "active": true
   },
   {
     "id": "die-toten-aerzte",
-    "name": "Die Toten Aerzte",
+    "name": "Die Toten Ärzte",
     "genre": ["Tribute", "Punk Rock"],
     "image": "/images/bands/die-toten-aerzte.jpg",
-    "bio": "Die Toten Aerzte sind eine Tribute-Band, die den unverwechselbaren Sound von Die Aerzte auf die Bühne bringt. Altmeister-Klassiker, perfekt nachgespielt und mit genauso viel Humor wie das Original.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "bio": "Die Toten Ärzte sind eine Tribute-Band, die den unverwechselbaren Sound von Die Ärzte auf die Bühne bringt. Altmeister-Klassiker, perfekt nachgespielt und mit genauso viel Humor wie das Original.",
+    "links": { "website": "https://dietotenaerzte.de/", "spotify": "", "instagram": "https://www.instagram.com/dietotenaerzte", "facebook": "https://www.facebook.com/DIETOTENAERZTELIVE/", "youtube": "https://www.youtube.com/@dietotenarzte5042" },
     "parachuteFestivals": [2016],
-    "headliner": false,
+    "headliner": true,
     "active": true
   },
   {
     "id": "drauf",
     "name": "DRAUF",
     "genre": ["Punk Rock"],
-    "image": "/images/bands/drauf.jpg",
+    "image": "/images/bands/drauf.jpeg",
     "bio": "Deutschsprachiger Punk Rock aus Vechta, der direkt ins Ohr und mitten ins Herz geht. Seit 2017 stehen DRAUF für klare Kante gegen Faschismus, Gesellschaftskritik und ganz viel Spass.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "https://open.spotify.com/intl-de/artist/2czmLj9rBJG6v9qD5DouPf", "instagram": "https://www.instagram.com/wir_sind_drauf/", "facebook": "https://www.facebook.com/wirsinddrauf/", "youtube": "https://www.youtube.com/watch?v=mQMlY_tW2zM" },
     "parachuteFestivals": [2026],
     "headliner": false,
     "active": true
@@ -203,8 +236,19 @@
     "genre": ["Electropunk"],
     "image": "/images/bands/egotronic.jpg",
     "bio": "Egotronic aus Berlin kombinierten seit 2000 Commodore-64-Sounds mit politisch kritischen Texten und prägten damit die deutsche Electropunk-Szene nachhaltig. Ihr Set ist laut, digital und absolut kompromisslos.",
-    "links": { "website": "", "spotify": "https://open.spotify.com/artist/7qOSGBeln5EB97texe71QD", "instagram": "https://www.instagram.com/egotronicberlin/", "facebook": "" },
+    "links": { "website": "https://egotronic.net/", "spotify": "https://open.spotify.com/artist/7qOSGBeln5EB97texe71QD", "instagram": "https://www.instagram.com/egotronicberlin/", "facebook": "https://www.facebook.com/egotronicband/?locale=de_DE", "youtube": "" },
     "parachuteFestivals": [2014],
+    "headliner": true,
+    "active": false
+  },
+  {
+    "id": "eat-the-gun",
+    "name": "Eat The Gun",
+    "genre": ["Metal", "Thrash"],
+    "image": "/images/bands/eat-the-gun.jpg",
+    "bio": "Eat The Gun ist eine thrash-metal Band aus Deutschland, die sich auf energiegeladene Sets und aggressive Performances spezialisiert hat.",
+    "links": { "website": "https://www.eatthegun.com/", "spotify": "https://open.spotify.com/intl-de/artist/1AzKZcX4D4T17QzioaYTEY?si=zXEC723bRlapHSzG1QzDiQ", "instagram": "http://instagram.com/eatthegun", "facebook": "http://www.facebook.com/eatthegun.official", "youtube": "https://www.youtube.com/eattheguntube" },
+    "parachuteFestivals": [2007],
     "headliner": false,
     "active": false
   },
@@ -214,7 +258,7 @@
     "genre": ["Rock"],
     "image": "/images/bands/electric-turtles.jpg",
     "bio": "Electric Turtles eröffneten die Parachute-Ära 2019 mit einem energiegeladenen Rockset. Langsam aber sicher - aber wenn sie da sind, rockt die Bühne.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://schmalin.uber.space/turtles/website/index.html", "spotify": "https://open.spotify.com/intl-de/artist/3EIxsvqaEjHSjTCqpY9ayZ", "instagram": "https://www.instagram.com/electricturtlesmusic/", "facebook": "https://www.facebook.com/electricturtlesmusic/?locale=de_DE", "youtube": "https://www.youtube.com/@electricturtles1337" },
     "parachuteFestivals": [2019],
     "headliner": false,
     "active": false
@@ -225,7 +269,7 @@
     "genre": ["Rock", "Metal"],
     "image": "/images/bands/farewell-spit.jpg",
     "bio": "Farewell Spit sprechen für all jene, die sich in einer Welt voller Herausforderungen verloren fuehlen. Ihre Mischung aus Rock, poppigen Elektro-Parts und Metal-Sound spiegelt die Hoehn und Tiefen des Lebens wider.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "https://open.spotify.com/intl-de/artist/0ULu9bofaA3FnxWAvv7aJf", "instagram": "https://www.instagram.com/farewellspit_official/", "facebook": "https://www.facebook.com/farewellspitband/", "youtube": "https://www.youtube.com/@farewellspit_official" },
     "parachuteFestivals": [2026],
     "headliner": false,
     "active": true
@@ -236,7 +280,7 @@
     "genre": ["Punk Rock"],
     "image": "/images/bands/findus.jpg",
     "bio": "Findus standen 2014 beim Osterrock auf der Bühne und lieferten einen treibenden Punkrock-Set. Keine langen Ansagen - einfach spielen und die Bühne zum Kochen bringen.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://audiolith.net/de/2012/11/neue-band-bei-audiolith-booking-findus/", "spotify": "https://open.spotify.com/intl-de/artist/4lad9OxEPQ5hKklKiG6hPP", "instagram": "", "facebook": "https://www.facebook.com/findusmusik/?locale=de_DE", "youtube": "" },
     "parachuteFestivals": [2014],
     "headliner": false,
     "active": false
@@ -247,7 +291,7 @@
     "genre": ["Punk Rock"],
     "image": "/images/bands/focus.jpg",
     "bio": "Focus. aus Riesa bringen schmutzige Riffs, weltoffene Texte und eingängige Melodien auf die Bühne. Seit 2024 zeigen sie auf Tour und als Support für etablierte Punkbands, dass sie zur ersten Liga aufschliessen.",
-    "links": { "website": "https://focus-band.de/", "spotify": "https://open.spotify.com/artist/5TbE0PiXvN5JKGA6W6JybO", "instagram": "https://www.instagram.com/foc.s/", "facebook": "" },
+    "links": { "website": "https://focus-band.de/", "spotify": "https://open.spotify.com/artist/5TbE0PiXvN5JKGA6W6JybO", "instagram": "https://www.instagram.com/foc.s/", "facebook": "https://www.facebook.com/focuspunkt/", "youtube": "https://www.youtube.com/@focuspunkt" },
     "parachuteFestivals": [2024],
     "headliner": false,
     "active": true
@@ -258,7 +302,7 @@
     "genre": ["Horror Punk", "Tribute"],
     "image": "/images/bands/ghouls.jpg",
     "bio": "Die Ghouls sind eine Misfits-Coverband, die Hallen in Horror-Punk-Partys verwandeln. Klassiker werden lautstark mitgesungen - schweisstreibend, dunkel und punktgenau.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
     "parachuteFestivals": [2004],
     "headliner": false,
     "active": false
@@ -269,7 +313,7 @@
     "genre": ["Indie", "Pop"],
     "image": "/images/bands/goodbye-fairground.jpg",
     "bio": "Goodbye Fairground brachten 2011 einen atmosphärischen Indie-Pop-Sound auf die Osterrock-Bühne. Melodioes, gefuehlvoll und mit dem gewissen Etwas, das noch lange nachhallt.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://www.goodbyefairground.com/", "spotify": "https://open.spotify.com/artist/4obit86HOVVDbWZe8BzEpp", "instagram": "https://www.instagram.com/goodbyefairground/", "facebook": "https://www.facebook.com/goodbyefairground/", "youtube": "" },
     "parachuteFestivals": [2011],
     "headliner": false,
     "active": false
@@ -278,9 +322,9 @@
     "id": "hate-breeders-ad",
     "name": "Hate Breeders A.D.",
     "genre": ["Punk", "Hardcore"],
-    "image": "/images/bands/hate-breeders-ad.jpg",
+    "image": "/images/bands/hate-breeders-ad.jpeg",
     "bio": "Hate Breeders A.D. standen 2014 beim Osterrock auf der Bühne und lieferten Punk und Hardcore ohne Kompromisse. Roh, direkt und mit einer Energie, die den Raum ausfuellt.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://www.discogs.com/artist/4288605-Hate-Breeders-AD", "spotify": "", "instagram": "https://www.instagram.com/hate_breeders_ad/", "facebook": "https://www.facebook.com/pages/Hate-Breeders-AD/115740911847769/", "youtube": "" },
     "parachuteFestivals": [2014],
     "headliner": false,
     "active": false
@@ -289,9 +333,9 @@
     "id": "heile-und-kaputt",
     "name": "Heile und Kaputt",
     "genre": ["Rock"],
-    "image": "/images/bands/heile-und-kaputt.jpg",
+    "image": "/images/bands/heile-und-kaputt.jpeg",
     "bio": "Heile und Kaputt spielten 2017 beim Osterrock und sorgten für einen Abend voller Gegensätze - laut und leise, rau und melodisch. Ein Bandname, der Programm ist.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "https://www.facebook.com/HeileUndKaputt/videos/", "youtube": "https://www.youtube.com/@heilekaputt9806" },
     "parachuteFestivals": [2017],
     "headliner": false,
     "active": false
@@ -302,7 +346,7 @@
     "genre": ["Indie Rock"],
     "image": "/images/bands/herrenmagazin.jpg",
     "bio": "Herrenmagazin aus Hamburg stehen für melancholischen, poetischen Indie-Rock mit rohem Post-Punk-Einschlag. Nach einer langen Pause meldeten sie sich 2026 mit neuem Material zurück.",
-    "links": { "website": "", "spotify": "https://open.spotify.com/artist/0jjCQcyzvVgiT6FyrYvDUl", "instagram": "https://www.instagram.com/dasherrenmagazin/", "facebook": "https://www.facebook.com/Herrenmagazin/" },
+    "links": { "website": "https://fkpscorpio.de/artists/detail/herrenmagazin/", "spotify": "https://open.spotify.com/artist/0jjCQcyzvVgiT6FyrYvDUl", "instagram": "https://www.instagram.com/dasherrenmagazin/", "facebook": "https://www.facebook.com/Herrenmagazin/", "youtube": "https://www.youtube.com/@Herrenvideos" },
     "parachuteFestivals": [2012],
     "headliner": false,
     "active": true
@@ -313,7 +357,7 @@
     "genre": ["Indie", "Punk Rock"],
     "image": "/images/bands/hi-spencer.jpg",
     "bio": "Hi! Spencer aus Osnabrück vereinen seit 2012 Indie-Pop, Rock und Punk zu einem unverwechselbaren Sound. Energetische Gitarrenriffs, eingängige Melodien und tiefgruendige Texte.",
-    "links": { "website": "", "spotify": "https://open.spotify.com/artist/1ZsBmcVGsvjkptybP7nVkE", "instagram": "https://www.instagram.com/hispencer.musik/", "facebook": "" },
+    "links": { "website": "https://hispencer.de/", "spotify": "https://open.spotify.com/artist/1ZsBmcVGsvjkptybP7nVkE", "instagram": "https://www.instagram.com/hispencer.musik/", "facebook": "https://www.facebook.com/hispencerhi/?locale=de_DE", "youtube": "https://www.youtube.com/@HiSpencerBand" },
     "parachuteFestivals": [2023],
     "headliner": false,
     "active": true
@@ -324,8 +368,19 @@
     "genre": ["Rock", "Punk"],
     "image": "/images/bands/hurricane-dean.jpg",
     "bio": "Hurricane Dean fegten 2013 mit einem druckvollen Rockset über die Osterrock-Bühne. Laut, schnell und mit der Energie eines echten Sturms.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "https://open.spotify.com/intl-de/artist/1aD85OrAZSvffCNLp8hAyX", "instagram": "https://www.instagram.com/hurricanedeanmusic/", "facebook": "https://www.facebook.com/hurricanedeanmusic/?locale=de_DE", "youtube": "https://www.youtube.com/user/hurricanedeanmusic" },
     "parachuteFestivals": [2013],
+    "headliner": false,
+    "active": false
+  },
+  {
+    "id": "isi-going",
+    "name": "Isi Going",
+    "genre": [],
+    "image": "/images/bands/isi-going.jpg",
+    "bio": "",
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
+    "parachuteFestivals": [2007],
     "headliner": false,
     "active": false
   },
@@ -333,12 +388,23 @@
     "id": "in-your-honor",
     "name": "In Your Honor",
     "genre": ["Tribute", "Rock"],
-    "image": "/images/bands/in-your-honor.jpg",
+    "image": "/images/bands/in-your-honor.jpeg",
     "bio": "In Your Honor sind eine Foo Fighters Tribute-Band, die authentische Live-Erlebnisse des amerikanischen Originals auf deutsche Bühnen bringt. Sie standen zweimal beim Parachute Festival auf der Bühne.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "https://www.facebook.com/inyourhonortributeband/" },
+    "links": { "website": "https://www.inyourhonor.be/", "spotify": "", "instagram": "https://www.instagram.com/inyourhonorfoofighterstribute/", "facebook": "https://www.facebook.com/inyourhonortributeband/", "youtube": "https://www.youtube.com/channel/UCqJA8RVS66F3lly5lA15ZmA" },
     "parachuteFestivals": [2022, 2025],
     "headliner": false,
     "active": true
+  },
+  {
+    "id": "kennzeichen-d",
+    "name": "Kennzeichen D",
+    "genre": ["Punk Rock"],
+    "image": "/images/bands/kennzeichen-d.jpg",
+    "bio": "Die Punkband direkt aus Lindern mit Ihrem Song Lindern brennt ein Klassiker der Linderner Festivalszene. Kennzeichen D standen 2007 auf der Bühne und lieferten einen energiegeladenen Punkrock-Set, der die lokale Verbundenheit spürbar machte.",
+    "links": { "website": "https://www.discogs.com/de/artist/1305721-KZD", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
+    "parachuteFestivals": [2007],
+    "headliner": false,
+    "active": false
   },
   {
     "id": "lax-diamond",
@@ -346,7 +412,7 @@
     "genre": ["Rock"],
     "image": "/images/bands/lax-diamond.jpg",
     "bio": "Lax Diamond standen 2020 beim Parachute Festival auf der Bühne und überzeugten mit einem soliden Rockset. Eine Band, die ihre Arbeit kennt und das Publikum mit auf die Reise nimmt.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "https://open.spotify.com/intl-de/artist/1TDSjM1rEmN2Vl8WWzZf2q", "instagram": "https://www.instagram.com/laxdiamondofficial/", "facebook": "https://www.facebook.com/LaxDiamond/?locale=de_DE", "youtube": "https://www.youtube.com/@LaxDiamond" },
     "parachuteFestivals": [2020],
     "headliner": false,
     "active": false
@@ -357,7 +423,7 @@
     "genre": ["Pop", "Rock"],
     "image": "/images/bands/liebe-3000.jpg",
     "bio": "Ali Amore, Malibu Markus, Schiessbuden Bernie, Michi Moschus und Andi Acapulco reiten die Sinuswelle der Romantik. Liebe 3000 ist Ohrwurm-Pop mit der Extraportion Herz.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "https://open.spotify.com/intl-de/artist/3JEbm00O3PJhwqWk6s2kaN", "instagram": "https://www.instagram.com/liebe3000official/", "facebook": "https://www.facebook.com/Liebe3000/", "youtube": "" },
     "parachuteFestivals": [2026],
     "headliner": false,
     "active": true
@@ -367,8 +433,8 @@
     "name": "Louie.E",
     "genre": ["Hip-Hop", "Rap"],
     "image": "/images/bands/louie-e.jpg",
-    "bio": "Louie.E stand 2020 beim Parachute Festival auf der Bühne und brachte Hip-Hop-Vibes in die Linderner Festivalszene. Echter Rap, kein Playback.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "bio": "",
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
     "parachuteFestivals": [2020],
     "headliner": false,
     "active": true
@@ -377,9 +443,9 @@
     "id": "mega-808",
     "name": "Mega 808",
     "genre": ["Hip-Hop"],
-    "image": "/images/bands/mega-808.jpg",
+    "image": "/images/bands/mega-808.jpeg",
     "bio": "Mega 808 bringt deutschsprachigen Hip-Hop mit authentischen Texten und innovativen Produktionen auf die Bühne. Einer der interessantesten Acts der deutschen Underground-Szene.",
-    "links": { "website": "", "spotify": "https://open.spotify.com/artist/44PehBvNEI399DbXC745Iz", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "https://open.spotify.com/artist/44PehBvNEI399DbXC745Iz", "instagram": "https://www.instagram.com/mega808.wav/", "facebook": "", "youtube": "https://www.youtube.com/channel/UCS_pUMPYEIkMi4q8So2-eaw" },
     "parachuteFestivals": [2025],
     "headliner": false,
     "active": true
@@ -390,7 +456,7 @@
     "genre": ["Rock", "Metal"],
     "image": "/images/bands/motorblock.jpg",
     "bio": "Motorblock standen 2010 beim Osterrock auf der Bühne und sorgten mit schwerem Sound für ordentlich Lautstaerke. Rock und Metal aus einem Guss.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://motorblock-music.de/", "spotify": "https://open.spotify.com/intl-de/artist/66lTDa1XVGFBbw5v2jPIDH", "instagram": "https://www.instagram.com/motorblockrock/", "facebook": "https://www.facebook.com/motorblock/?locale=de_DE", "youtube": "https://www.youtube.com/@motorblockrock" },
     "parachuteFestivals": [2010],
     "headliner": false,
     "active": false
@@ -401,9 +467,9 @@
     "genre": ["Hip-Hop", "Punk"],
     "image": "/images/bands/neonschwarz.jpg",
     "bio": "Neonschwarz aus Hamburg waren ein politisches Hip-Hop-Quartett, das anarchistische Texte mit elektronischen Beats kombinierte. Eines der lautesten Statements der deutschen Underground-Szene der 2010er Jahre.",
-    "links": { "website": "", "spotify": "https://open.spotify.com/artist/2IfNW3VJWrAqzGSxSLhiAv", "instagram": "", "facebook": "https://www.facebook.com/NeonschwarzHamburg/" },
+    "links": { "website": "https://neonschwarz-music.com/", "spotify": "https://open.spotify.com/artist/2IfNW3VJWrAqzGSxSLhiAv", "instagram": "https://www.instagram.com/neonschwizzy/", "facebook": "https://www.facebook.com/NeonschwarzHamburg/", "youtube": "https://www.youtube.com/channel/UC7HcTKphpY10DHqD952CaPg" },
     "parachuteFestivals": [2015],
-    "headliner": false,
+    "headliner": true,
     "active": false
   },
   {
@@ -412,7 +478,7 @@
     "genre": ["Singer-Songwriter"],
     "image": "/images/bands/nicolas-sturm.jpg",
     "bio": "Nicolas Sturm brachte 2014 Singer-Songwriter-Klaenge auf die Osterrock-Bühne. Ruhig, ehrlich und mit Texten, die unter die Haut gehen.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "https://open.spotify.com/intl-de/artist/4DCqU9zbd1UNo4AfCYOTL7", "instagram": "https://www.instagram.com/sturmpicc/", "facebook": "https://www.facebook.com/NicolasSturm/", "youtube": "https://www.youtube.com/channel/UClUk5XYO9lY6UvAzYeXyGkA" },
     "parachuteFestivals": [2014],
     "headliner": false,
     "active": false
@@ -421,9 +487,9 @@
     "id": "north-alone",
     "name": "North Alone",
     "genre": ["Indie Rock"],
-    "image": "/images/bands/north-alone.jpg",
+    "image": "/images/bands/north-alone.jpeg",
     "bio": "North Alone schlossen 2018 den letzten Osterrock-Abend mit einem atmosphärischen Indie-Rock-Set. Eine Band mit Gespür für Dynamik - von leise bis explodierend.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://www.northalone.com/", "spotify": "https://open.spotify.com/intl-de/artist/7rNKc0I5ldUV7AvXIltX8h", "instagram": "https://www.instagram.com/northalonemusic/", "facebook": "https://www.facebook.com/northalonemusic/?locale=de_DE", "youtube": "https://www.youtube.com/channel/UCF8l0J6haXmbPENXCcfzGVQ" },
     "parachuteFestivals": [2018],
     "headliner": false,
     "active": false
@@ -434,7 +500,7 @@
     "genre": ["Reggae", "Hip-Hop"],
     "image": "/images/bands/ohrbooten.jpg",
     "bio": "Ohrbooten aus Berlin verschmolzen seit 2003 Reggae, Ragga und Hip-Hop zu ihrem eigenen Sound. Mit lebendiger Bühnenpräsenz und europaweiten Touren prägten sie die Szene nachhaltig.",
-    "links": { "website": "", "spotify": "https://open.spotify.com/artist/06sVMzmcw141RgryE8TuMj", "instagram": "https://www.instagram.com/ohrbooten/", "facebook": "https://www.facebook.com/ohrbooten/" },
+    "links": { "website": "http://www.ohrbooten.de/", "spotify": "https://open.spotify.com/artist/06sVMzmcw141RgryE8TuMj", "instagram": "https://www.instagram.com/ohrbooten/", "facebook": "https://www.facebook.com/ohrbooten/", "youtube": "https://www.youtube.com/@ohrbootenTV" },
     "parachuteFestivals": [2013],
     "headliner": false,
     "active": false
@@ -445,7 +511,7 @@
     "genre": ["Rock", "Punk"],
     "image": "/images/bands/pressure-recall.jpg",
     "bio": "Pressure Recall standen 2012 beim Osterrock auf der Bühne und sorgten für einen druckvollen Set. Der Name ist Programm: volle Energie, kein Zurückhalten.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "https://open.spotify.com/intl-de/artist/0dvscAtZyUvHkATNuAKQ2W", "instagram": "https://www.instagram.com/pressure_recall/", "facebook": "https://www.facebook.com/pressurerecallmusic/", "youtube": "https://www.youtube.com/channel/UCKEhTe-jqPiFcA-wMMPQK3Q" },
     "parachuteFestivals": [2012],
     "headliner": false,
     "active": false
@@ -456,7 +522,7 @@
     "genre": ["Metal", "Hardcore"],
     "image": "/images/bands/rebuke.jpg",
     "bio": "Rebuke brachten 2012 harten Metal- und Hardcore-Sound auf die Osterrock-Bühne. Schwere Riffs, aggressive Energie - eine Band ohne Kompromisse.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
     "parachuteFestivals": [2012],
     "headliner": false,
     "active": false
@@ -467,7 +533,7 @@
     "genre": ["Punk Rock"],
     "image": "/images/bands/rogers.jpg",
     "bio": "Die Rogers aus Düsseldorf sind eine der wichtigsten Stimmen des deutschen Punkrocks. Mit explosiver Live-Energie, authentischen Texten und dem Album Rambazamba und Randale machen sie seit Jahren Clubs und Hallen zum Beben.",
-    "links": { "website": "https://rogers.de/", "spotify": "https://open.spotify.com/artist/7MXHWXL86uBpEtfHVnW96X", "instagram": "https://www.instagram.com/rogerspunkrock/", "facebook": "https://www.facebook.com/RogersPunkrock/" },
+    "links": { "website": "https://rogers.de/", "spotify": "https://open.spotify.com/artist/7MXHWXL86uBpEtfHVnW96X", "instagram": "https://www.instagram.com/rogerspunkrock/", "facebook": "https://www.facebook.com/RogersPunkrock/", "youtube": "" },
     "parachuteFestivals": [2026],
     "headliner": true,
     "active": true
@@ -476,9 +542,9 @@
     "id": "shes-a-woman",
     "name": "Shes a Woman",
     "genre": ["Rock"],
-    "image": "/images/bands/shes-a-woman.jpg",
+    "image": "/images/bands/shes-a-woman.jpeg",
     "bio": "Shes a Woman eröffneten das erste Parachute Festival 2019 und setzten den Ton für die neue Aera. Rockmusik mit Haltung und einer Bühnenpräsenz, die sofort überzeugt.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "https://open.spotify.com/intl-de/artist/2Ujt2s4sgcKMMvA1V1Oenq", "instagram": "", "facebook": "https://www.facebook.com/shesawomanmusic/?locale=de_DE", "youtube": "https://www.youtube.com/@AstridMK" },
     "parachuteFestivals": [2019],
     "headliner": false,
     "active": false
@@ -489,7 +555,7 @@
     "genre": ["Crossover", "Hardcore"],
     "image": "/images/bands/slope.jpg",
     "bio": "Slope aus Oldenburg standen beim Osterrock 2002 auf der Bühne und lieferten energiegeladenen Crossover-Sound. Die Mischung aus Groove und Hardcore-Elementen kam beim Publikum sofort an.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://slope-gang.com/", "spotify": "https://open.spotify.com/album/6f4ERlVYb14vN07PLs7kUU", "instagram": "https://www.instagram.com/slopegang/", "facebook": "https://www.facebook.com/slopegang", "youtube": "https://www.youtube.com/@SlopeGang450" },
     "parachuteFestivals": [2002],
     "headliner": false,
     "active": false
@@ -500,9 +566,9 @@
     "genre": ["Punk Rock"],
     "image": "/images/bands/smile-and-burn.jpg",
     "bio": "Smile and Burn aus Berlin sind seit 2009 aktiv und haben sich von schnellem Hardcore-Punk zu einem ausgereiften Post-Punk-Sound entwickelt. Sie standen gleich zweimal beim Festival auf der Bühne.",
-    "links": { "website": "", "spotify": "https://open.spotify.com/artist/7ydiqNkdc2TQoP0mL5d1JH", "instagram": "https://www.instagram.com/smileandburn/", "facebook": "https://www.facebook.com/smileandburn/" },
+    "links": { "website": "https://smileandburn.bandcamp.com/", "spotify": "https://open.spotify.com/artist/7ydiqNkdc2TQoP0mL5d1JH", "instagram": "https://www.instagram.com/smileandburn/", "facebook": "https://www.facebook.com/smileandburn/", "youtube": "https://www.youtube.com/channel/UCYcKTvighPmO4uVgaRsrLrA" },
     "parachuteFestivals": [2013, 2024],
-    "headliner": false,
+    "headliner": true,
     "active": true
   },
   {
@@ -511,7 +577,7 @@
     "genre": ["Street Punk"],
     "image": "/images/bands/small-town-riot.jpg",
     "bio": "Small Town Riot aus Buxtehude stehen seit 1999 für unkomplizierten Street-Punk und Punk n Roll. Mit einer festen Fanbase in Norddeutschland sind sie ein verlässlicher Garant für gute Stimmung.",
-    "links": { "website": "http://www.smalltownriot.de/", "spotify": "https://open.spotify.com/artist/1SHBDky2RqjBnVSxCqt0rv", "instagram": "https://www.instagram.com/smalltownriothamburg/", "facebook": "" },
+    "links": { "website": "http://www.smalltownriot.de/", "spotify": "https://open.spotify.com/artist/1SHBDky2RqjBnVSxCqt0rv", "instagram": "https://www.instagram.com/smalltownriothamburg/", "facebook": "https://www.facebook.com/p/Small-Town-Riot-100063787590619/", "youtube": "https://www.youtube.com/@TrueRebelRecords" },
     "parachuteFestivals": [2010],
     "headliner": false,
     "active": true
@@ -520,9 +586,9 @@
     "id": "stanley-spadowskis-clubhouse-band",
     "name": "Stanley Spadowskis Clubhouse Band",
     "genre": ["Rock"],
-    "image": "/images/bands/stanley-spadowskis-clubhouse-band.jpg",
+    "image": "/images/bands/stanley-spadowskis-clubhouse-band.jpeg",
     "bio": "Stanley Spadowskis Clubhouse Band gehören zu den treuesten Stammgästen des Parachute Festivals - sie standen dreimal in Folge auf der Bühne. Eine Band mit echter Verbindung zum Festival und zur Community.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "https://www.facebook.com/people/Stanley-Spadowskis-Clubhouse-Band/100032299676827/" },
+    "links": { "website": "https://www.backstagepro.de/stanley-spadowski-s-clubhaus-band", "spotify": "", "instagram": "https://www.instagram.com/spadowskis_clubhouse_band/", "facebook": "https://www.facebook.com/people/Stanley-Spadowskis-Clubhouse-Band/100032299676827/", "youtube": "https://www.youtube.com/channel/UCTbteacZF9sL_H-yhKR2Kuw" },
     "parachuteFestivals": [2023, 2024, 2025],
     "headliner": false,
     "active": true
@@ -533,18 +599,18 @@
     "genre": ["Rock", "Punk"],
     "image": "/images/bands/subbotnik.jpg",
     "bio": "SuBBotnik spielten beim ersten Parachute Festival 2019 und brachten einen rohen, energiegeladenen Sound auf den Schützenplatz. Eine Band, die direkt anpackt und keine Umwege macht.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "http://subbotnik.info/", "spotify": "https://open.spotify.com/intl-de/artist/3O8MBUgt7hMHzipnJgyW5z", "instagram": "http://www.instagram.com/subbotnikhro/", "facebook": "https://www.facebook.com/subbotnikhro/?locale=de_DE", "youtube": "http://youtube.com/c/subbotnik" },
     "parachuteFestivals": [2019],
-    "headliner": false,
+    "headliner": true,
     "active": false
   },
   {
     "id": "subspecial",
     "name": "Subspecial",
-    "genre": ["Rock"],
+    "genre": [""],
     "image": "/images/bands/subspecial.jpg",
-    "bio": "Subspecial aus Meppen eröffneten das Osterrock 2002 mit einem melodischen, aber druckvollen Rock-Set. Die Band brachte das Publikum schnell auf Betriebstemperatur.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "bio": "",
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
     "parachuteFestivals": [2002],
     "headliner": false,
     "active": false
@@ -554,8 +620,8 @@
     "name": "Supershirt",
     "genre": ["Electronic", "Pop"],
     "image": "/images/bands/supershirt.jpg",
-    "bio": "Supershirt aus Rostock kombinierten Electronic, Pop und Hip-Hop-Einfluesse zu einem innovativen Sound, der in der deutschen Indie-Szene der 2010er Jahre für Aufsehen sorgte. 2015 loeste sich die Band auf.",
-    "links": { "website": "", "spotify": "https://open.spotify.com/artist/09e4HLtPndIxnyrFduAgsn", "instagram": "", "facebook": "" },
+    "bio": "pSuershirt aus Rostock kombinierten Electronic, Pop und Hip-Hop-Einfluesse zu einem innovativen Sound, der in der deutschen Indie-Szene der 2010er Jahre für Aufsehen sorgte. 2015 loeste sich die Band auf.",
+    "links": { "website": "http://teitmaschine.de/", "spotify": "https://open.spotify.com/artist/09e4HLtPndIxnyrFduAgsn", "instagram": "", "facebook": "https://www.facebook.com/supershirt/?locale=de_DE", "youtube": "https://www.youtube.com/@KasabiTunez" },
     "parachuteFestivals": [2012],
     "headliner": false,
     "active": false
@@ -566,7 +632,7 @@
     "genre": ["Rock"],
     "image": "/images/bands/the-livelines.jpg",
     "bio": "The Livelines standen 2025 beim Parachute Festival auf der Bühne und lieferten einen mitreissenden Rockset. Eine Band, die live genau das hält, was der Name verspricht.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://www.thelivelines.de/", "spotify": "https://open.spotify.com/intl-de/artist/6yvjzXThVSwgikJgw6S26s", "instagram": "https://www.instagram.com/the.livelines/", "facebook": "", "youtube": "https://www.youtube.com/@the.livelines" },
     "parachuteFestivals": [2025],
     "headliner": false,
     "active": true
@@ -575,9 +641,9 @@
     "id": "the-mortis",
     "name": "The Mortis",
     "genre": ["Punk", "Rock"],
-    "image": "/images/bands/the-mortis.jpg",
+    "image": "/images/bands/the-mortis.jpeg",
     "bio": "The Mortis spielten 2014 beim Osterrock und sorgten für einen druckvollen Auftritt mit rohem Punk-Rock-Sound. Dunkel, direkt und ohne Schnoerkel.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "", "instagram": "https://www.instagram.com/mortisband/", "facebook": "https://www.facebook.com/TheMortisBand/?locale=de_DE", "youtube": "" },
     "parachuteFestivals": [2014],
     "headliner": false,
     "active": false
@@ -588,7 +654,7 @@
     "genre": ["Blues Rock", "Garage"],
     "image": "/images/bands/the-picturebooks.jpg",
     "bio": "The Picturebooks aus Gütersloh - Fynn Claus Grabke und Philipp Mirtschink - kreieren seit 2009 rohen Blues- und Garage-Rock, aufgenommen in ihrer eigenen Garage. Dreckig, authentisch und live noch besser.",
-    "links": { "website": "", "spotify": "https://open.spotify.com/artist/5L8u4AcYBOnxAtRrluOjKo", "instagram": "https://www.instagram.com/thepicturebooks/", "facebook": "https://www.facebook.com/ThePicturebooks/" },
+    "links": { "website": "https://www.pctrbks.com/", "spotify": "https://open.spotify.com/artist/5L8u4AcYBOnxAtRrluOjKo", "instagram": "https://www.instagram.com/thepicturebooks/", "facebook": "https://www.facebook.com/ThePicturebooks/", "youtube": "https://www.youtube.com/channel/UCEb5BhrkI9mQeqrAq_Nu0CA" },
     "parachuteFestivals": [2011],
     "headliner": false,
     "active": true
@@ -597,9 +663,9 @@
     "id": "the-projects",
     "name": "The Projects",
     "genre": ["Punk Rock"],
-    "image": "/images/bands/the-projects.jpg",
+    "image": "/images/bands/the-projects.jpeg",
     "bio": "The Projects standen gleich zweimal auf der Osterrock-Bühne und gehörten zu den verlässlichen Größen des Festivals. Punkrock mit Substanz und einer Crowd, die jeden Auftritt mitfeiert.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "https://www.facebook.com/theprojects.de/", "youtube": "" },
     "parachuteFestivals": [2015, 2017],
     "headliner": false,
     "active": false
@@ -610,7 +676,7 @@
     "genre": ["Punk Rock"],
     "image": "/images/bands/the-real-danger.jpg",
     "bio": "The Real Danger spielten 2011 beim Osterrock und sorgten mit ihrem druckvollen Punkrock für echte Gefahr auf der Bühne. Schnell, laut und mit vollem Einsatz.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://therealdanger.bandcamp.com/album/down-and-out", "spotify": "https://open.spotify.com/intl-de/artist/4fGshl4stCtYcV5NQTHZmk", "instagram": "https://www.instagram.com/therealdangerpunx/", "facebook": "https://www.facebook.com/p/the-real-danger-100063475159569/", "youtube": "https://www.youtube.com/channel/UCPNzfBXz6KpSk_TrFUifeCw" },
     "parachuteFestivals": [2011],
     "headliner": false,
     "active": false
@@ -619,9 +685,9 @@
     "id": "the-vaders",
     "name": "The Vaders",
     "genre": ["Rock"],
-    "image": "/images/bands/the-vaders.jpg",
+    "image": "/images/bands/the-vaders.jpeg",
     "bio": "The Vaders standen 2010 beim Osterrock auf der Bühne und brachten mit ihrem Rocksound die Stimmung auf Betriebstemperatur. Eine Band, die sich den Klassikern des Rock verschrieben hat.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://thevaders.bandcamp.com/", "spotify": "https://open.spotify.com/intl-de/artist/1RTSbPOLcNAary53J1OEaN", "instagram": "", "facebook": "https://www.facebook.com/TheVaders/", "youtube": "" },
     "parachuteFestivals": [2010],
     "headliner": false,
     "active": false
@@ -629,10 +695,10 @@
   {
     "id": "tim-vantol",
     "name": "Tim Vantol",
-    "genre": ["Folk Punk"],
+    "genre": ["Folk Punk", "Singer-Songwriter"],
     "image": "/images/bands/tim-vantol.jpg",
     "bio": "Tim Vantol ist ein niederländischer Singer-Songwriter, der Folk-Punk mit authentischer Rauheit und Texten über Armut, Hoffnung und ungefilterte Gefuehle verbindet. Europaweit auf Tour.",
-    "links": { "website": "https://timvantol.com/", "spotify": "https://open.spotify.com/artist/1a1kfqTA5XiOHLhDFgZhSd", "instagram": "https://www.instagram.com/timvantol/", "facebook": "" },
+    "links": { "website": "https://timvantol.com/", "spotify": "https://open.spotify.com/artist/1a1kfqTA5XiOHLhDFgZhSd", "instagram": "https://www.instagram.com/timvantol/", "facebook": "https://www.facebook.com/timvantol/?locale=de_DE", "youtube": "https://www.youtube.com/@timvantoltv" },
     "parachuteFestivals": [2012],
     "headliner": false,
     "active": true
@@ -643,7 +709,7 @@
     "genre": ["Rock", "Punk"],
     "image": "/images/bands/turbine-weststadt.jpg",
     "bio": "Turbine Weststadt eröffneten 2012 die Osterrock-Festivalnacht mit einem energiegeladenen Rock-Set. Eine Band, die direkt Dampf macht.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "https://www.backstagepro.de/turbine-weststadt", "spotify": "https://soundcloud.com/turbineweststadt", "instagram": "", "facebook": "", "youtube": "https://www.youtube.com/watch?v=c3pI-9Lhdwc" },
     "parachuteFestivals": [2012],
     "headliner": false,
     "active": false
@@ -651,10 +717,10 @@
   {
     "id": "v8-wankers",
     "name": "V8 Wankers",
-    "genre": ["Schweinerock"],
+    "genre": ["Rock"],
     "image": "/images/bands/v8-wankers.jpg",
-    "bio": "Die V8 Wankers aus Offenbach liefern rauen Schweinerock mit fetten Riffs, viel Attituede und einem Sound, der direkt in die Magengrube geht. Live ein Brett.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "bio": "Die V8 Wankers aus Offenbach liefern rauen Rock mit fetten Riffs, viel Attituede und einem Sound, der direkt in die Magengrube geht. Live ein Brett.",
+    "links": { "website": "https://www.v8wankers.com/", "spotify": "https://open.spotify.com/intl-de/artist/3TyZ65s7OEzbNrtC1PFPsA", "instagram": "", "facebook": "https://www.facebook.com/V8Wrock/?locale=de_DE", "youtube": "https://www.youtube.com/@v8wankersvids" },
     "parachuteFestivals": [2004],
     "headliner": false,
     "active": false
@@ -665,7 +731,7 @@
     "genre": ["Rock"],
     "image": "/images/bands/westwaerts.jpg",
     "bio": "Westwaerts spielten 2020 beim Parachute Festival und brachten deutschsprachigen Rockklang mit Seele auf die Bühne. Songs über Aufbruch, Heimat und das, was dazwischen liegt.",
-    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "" },
+    "links": { "website": "", "spotify": "https://open.spotify.com/intl-de/artist/5vlaT7Q9pz37dSi3EEVgZe", "instagram": "https://www.instagram.com/westwaerts_official/", "facebook": "https://www.facebook.com/westwaerts.band/", "youtube": "https://www.youtube.com/@Westw%C3%A4rts" },
     "parachuteFestivals": [2020],
     "headliner": false,
     "active": false

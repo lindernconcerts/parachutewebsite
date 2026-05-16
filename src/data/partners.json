@@ -2,57 +2,57 @@
   {
     "id": "krombacher",
     "name": "Krombacher",
-    "logo": "/images/partners/krombacher.svg",
-    "url": "",
+    "logo": "/images/partners/krombacher.png",
+    "url": "https://www.krombacher.de/",
     "tier": "kooperation"
   },
   {
     "id": "papa-fuego",
     "name": "Papa Fuego",
-    "logo": "/images/partners/papa-fuego.svg",
-    "url": "",
+    "logo": "/images/partners/papa-fuego.png",
+    "url": "https://papafuego.de/",
     "tier": "kooperation"
   },
   {
     "id": "getraenkehof-moeller",
     "name": "Getränkehof Möller",
-    "logo": "/images/partners/getraenkehof-moeller.svg",
-    "url": "",
+    "logo": "/images/partners/getraenkehof-moeller.jpg",
+    "url": "https://www.instagram.com/getraenkehof_moeller/",
     "tier": "kooperation"
   },
   {
     "id": "partyfly",
     "name": "Partyfly",
-    "logo": "/images/partners/partyfly.svg",
-    "url": "",
+    "logo": "/images/partners/partyfly.jpg",
+    "url": "https://www.partyfly.de/",
     "tier": "kooperation"
   },
   {
     "id": "viva-con-agua",
     "name": "Viva con Agua",
-    "logo": "/images/partners/viva-con-agua.svg",
+    "logo": "/images/partners/viva-con-agua.jpg",
     "url": "https://www.vivaconagua.org/",
     "tier": "kooperation"
   },
   {
     "id": "tewes-dachdeckerbetrieb",
     "name": "Tewes Dachdeckerbetrieb GmbH",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/tewes-dachdeckerbetrieb.png",
+    "url": "https://tewes-dach.de/",
     "tier": "kooperation"
   },
   {
     "id": "kein-bock-auf-nazis",
     "name": "Kein Bock auf Nazis",
-    "logo": "/images/partners/kein-bock-auf-nazis.svg",
+    "logo": "/images/partners/kein-bock-auf-nazis.jpg",
     "url": "https://www.keinbockaufnazis.de/",
     "tier": "kooperation"
   },
   {
     "id": "jaegermeister",
     "name": "Jägermeister",
-    "logo": "/images/partners/jaegermeister.svg",
-    "url": "",
+    "logo": "/images/partners/jaegermeister.png",
+    "url": "https://de.jagermeister.com/",
     "tier": "kooperation"
   },
   {

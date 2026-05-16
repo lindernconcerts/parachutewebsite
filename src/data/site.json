@@ -21,10 +21,10 @@
     "email":     "lindernconcerts@gmail.com"
   },
   "maps": {
-    "embedUrl": "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d640.1455381855276!2d7.767052078837831!3d52.84455506558119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sde!2sde!4v1778923083687!5m2!1sde!2sde",
-    "directionsUrl": "https://maps.app.goo.gl/z35i44sbBdC41j4KA",
+    "embedUrl": "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d638.9547678748897!2d7.767883202473483!3d52.844659129590966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1778948465710!5m2!1sde!2sde",
+    "directionsUrl": "https://maps.app.goo.gl/owqjnt1Ee2WVGtPC6",
     "address": "Schützenplatz, 49699 Lindern (Oldenburg)",
-    "parkingEmbedUrl": "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d755.9049475323383!2d7.779390096280942!3d52.845857080190875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sde!2sde!4v1778923037067!5m2!1sde!2sde",
-    "parkingDirectionsUrl": "https://maps.app.goo.gl/GoyShKqyK6abYztAA"
+    "parkingEmbedUrl": "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d225.89784147364927!2d7.780069306955612!3d52.845962858111704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1778948578336!5m2!1sde!2sde",
+    "parkingDirectionsUrl": "https://maps.app.goo.gl/DU5kEZFprjys24VSA"
   }
 }

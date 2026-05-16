@@ -2,8 +2,12 @@
 import PageLayout from '@/layouts/PageLayout.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
 import Countdown from '@/components/home/Countdown.astro';
+import HistorieBandEntry from '@/components/bands/HistorieBandEntry.astro';
 import historieData from '@/data/historie.json';
+import bandsData from '@/data/bands.json';
 import siteData from '@/data/site.json';
+
+const bandsById = new Map(bandsData.map(b => [b.id, b]));
 
 const sorted = [...historieData].sort((a, b) => b.year - a.year);
 const upcoming = sorted.find(e => e.upcoming);
@@ -82,27 +86,21 @@ const { nextEdition, futureEdition } = siteData;
             }`}
             style={`border: 1px solid ${edition.cancelled ? 'var(--color-border)' : 'var(--color-border)'};`}
           >
-            <div class={`grid ${(edition.poster && !edition.missing) ? 'grid-cols-1 md:grid-cols-[280px_1fr]' : 'grid-cols-1'}`}>
+            <div class={`grid ${edition.poster ? 'grid-cols-1 md:grid-cols-[240px_1fr]' : 'grid-cols-1'}`}>
 
               <!-- Poster -->
-              {edition.poster && !edition.missing && (
+              {edition.poster && (
                 <div
-                  class="relative flex items-center justify-center shrink-0"
-                  style="background: var(--color-bg-card); width: 280px; height: 320px;"
+                  class="poster-container flex items-center justify-center p-4"
+                  style="background: var(--color-bg-card);"
                 >
                   <img
                     src={edition.poster}
                     alt={`Plakat ${edition.name}`}
                     loading="lazy"
-                    class="w-full h-full object-contain p-3"
-                    onerror="this.style.display='none'; this.parentElement.querySelector('.poster-fallback').style.display='flex'"
+                    class="max-h-80 object-contain"
+                    onerror="let c=this.closest('.poster-container'); c.style.display='none'; c.parentElement.style.gridTemplateColumns='1fr'"
                   />
-                  <div
-                    class="poster-fallback w-full h-full absolute inset-0 items-center justify-center"
-                    style="display:none;"
-                  >
-                    <span class="font-heading text-6xl opacity-10 text-primary">{edition.year}</span>
-                  </div>
                 </div>
               )}
 
@@ -132,7 +130,17 @@ const { nextEdition, futureEdition } = siteData;
                   </p>
                 )}
 
-                {!edition.poster && !edition.cancelled && !edition.description && (
+                {Array.isArray(edition.bands) && edition.bands.length > 0 && (
+                  <div class="mt-5 pt-5 space-y-5" style="border-top: 1px solid var(--color-border);">
+                    {(edition.bands as string[]).map(id => {
+                      const bandData = bandsById.get(id);
+                      const name = bandData?.name ?? id;
+                      return <HistorieBandEntry name={name} bandData={bandData} />;
+                    })}
+                  </div>
+                )}
+
+                {!edition.poster && !edition.cancelled && !edition.description && !edition.bands?.length && (
                   <p class="text-sm italic" style="color: var(--color-text-muted);">
                     Infos folgen…
                   </p>
@@ -174,27 +182,21 @@ const { nextEdition, futureEdition } = siteData;
             class="rounded-sm overflow-hidden"
             style={`border: 1px solid ${edition.missing ? 'var(--color-border)' : 'var(--color-border)'}; opacity: ${edition.missing && !edition.bands.length && !edition.description ? '0.5' : '1'};`}
           >
-            <div class={`grid ${(edition.poster && !edition.missing) ? 'grid-cols-1 md:grid-cols-[280px_1fr]' : 'grid-cols-1'}`}>
+            <div class={`grid ${edition.poster ? 'grid-cols-1 md:grid-cols-[240px_1fr]' : 'grid-cols-1'}`}>
 
               <!-- Poster -->
-              {edition.poster && !edition.missing && (
+              {edition.poster && (
                 <div
-                  class="relative flex items-center justify-center shrink-0"
-                  style="background: var(--color-bg-card); width: 280px; height: 320px;"
+                  class="poster-container flex items-center justify-center p-4"
+                  style="background: var(--color-bg-card);"
                 >
                   <img
                     src={edition.poster}
                     alt={`Plakat ${edition.name}`}
                     loading="lazy"
-                    class="w-full h-full object-contain p-3"
-                    onerror="this.style.display='none'; this.parentElement.querySelector('.poster-fallback').style.display='flex'"
+                    class="max-h-80 object-contain"
+                    onerror="let c=this.closest('.poster-container'); c.style.display='none'; c.parentElement.style.gridTemplateColumns='1fr'"
                   />
-                  <div
-                    class="poster-fallback w-full h-full absolute inset-0 items-center justify-center"
-                    style="display:none;"
-                  >
-                    <span class="font-heading text-6xl opacity-10 text-secondary">{edition.year}</span>
-                  </div>
                 </div>
               )}
 
@@ -221,37 +223,13 @@ const { nextEdition, futureEdition } = siteData;
                   </p>
                 )}
 
-                <!-- Band list (simple names, e.g. 2007) -->
-                {Array.isArray(edition.bands) && edition.bands.length > 0 && typeof edition.bands[0] === 'string' && (
-                  <div class="flex flex-wrap gap-2 mt-2">
-                    {(edition.bands as string[]).map(b => (
-                      <span class="badge-secondary">{b}</span>
-                    ))}
-                  </div>
-                )}
-
-                <!-- Band list with descriptions (e.g. 2004, 2002) -->
-                {Array.isArray(edition.bands) && edition.bands.length > 0 && typeof edition.bands[0] === 'object' && (
-                  <div class="space-y-4 mt-4">
-                    {(edition.bands as {name:string; genre:string; description:string}[]).map((band, i) => (
-                      <div class="flex gap-4">
-                        <div
-                          class="shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
-                          style="background: var(--color-primary); color: white;"
-                        >
-                          {i + 1}
-                        </div>
-                        <div>
-                          <div class="flex flex-wrap items-baseline gap-2 mb-1">
-                            <span class="font-heading text-xl text-white">{band.name}</span>
-                            {band.genre && (
-                              <span class="text-xs" style="color: var(--color-secondary);">{band.genre}</span>
-                            )}
-                          </div>
-                          <p class="text-xs leading-relaxed" style="color: var(--color-text-muted);">{band.description}</p>
-                        </div>
-                      </div>
-                    ))}
+                {Array.isArray(edition.bands) && edition.bands.length > 0 && (
+                  <div class="mt-5 pt-5 space-y-5" style="border-top: 1px solid var(--color-border);">
+                    {(edition.bands as string[]).map(id => {
+                      const bandData = bandsById.get(id);
+                      const name = bandData?.name ?? id;
+                      return <HistorieBandEntry name={name} bandData={bandData} />;
+                    })}
                   </div>
                 )}
               </div>
