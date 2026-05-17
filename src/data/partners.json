@@ -10,21 +10,21 @@
     "id": "papa-fuego",
     "name": "Papa Fuego",
     "logo": "/images/partners/papa-fuego.png",
-    "url": "",
+    "url": "https://papafuego.de/",
     "tier": "kooperation"
   },
   {
     "id": "getraenkehof-moeller",
     "name": "Getränkehof Möller",
     "logo": "/images/partners/getraenkehof-moeller.jpg",
-    "url": "",
+    "url": "https://www.instagram.com/getraenkehof_moeller/",
     "tier": "kooperation"
   },
   {
     "id": "partyfly",
     "name": "Partyfly",
     "logo": "/images/partners/partyfly.jpg",
-    "url": "",
+    "url": "https://www.partyfly.de/",
     "tier": "kooperation"
   },
   {
@@ -38,7 +38,7 @@
     "id": "tewes-dachdeckerbetrieb",
     "name": "Tewes Dachdeckerbetrieb GmbH",
     "logo": "/images/partners/tewes-dachdeckerbetrieb.png",
-    "url": "",
+    "url": "https://tewes-dach.de/",
     "tier": "kooperation"
   },
   {
@@ -52,7 +52,7 @@
     "id": "jaegermeister",
     "name": "Jägermeister",
     "logo": "/images/partners/jaegermeister.png",
-    "url": "",
+    "url": "https://de.jagermeister.com/",
     "tier": "kooperation"
   },
   {
