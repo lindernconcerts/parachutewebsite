@@ -4,13 +4,16 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   X-XSS-Protection: 1; mode=block
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
 
 # Statische Assets – langer Cache, unveränderlich
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
 /_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
 /favicon.ico

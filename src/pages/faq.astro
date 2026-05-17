@@ -11,11 +11,22 @@ const categoryIcons: Record<string, string> = {
   'Vor Ort':                 '📍',
   'Jugendschutz & Awareness': '💛',
 };
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+  }))
+};
 ---
 
 <PageLayout
   title="FAQ"
   description="Haeufig gestellte Fragen zum Parachute Festival Lindern – alles was du wissen musst."
+  jsonLd={faqJsonLd}
 >
   <!-- Page Header -->
   <section
@@ -35,7 +46,7 @@ const categoryIcons: Record<string, string> = {
         <div class="mb-14">
           <!-- Category heading -->
           <div class="flex items-center gap-3 mb-6 pb-3" style="border-bottom: 2px solid var(--color-primary);">
-            <span class="text-2xl">{categoryIcons[category] ?? '📌'}</span>
+            <span class="text-2xl" aria-hidden="true">{categoryIcons[category] ?? '📌'}</span>
             <h2 class="font-heading text-4xl text-white">{category}</h2>
           </div>
 

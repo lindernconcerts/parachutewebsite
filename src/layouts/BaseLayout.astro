@@ -21,6 +21,26 @@ const {
 const siteUrl = 'https://parachutefestival.de';
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const fullTitle = title === 'Parachute Festival' ? title : `${title} | Parachute Festival`;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Parachute Festival",
+  "url": siteUrl,
+  "logo": `${siteUrl}/images/Logo.png`,
+  "email": "lindernconcerts@gmail.com",
+  "sameAs": [
+    "https://www.instagram.com/parachutefestival",
+    "https://www.facebook.com/Parachutefestivallindern/",
+    "https://www.tiktok.com/@lindern.concerts"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lindern",
+    "postalCode": "49699",
+    "addressCountry": "DE"
+  }
+};
 ---
 
 <!doctype html>
@@ -49,8 +69,8 @@ const fullTitle = title === 'Parachute Festival' ? title : `${title} | Parachute
 
     <link rel="canonical" href={canonicalUrl} />
     <!-- Browser-Tab & Lesezeichen -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="32x32" />
     <!-- iOS Home Screen & Apple Touch -->
     <link rel="apple-touch-icon" href="/images/Logo.png" />
     <!-- Web App Manifest -->
@@ -61,15 +81,13 @@ const fullTitle = title === 'Parachute Festival' ? title : `${title} | Parachute
     {jsonLd && (
       <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     )}
+    <!-- Organization Schema (siteweite Basis) -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 
-    <!-- Google Fonts — CI 2025: Bebas Neue + Inter -->
-    <!-- Jährlicher CI-Tausch: diese Links anpassen wenn andere Fonts gewählt werden -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Fonts selbst-gehostet — CI 2025: Bebas Neue + Inter -->
+    <!-- Jährlicher CI-Tausch: /public/fonts/ ersetzen und @font-face in theme.css anpassen -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/bebas-neue-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin />
   </head>
   <body>
     <slot />

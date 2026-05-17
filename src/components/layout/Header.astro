@@ -28,10 +28,7 @@ const currentPath = Astro.url.pathname;
     </span>
     <a
       href="/tickets"
-      class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-sm transition-colors shrink-0"
-      style="background: rgba(0,0,0,0.15); color: #000;"
-      onmouseover="this.style.background='rgba(0,0,0,0.3)'"
-      onmouseout="this.style.background='rgba(0,0,0,0.15)'"
+      class="announcement-link text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-sm transition-colors shrink-0"
     >
       Mehr erfahren
     </a>
@@ -92,6 +89,7 @@ const currentPath = Astro.url.pathname;
       class="lg:hidden p-2 text-white"
       aria-label="Menü öffnen"
       aria-expanded="false"
+      aria-controls="mobile-menu"
     >
       <svg id="icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -105,8 +103,9 @@ const currentPath = Astro.url.pathname;
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="lg:hidden hidden"
-    style="background: var(--color-dark); border-top: 1px solid var(--color-border);"
+    class="lg:hidden overflow-hidden"
+    style="background: var(--color-dark); border-top: 1px solid var(--color-border); max-height: 0; opacity: 0; transition: max-height 0.3s ease, opacity 0.2s ease;"
+    aria-hidden="true"
   >
     <nav class="container py-4 flex flex-col gap-1" aria-label="Mobile Navigation">
       {navLinks.map(({ href, label }) => {
@@ -133,7 +132,7 @@ const currentPath = Astro.url.pathname;
   const header           = document.getElementById('main-header')!;
   const announcementBar  = document.getElementById('announcement-bar')!;
   const closeBtn         = document.getElementById('close-announcement')!;
-  const toggle           = document.getElementById('menu-toggle')!;
+  const toggle           = document.getElementById('menu-toggle') as HTMLButtonElement;
   const mobileMenu       = document.getElementById('mobile-menu')!;
   const iconOpen         = document.getElementById('icon-open')!;
   const iconClose        = document.getElementById('icon-close')!;
@@ -168,12 +167,53 @@ const currentPath = Astro.url.pathname;
     header.style.top = '0';
   }
 
-  // Mobile menu toggle
+  // Mobile menu: animated open/close
+  function openMenu() {
+    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+    mobileMenu.style.opacity = '1';
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    iconOpen.classList.add('hidden');
+    iconClose.classList.remove('hidden');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Menü schließen');
+    mobileMenu.querySelector<HTMLAnchorElement>('a')?.focus();
+  }
+
+  function closeMenu() {
+    mobileMenu.style.maxHeight = '0';
+    mobileMenu.style.opacity = '0';
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Menü öffnen');
+  }
+
   toggle.addEventListener('click', () => {
-    const isOpen = !mobileMenu.classList.contains('hidden');
-    mobileMenu.classList.toggle('hidden');
-    iconOpen.classList.toggle('hidden', !isOpen);
-    iconClose.classList.toggle('hidden', isOpen);
-    toggle.setAttribute('aria-expanded', String(!isOpen));
+    toggle.getAttribute('aria-expanded') === 'true' ? closeMenu() : openMenu();
+  });
+
+  // Close when a nav link is clicked
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => closeMenu());
+  });
+
+  // Close on Escape and return focus to toggle
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+      toggle.focus();
+    }
   });
 </script>
+
+<style>
+  .announcement-link {
+    background: rgba(0, 0, 0, 0.15);
+    color: #000;
+  }
+  .announcement-link:hover,
+  .announcement-link:focus-visible {
+    background: rgba(0, 0, 0, 0.3);
+  }
+</style>

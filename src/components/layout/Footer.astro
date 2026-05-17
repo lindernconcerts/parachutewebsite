@@ -66,10 +66,7 @@ const socialLinks = [
           target={href.startsWith('mailto') ? '_self' : '_blank'}
           rel="noopener noreferrer"
           aria-label={label}
-          class="p-2 rounded-full transition-colors duration-200"
-          style="color: var(--color-text-muted);"
-          onmouseover="this.style.color='var(--color-primary)'"
-          onmouseout="this.style.color='var(--color-text-muted)'"
+          class="social-link p-2 rounded-full transition-colors duration-200"
         >
           <Fragment set:html={icon} />
         </a>
@@ -82,13 +79,7 @@ const socialLinks = [
     <!-- Footer Links -->
     <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8" aria-label="Footer Navigation">
       {footerLinks.map(({ href, label }) => (
-        <a
-          href={href}
-          class="text-sm transition-colors duration-200"
-          style="color: var(--color-text-muted);"
-          onmouseover="this.style.color='var(--color-primary)'"
-          onmouseout="this.style.color='var(--color-text-muted)'"
-        >
+        <a href={href} class="footer-link text-sm transition-colors duration-200">
           {label}
         </a>
       ))}
@@ -100,3 +91,20 @@ const socialLinks = [
     </p>
   </div>
 </footer>
+
+<style>
+  .social-link {
+    color: var(--color-text-muted);
+  }
+  .social-link:hover,
+  .social-link:focus-visible {
+    color: var(--color-primary);
+  }
+  .footer-link {
+    color: var(--color-text-muted);
+  }
+  .footer-link:hover,
+  .footer-link:focus-visible {
+    color: var(--color-primary);
+  }
+</style>

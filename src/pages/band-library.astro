@@ -6,11 +6,25 @@ import bandsData from '@/data/bands.json';
 const sorted = [...bandsData].sort((a, b) => a.name.localeCompare(b.name, 'de'));
 const letters = [...new Set(sorted.map(b => b.name[0].toUpperCase()))].sort();
 const allYears = [...new Set(sorted.flatMap(b => b.parachuteFestivals))].sort((a, b) => b - a);
+
+const bandLibraryJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Parachute Festival Band Library",
+  "description": "Alle Bands, die beim Parachute Festival oder Osterrock Lindern aufgetreten sind.",
+  "numberOfItems": sorted.length,
+  "itemListElement": sorted.slice(0, 10).map((b, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": b.name
+  }))
+};
 ---
 
 <PageLayout
   title="Band Library"
   description="Alle Bands die beim Parachute Festival und Osterrock Lindern auf der Bühne standen – alphabetisch durchsuchbar, nach Jahr filterbar."
+  jsonLd={bandLibraryJsonLd}
 >
   <!-- Page Header -->
   <section
@@ -75,6 +89,12 @@ const allYears = [...new Set(sorted.flatMap(b => b.parachuteFestivals))].sort((a
         ))}
       </div>
 
+      <!-- Active filter summary + reset -->
+      <div id="filter-summary" class="hidden justify-center items-center gap-3 mb-4 flex-wrap">
+        <span id="filter-pill" class="px-3 py-1 rounded-full text-sm font-semibold text-white" style="background: var(--color-primary);"></span>
+        <button id="filter-reset" class="text-sm transition-colors" style="color: var(--color-text-muted);">Filter zurücksetzen ×</button>
+      </div>
+
       <!-- Results count -->
       <p id="band-results-info" class="text-sm mb-6" style="color:var(--color-text-muted);">
         {sorted.length} Bands
@@ -105,6 +125,19 @@ const allYears = [...new Set(sorted.flatMap(b => b.parachuteFestivals))].sort((a
   </section>
 </PageLayout>
 
+<style>
+  /* Nur sichtbare Cards rendern — Browser überspringt off-screen Cards */
+  .band-card-wrapper {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 350px;
+  }
+  #filter-reset:hover,
+  #filter-reset:focus-visible {
+    color: var(--color-primary);
+    text-decoration-color: var(--color-primary);
+  }
+</style>
+
 <script>
   // @ts-ignore
   import Fuse from 'fuse.js';
@@ -118,12 +151,15 @@ const allYears = [...new Set(sorted.flatMap(b => b.parachuteFestivals))].sort((a
     minMatchCharLength: 2,
   });
 
-  const input       = document.getElementById('band-search-input') as HTMLInputElement;
-  const grid        = document.getElementById('band-grid')!;
-  const noResults   = document.getElementById('band-no-results')!;
-  const resultsInfo = document.getElementById('band-results-info')!;
-  const azButtons   = document.querySelectorAll<HTMLButtonElement>('.az-btn');
-  const yearButtons = document.querySelectorAll<HTMLButtonElement>('.year-btn');
+  const input         = document.getElementById('band-search-input') as HTMLInputElement;
+  const grid          = document.getElementById('band-grid')!;
+  const noResults     = document.getElementById('band-no-results')!;
+  const resultsInfo   = document.getElementById('band-results-info')!;
+  const filterSummary = document.getElementById('filter-summary')!;
+  const filterPill    = document.getElementById('filter-pill')!;
+  const filterReset   = document.getElementById('filter-reset')!;
+  const azButtons     = document.querySelectorAll<HTMLButtonElement>('.az-btn');
+  const yearButtons   = document.querySelectorAll<HTMLButtonElement>('.year-btn');
 
   let currentLetter = 'all';
   let currentYear   = 'all';
@@ -135,6 +171,22 @@ const allYears = [...new Set(sorted.flatMap(b => b.parachuteFestivals))].sort((a
       b.style.background = isActive ? (primary ? 'var(--color-primary)' : 'var(--color-secondary)') : 'var(--color-bg-card)';
       b.style.color       = isActive ? 'white' : 'var(--color-text-muted)';
     });
+  }
+
+  function updateFilterInfo() {
+    const parts: string[] = [];
+    if (currentQuery) parts.push(`"${currentQuery}"`);
+    if (currentLetter !== 'all') parts.push(currentLetter);
+    if (currentYear !== 'all') parts.push(String(currentYear));
+
+    if (parts.length > 0) {
+      filterPill.textContent = parts.join(' · ');
+      filterSummary.classList.remove('hidden');
+      filterSummary.classList.add('flex');
+    } else {
+      filterSummary.classList.add('hidden');
+      filterSummary.classList.remove('flex');
+    }
   }
 
   function applyFilters() {
@@ -159,12 +211,10 @@ const allYears = [...new Set(sorted.flatMap(b => b.parachuteFestivals))].sort((a
     resultsInfo.textContent = `${visible} Band${visible !== 1 ? 's' : ''}`;
   }
 
+  // Alle drei Filter sind additiv — keiner setzt die anderen zurück
   input.addEventListener('input', () => {
-    currentQuery  = input.value.trim();
-    currentLetter = 'all';
-    currentYear   = 'all';
-    setActive(azButtons, azButtons[0]!, true);
-    setActive(yearButtons, yearButtons[0]!, true);
+    currentQuery = input.value.trim();
+    updateFilterInfo();
     applyFilters();
   });
   input.addEventListener('focus', () => (input.style.borderColor = 'var(--color-primary)'));
@@ -173,22 +223,29 @@ const allYears = [...new Set(sorted.flatMap(b => b.parachuteFestivals))].sort((a
   azButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       currentLetter = btn.dataset.letter!;
-      currentQuery  = '';
-      input.value   = '';
       setActive(azButtons, btn, true);
+      updateFilterInfo();
       applyFilters();
     });
   });
 
   yearButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      currentYear  = btn.dataset.year!;
-      currentQuery = '';
-      input.value  = '';
-      currentLetter = 'all';
-      setActive(azButtons, azButtons[0]!, true);
+      currentYear = btn.dataset.year!;
       setActive(yearButtons, btn, false);
+      updateFilterInfo();
       applyFilters();
     });
+  });
+
+  filterReset.addEventListener('click', () => {
+    currentQuery  = '';
+    currentLetter = 'all';
+    currentYear   = 'all';
+    input.value   = '';
+    setActive(azButtons, azButtons[0]!, true);
+    setActive(yearButtons, yearButtons[0]!, true);
+    updateFilterInfo();
+    applyFilters();
   });
 </script>

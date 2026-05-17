@@ -1,7 +1,17 @@
 ---
 // Web3Forms access key: set PUBLIC_WEB3FORMS_KEY in Cloudflare env vars
 const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
+const isMisconfigured = !accessKey;
 ---
+
+{isMisconfigured && (
+  <div class="p-4 rounded-sm mb-6" style="background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.35);">
+    <p class="text-sm" style="color: #f87171;">
+      Das Kontaktformular ist momentan nicht verfügbar. Bitte schreib uns direkt per
+      <a href="mailto:lindernconcerts@gmail.com" class="underline">E-Mail</a>.
+    </p>
+  </div>
+)}
 
 <form
   id="contact-form"
@@ -76,7 +86,7 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
 
   <!-- Submit -->
   <div class="flex items-center gap-4">
-    <button type="submit" id="cf-submit" class="btn-primary">
+    <button type="submit" id="cf-submit" class="btn-primary" disabled={isMisconfigured}>
       Nachricht senden
     </button>
     <span id="cf-status" class="text-sm hidden"></span>

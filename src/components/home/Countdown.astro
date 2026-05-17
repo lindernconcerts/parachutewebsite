@@ -9,6 +9,21 @@ interface Props {
 }
 
 const { targetDate, dateDisplay, location, futureDate, futureDateDisplay, futureLocation } = Astro.props;
+
+// Build-time fallback: eliminiert das "--" Flash beim ersten Render
+const now = new Date();
+const primaryTargetDate = new Date(targetDate);
+const futureTargetDate = new Date(futureDate);
+const isShowingFuture = now >= primaryTargetDate;
+const activeTarget = isShowingFuture ? futureTargetDate : primaryTargetDate;
+const diff = activeTarget.getTime() - now.getTime();
+const padNum = (n: number) => String(n).padStart(2, '0');
+const initDays  = diff > 0 ? Math.floor(diff / (1000 * 60 * 60 * 24)) : 0;
+const initHours = diff > 0 ? padNum(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))) : '00';
+const initMins  = diff > 0 ? padNum(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))) : '00';
+const initSecs  = diff > 0 ? padNum(Math.floor((diff % (1000 * 60)) / 1000)) : '00';
+const initDateDisplay = isShowingFuture ? futureDateDisplay : dateDisplay;
+const initLocation = isShowingFuture ? futureLocation : location;
 ---
 
 <div
@@ -19,15 +34,24 @@ const { targetDate, dateDisplay, location, futureDate, futureDateDisplay, future
   data-future-display={futureDateDisplay}
   data-future-location={futureLocation}
 >
+  {isShowingFuture && (
+    <p id="cd-next-label" class="eyebrow text-center mb-4">Bis zum nächsten Jahr</p>
+  )}
+
   <!-- Countdown display -->
   <div id="countdown-live" class="flex flex-wrap justify-center gap-4 md:gap-8">
-    {['Tage', 'Stunden', 'Minuten', 'Sekunden'].map((label) => (
+    {[
+      { label: 'Tage',     id: 'cd-tage',     value: String(initDays) },
+      { label: 'Stunden',  id: 'cd-stunden',  value: initHours },
+      { label: 'Minuten',  id: 'cd-minuten',  value: initMins },
+      { label: 'Sekunden', id: 'cd-sekunden', value: initSecs },
+    ].map(({ label, id, value }) => (
       <div class="text-center">
         <div
           class="font-heading text-6xl md:text-8xl lg:text-9xl leading-none text-white tabular-nums"
-          id={`cd-${label.toLowerCase()}`}
+          id={id}
         >
-          --
+          {value}
         </div>
         <div class="eyebrow mt-1 text-xs md:text-sm">{label}</div>
       </div>
@@ -36,9 +60,9 @@ const { targetDate, dateDisplay, location, futureDate, futureDateDisplay, future
 
   <!-- Date & Location -->
   <p id="countdown-meta" class="text-center mt-8 font-body text-lg md:text-xl" style="color: var(--color-text-muted);">
-    <span id="countdown-date" class="text-white font-semibold">{dateDisplay}</span>
+    <span id="countdown-date" class="text-white font-semibold">{initDateDisplay}</span>
     &nbsp;·&nbsp;
-    <span id="countdown-location">{location}</span>
+    <span id="countdown-location">{initLocation}</span>
   </p>
 </div>
 
