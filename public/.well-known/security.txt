@@ -1,5 +1,5 @@
 Contact: mailto:lindernconcerts@gmail.com
-Expires: 2026-12-31T23:59:59+02:00
+Expires: 2027-12-31T23:59:59+01:00
 Preferred-Languages: de, en
 Canonical: https://parachutefestival.de/.well-known/security.txt
 

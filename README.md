@@ -169,11 +169,11 @@ Nur **5 Dateien** müssen angepasst werden:
 
 | Datei | Was ändern |
 |---|---|
-| `src/styles/theme.css` | Farben (`--color-primary`, `--color-secondary` etc.) und Gradienten |
+| `src/styles/theme.css` | Farben (`--color-primary`, `--color-secondary` etc.), Gradienten und `@font-face`-Blöcke |
 | `tailwind.config.mjs` | Font-Namen falls Schrift wechselt |
-| `src/layouts/BaseLayout.astro` | Google Fonts URL falls Schrift wechselt |
+| `public/fonts/` | Neue woff2-Dateien ablegen (latin + latin-ext), alte ersetzen |
 | `public/images/Logo.png` | Neues Logo einsetzen (gleicher Dateiname!) |
-| `public/favicon.ico` | Neues Favicon einsetzen (gleicher Dateiname!) |
+| `public/favicon.svg` | Neues Favicon einsetzen (Vektordatei, gleicher Dateiname!) |
 
 **Farben** in `theme.css`:
 ```css
@@ -182,6 +182,11 @@ Nur **5 Dateien** müssen angepasst werden:
 --color-dark:      #2c282a;   /* Dunkler Hintergrund */
 --color-black:     #000000;   /* Seitenhintergrund */
 ```
+
+**Fonts wechseln** – die Fonts sind selbst-gehostet (kein Google Fonts Request):
+1. Neue woff2-Dateien unter `public/fonts/` ablegen (latin + latin-ext je Font)
+2. In `src/styles/theme.css` die `@font-face`-Blöcke am Dateiende anpassen
+3. In `src/layouts/BaseLayout.astro` die `<link rel="preload">` Pfade aktualisieren
 
 ---
 
@@ -238,8 +243,10 @@ Nach jedem Festivalwechsel diese Dateien prüfen:
 | `public/sitemap.xml` | Alle Seiten vorhanden? |
 | `public/llms.txt` | Lineup, Datum, Bands aktuell? |
 | `public/llms-full.txt` | Alle Infos zum neuen Festival ergänzen |
-| `public/.well-known/security.txt` | `Expires`-Datum aktualisieren |
+| `public/ai.txt` | `Updated`-Datum aktualisieren |
+| `public/.well-known/security.txt` | `Expires`-Datum aktualisieren (jährlich verlängern) |
 | `src/pages/index.astro` | JSON-LD Event-Schema: Datum, Bands, Ort aktualisieren |
+| `src/layouts/BaseLayout.astro` | Organization-Schema: nur bei Adress-/Kontaktänderungen |
 
 ---
 
@@ -247,24 +254,30 @@ Nach jedem Festivalwechsel diese Dateien prüfen:
 
 ```
 public/                  Statische Dateien (werden 1:1 deployed)
+├── fonts/               Selbst-gehostete Webfonts (woff2, latin + latin-ext)
 ├── images/
 │   ├── bands/           Bandfotos: {band-id}.jpg
-│   ├── partners/        Partner-Logos: {partner-id}.svg
+│   ├── partners/        Partner-Logos: {partner-id}.jpg/.png
 │   ├── gallery/         Galerie-Vorschaubilder: {jahr}/1.jpg, 2.jpg
 │   └── historie/        Festival-Plakate: {jahr}.jpg oder {jahr}.png
 ├── _headers             Cloudflare Security- & Cache-Header
 ├── _redirects           URL-Weiterleitungen
-├── robots.txt           Crawler-Regeln
+├── robots.txt           Crawler-Regeln (inkl. AI-Crawler)
 ├── sitemap.xml          Seitenübersicht für Suchmaschinen
 ├── manifest.json        Web App Manifest
-├── llms.txt             KI-Suchoptimierung
-├── llms-full.txt        Erweiterte KI-Informationen
+├── llms.txt             KI-Suchoptimierung (kompakt)
+├── llms-full.txt        Erweiterte KI-Informationen (vollständig)
 ├── ai.txt               AI-Crawler-Richtlinien
 ├── humans.txt           Team-Infos
 └── .well-known/
     └── security.txt     Sicherheitskontakt
 
 src/
+├── components/
+│   ├── home/            Hero, Countdown (mit SSR-Fallback)
+│   ├── layout/          Header (animiertes Mobile-Menü), Footer
+│   ├── bands/           BandCard
+│   └── ui/              SectionHeading, BackToTop, Accordion
 ├── data/                Inhalte (JSON) – hier werden die meisten Änderungen gemacht
 │   ├── site.json        Festivaldatum, Ort, Social Links, Maps
 │   ├── bands.json       Band Library
@@ -273,9 +286,11 @@ src/
 │   ├── gallery.json     Galerie-Links
 │   └── historie.json    Festival-Timeline
 ├── styles/
-│   └── theme.css        ⭐ CI-Datei – Farben, Fonts, Gradienten
+│   ├── theme.css        ⭐ CI-Datei – Farben, Fonts (@font-face), Gradienten
+│   └── global.css       Basis-Styles, Button-Klassen, Animationen
 ├── layouts/
-│   └── BaseLayout.astro HTML-Shell, Fonts, Meta-Tags
+│   ├── BaseLayout.astro HTML-Shell, Preload-Links, Meta-Tags, JSON-LD
+│   └── PageLayout.astro Wrapper mit Header, Footer und Back-to-Top
 └── pages/               Eine .astro Datei pro Seite
 ```
 

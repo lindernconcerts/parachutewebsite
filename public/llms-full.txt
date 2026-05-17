@@ -74,10 +74,14 @@ Kooperationen: Krombacher, Jägermeister, Papa Fuego, Getränkehof Möller, Part
 
 ## Technische Website-Infos
 
-- Technologie: Astro (statisch), Cloudflare Pages, Tailwind CSS
+- Technologie: Astro 5 (statisch / SSG), Cloudflare Pages, Tailwind CSS
 - Domain: parachutefestival.de
+- Fonts: Bebas Neue (Überschriften) + Inter (Fließtext), selbst-gehostet unter /fonts/
+- Suche: Fuse.js (client-side Fuzzy-Search in der Band Library)
+- Strukturierte Daten: JSON-LD (MusicEvent, Organization, FAQPage, ItemList)
 - Kein Tracking, keine eigenen Cookies, keine Werbung
 - Kontaktformular via Web3Forms
+- Letzte technische Aktualisierung: Mai 2026
 
 ---
 

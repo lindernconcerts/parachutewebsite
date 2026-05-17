@@ -8,8 +8,9 @@
   seit 2000 jedes Jahr möglich machen. 🤘
 
 /* SITE */
-  Letzte Aktualisierung: 2025
+  Letzte Aktualisierung: 2026
   Technologie: Astro, Tailwind CSS, Cloudflare Pages
   Sprache: Deutsch
   Doctype: HTML5
   IDE: VS Code
+  KI-Unterstützung: Claude (Anthropic)

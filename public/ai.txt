@@ -25,4 +25,4 @@ Contact: lindernconcerts@gmail.com
 Language: de
 
 # Letzte Aktualisierung
-Updated: 2025-05-16
+Updated: 2026-05-17
