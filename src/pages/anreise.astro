@@ -50,12 +50,12 @@ const taxiCompanies = [
 >
   <!-- Page Header -->
   <section
-    class="py-20 text-center relative"
+    class="py-12 md:py-20 text-center relative"
     style="background: var(--color-bg-section); border-bottom: 1px solid var(--color-border);"
   >
     <div class="container">
       <p class="eyebrow mb-4">So findet ihr uns</p>
-      <h1 class="font-heading text-6xl md:text-8xl text-white">Anreise</h1>
+      <h1 class="font-heading text-4xl sm:text-6xl md:text-8xl text-white">Anreise</h1>
       <p class="mt-4 text-lg font-semibold text-white">{maps.address}</p>
       <p class="mt-1" style="color: var(--color-text-muted);">
         Das Parachute Festival {nextEdition.dateDisplay.split(' ').pop()} findet auf dem Schützenplatz
@@ -148,7 +148,7 @@ const taxiCompanies = [
                   <p class="text-sm text-white font-semibold leading-tight">{name}</p>
                   <a
                     href={`tel:${phone.replace(/[\s/]/g, '')}`}
-                    class="text-sm transition-colors hover:text-primary"
+                    class="inline-flex items-center gap-1.5 text-sm mt-1 px-3 py-1.5 rounded-sm transition-colors hover:text-primary hover:bg-primary/10"
                     style="color: var(--color-text-muted);"
                   >
                     📞 {phone}

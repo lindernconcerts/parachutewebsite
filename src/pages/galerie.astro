@@ -12,12 +12,12 @@ const sorted = [...galleryData].sort((a, b) => b.year - a.year);
 >
   <!-- Page Header -->
   <section
-    class="py-20 text-center relative"
+    class="py-12 md:py-20 text-center relative"
     style="background: var(--color-bg-section); border-bottom: 1px solid var(--color-border);"
   >
     <div class="container">
       <p class="eyebrow mb-4">Unvergessliche Momente</p>
-      <h1 class="font-heading text-6xl md:text-8xl text-white">Galerie</h1>
+      <h1 class="font-heading text-4xl sm:text-6xl md:text-8xl text-white">Galerie</h1>
     </div>
   </section>
 
@@ -54,8 +54,8 @@ const sorted = [...galleryData].sort((a, b) => b.year - a.year);
 
               <!-- Info + CTA -->
               <div
-                class="flex flex-col justify-between p-8 shrink-0 lg:w-72"
-                style="background: var(--color-bg-card); border-left: 1px solid var(--color-border);"
+                class="flex flex-col justify-between p-8 shrink-0 lg:w-72 border-t border-[var(--color-border)] lg:border-t-0 lg:border-l"
+                style="background: var(--color-bg-card);"
               >
                 <div>
                   <span class="font-heading text-6xl text-primary leading-none block mb-2">

@@ -28,12 +28,12 @@ const bandLibraryJsonLd = {
 >
   <!-- Page Header -->
   <section
-    class="py-20 text-center relative"
+    class="py-12 md:py-20 text-center relative"
     style="background: var(--color-bg-section); border-bottom: 1px solid var(--color-border);"
   >
     <div class="container">
       <p class="eyebrow mb-4">Seit 2000</p>
-      <h1 class="font-heading text-6xl md:text-8xl text-white">Band Library</h1>
+      <h1 class="font-heading text-4xl sm:text-6xl md:text-8xl text-white">Band Library</h1>
       <p class="mt-4 text-lg" style="color: var(--color-text-muted);">
         {sorted.length} Bands. Alle, die je in Lindern auf der Bühne standen.
       </p>
@@ -66,11 +66,11 @@ const bandLibraryJsonLd = {
       <div class="mb-6">
         <p class="eyebrow mb-3 text-center">Nach Jahr filtern</p>
         <div class="flex flex-wrap justify-center gap-2" id="year-nav">
-          <button class="year-btn px-3 py-1.5 text-sm font-bold rounded transition-colors" data-year="all" style="background:var(--color-primary);color:white;">
+          <button class="year-btn px-3 py-2 text-sm font-bold rounded transition-colors" data-year="all" style="background:var(--color-primary);color:white;">
             Alle
           </button>
           {allYears.map(year => (
-            <button class="year-btn px-3 py-1.5 text-sm font-bold rounded transition-colors" data-year={year} style="background:var(--color-bg-card);color:var(--color-text-muted);">
+            <button class="year-btn px-3 py-2 text-sm font-bold rounded transition-colors" data-year={year} style="background:var(--color-bg-card);color:var(--color-text-muted);">
               {year}
             </button>
           ))}
@@ -78,12 +78,12 @@ const bandLibraryJsonLd = {
       </div>
 
       <!-- A-Z Jump -->
-      <div class="flex flex-wrap justify-center gap-1 mb-10" id="az-nav">
-        <button class="az-btn px-3 py-1.5 text-sm font-bold rounded transition-colors" data-letter="all" style="background:var(--color-bg-card);color:var(--color-text-muted);">
+      <div class="flex flex-wrap justify-center gap-1.5 mb-10" id="az-nav">
+        <button class="az-btn px-3 py-2 text-sm font-bold rounded transition-colors" data-letter="all" style="background:var(--color-bg-card);color:var(--color-text-muted);">
           A–Z
         </button>
         {letters.map(letter => (
-          <button class="az-btn w-9 h-9 text-sm font-bold rounded transition-colors" data-letter={letter} style="background:var(--color-bg-card);color:var(--color-text-muted);">
+          <button class="az-btn w-10 h-10 text-sm font-bold rounded transition-colors" data-letter={letter} style="background:var(--color-bg-card);color:var(--color-text-muted);">
             {letter}
           </button>
         ))}

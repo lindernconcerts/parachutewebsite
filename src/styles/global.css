@@ -43,8 +43,7 @@ h1, h2, h3, h4 {
   }
 
   .section {
-    padding-top: var(--section-py);
-    padding-bottom: var(--section-py);
+    @apply py-12 md:py-20;
   }
 
   /* --- Buttons --- */
