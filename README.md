@@ -18,35 +18,85 @@ Nach jedem `git push` auf den Hauptbranch wird die Website automatisch über Clo
 
 ---
 
-## Jährliche Aufgaben – Neues Festival
+## Jährliche Aufgaben – Festivaljahr wechseln
 
-### 1. Countdown & Festivaldatum aktualisieren
+Grobe Reihenfolge: erst alles vorbereiten und testen, dann deployen wenn der Vorverkauf startet.
 
-Datei: `src/data/site.json`
+---
+
+### 1. Festivaldatum, Ort & Countdown
+
+**Datei:** `src/data/site.json`
+
+Hier startet jede Vorbereitung. Alle Countdowns auf Startseite und Tickets-Seite ziehen ihren Wert automatisch aus dieser Datei.
 
 ```json
 "nextEdition": {
-  "date": "2027-04-24T17:00:00+02:00",   ← Datum + Uhrzeit (CEST = +02:00)
-  "dateDisplay": "24. April 2027",        ← Anzeige-Text
+  "date": "2027-04-24T17:00:00+02:00",   ← ISO-Datum mit Uhrzeit (CEST = +02:00)
+  "dateDisplay": "24. April 2027",        ← Anzeige-Text überall auf der Seite
   "location": "Schützenplatz, Lindern (Oldenburg)"
 },
 "futureEdition": {
-  "date": "2028-04-...",                  ← Schon das übernächste Jahr eintragen
+  "date": "2028-04-...",                  ← Übernächstes Jahr schon eintragen
   "dateDisplay": "... 2028",
   "location": "..."
 }
 ```
 
-Der Countdown auf der Startseite und der Tickets-Seite aktualisiert sich automatisch.
-Nach Ablauf von `nextEdition` springt der Countdown automatisch auf `futureEdition`.
+Nach Ablauf von `nextEdition` springt der Countdown automatisch auf `futureEdition` – kein weiterer Eingriff nötig.
+
+**Location wechseln:** Falls das Festival an einem neuen Ort stattfindet, zusätzlich anpassen:
+
+```json
+"maps": {
+  "embedUrl":          "...",   ← Neuen Google Maps Einbettungs-Link eintragen
+  "directionsUrl":     "...",   ← Neuen Directions-Link eintragen
+  "address":           "Neue Adresse, 12345 Ort",
+  "parkingEmbedUrl":   "...",   ← Parkplatz-Karte anpassen
+  "parkingDirectionsUrl": "..."
+}
+```
+
+Zusätzlich die Anreise-Seite prüfen: `src/pages/anreise.astro` – dort sind Parkplatz-Beschreibungen und ggf. Taxi-Nummern als Text hinterlegt, die manuell angepasst werden müssen.
 
 ---
 
-### 2. Lineup auf der Startseite aktualisieren
+### 2. CI-Farben, Logo & Favicon
 
-Datei: `src/pages/index.astro`
+**Farben** – nur in einer Datei: `src/styles/theme.css`
 
-Das Array `lineup2026` (oben in der Datei) auf das neue Jahr umbenennen und befüllen:
+```css
+--color-primary:   #c5138d;   /* Akzentfarbe (Buttons, Badges, Glow) */
+--color-secondary: #6fc29d;   /* Sekundärfarbe (Announcement-Bar, Filter) */
+--color-dark:      #2c282a;   /* Dunkler Hintergrund (Header, Sections) */
+--color-black:     #000000;   /* Seitenhintergrund */
+```
+
+**Logo:** `public/images/Logo.png` – gleicher Dateiname, einfach ersetzen. Wird in Header, Hero und Footer verwendet.
+
+**Favicon:** `public/favicon.svg` ist das primäre Icon (Vektorformat, vom Browser bevorzugt). Zusätzlich `public/favicon.ico` als Fallback für ältere Browser ersetzen. Beide müssen gleich aussehen.
+
+**Placeholder-Bilder ersetzen** – falls ein neues CI auch neue Platzhaltergrafiken braucht:
+
+| Datei | Verwendet für |
+|---|---|
+| `public/images/bands/placeholder.jpg` | Bands ohne Foto in der Band Library |
+| `public/images/partners/placeholder.jpg` | Partner ohne Logo auf der Partnerseite |
+
+**Fonts wechseln** – Fonts sind selbst-gehostet:
+1. Neue woff2-Dateien unter `public/fonts/` ablegen (je Font: latin + latin-ext)
+2. `@font-face`-Blöcke am Ende von `src/styles/theme.css` anpassen
+3. `--font-heading` / `--font-body` CSS-Variablen in `theme.css` anpassen
+4. `<link rel="preload">` Pfade in `src/layouts/BaseLayout.astro` aktualisieren
+5. Falls Tailwind Font-Namen sich ändern: `tailwind.config.mjs` anpassen
+
+---
+
+### 3. Startseite – Lineup aktualisieren
+
+**Datei:** `src/pages/index.astro`
+
+Das Lineup-Array umbenennen (z. B. `lineup2026` → `lineup2027`) und befüllen:
 
 ```js
 const lineup2027 = [
@@ -56,29 +106,32 @@ const lineup2027 = [
     genre: 'Punk Rock',
     origin: 'Stadt',
     image: '/images/bands/bandname.jpg',
-    description: 'Beschreibung der Band...',
-    links: { instagram: '...', spotify: '...' },
-    highlight: true,         // true = Headliner-Layout, false = Support-Grid
+    description: 'Beschreibung der Band für die Startseite.',
+    links: { instagram: 'https://...', spotify: 'https://...' },
+    highlight: true,         // true = großes Headliner-Layout, false = Support-Grid
   },
 ];
 ```
 
-Auch die `eyebrow`-Zeile ("Lineup 2026") und den `subtitle` ("...brachten am 25. April 2026...") anpassen.
+In der gleichen Datei weiter unten auch anpassen:
+- `eyebrow`-Text (z. B. "Lineup 2026" → "Lineup 2027")
+- `subtitle`-Text mit Datum des letzten Festivals
+- JSON-LD Event-Schema: `startDate`, `endDate`, Bands und Ort aktualisieren
 
 ---
 
-### 3. Bands in die Band Library aufnehmen
+### 4. Band Library aktualisieren
 
-Datei: `src/data/bands.json`
+**Datei:** `src/data/bands.json`
 
-Für jede neue Band einen Eintrag hinzufügen:
+Neue Bands als Eintrag hinzufügen:
 
 ```json
 {
-  "id": "band-slug",                        ← Kleinbuchstaben, Bindestriche statt Leerzeichen
+  "id": "band-slug",
   "name": "Bandname",
   "genre": ["Rock", "Punk"],
-  "image": "/images/bands/band-slug.jpg",   ← Bild unter public/images/bands/ ablegen
+  "image": "/images/bands/band-slug.jpg",
   "bio": "Kurze Beschreibung der Band.",
   "links": {
     "website":   "https://...",
@@ -86,27 +139,38 @@ Für jede neue Band einen Eintrag hinzufügen:
     "instagram": "https://www.instagram.com/...",
     "facebook":  "https://www.facebook.com/..."
   },
-  "parachuteFestivals": [2027],             ← Jahr eintragen
+  "parachuteFestivals": [2027],
   "headliner": false,
   "active": true
 }
 ```
 
-Bestehende Bands, die wieder spielen: einfach das neue Jahr in `parachuteFestivals` ergänzen:
+Bands, die wieder spielen – einfach das neue Jahr ergänzen:
 ```json
 "parachuteFestivals": [2024, 2027]
 ```
 
 **Bandbilder** unter `public/images/bands/{band-slug}.jpg` ablegen.
-Die Suche und A-Z-Filter aktualisieren sich automatisch.
+Die Suche, A-Z-Filter und Jahresfilter aktualisieren sich automatisch.
 
 ---
 
-### 4. Festival Historie aktualisieren
+### 5. Ticketing einbetten
 
-Datei: `src/data/historie.json`
+Sobald der Eventfrog-Vorverkauf aktiv ist, den Platzhalter-Block in `src/pages/tickets.astro` durch den echten Widget-Code ersetzen. Den Platzhalter-Block suchen (Kommentar `<!-- Eventfrog Platzhalter -->`) und durch den Einbettungscode von Eventfrog ersetzen.
 
-**Schritt A:** Das neue kommende Festival oben eintragen (`"upcoming": true`):
+Außerdem in `src/data/site.json` die Ticket-URL eintragen:
+```json
+"ticketsUrl": "https://eventfrog.de/..."
+```
+
+---
+
+### 6. Festival Historie aktualisieren
+
+**Datei:** `src/data/historie.json`
+
+**Vor dem Festival** – neuen Eintrag ganz oben einfügen:
 ```json
 {
   "year": 2027,
@@ -117,34 +181,68 @@ Datei: `src/data/historie.json`
   "poster": "/images/historie/2027.jpg",
   "description": "",
   "bands": [],
-  "highlights": [],
   "missing": false,
   "cancelled": false,
   "upcoming": true
 }
 ```
 
-**Schritt B:** Nach dem Festival – den Eintrag des abgelaufenen Jahres vervollständigen:
+**Nach dem Festival** – den abgelaufenen Eintrag vervollständigen:
 ```json
 {
   "year": 2026,
-  "upcoming": false,        ← auf false setzen
-  "description": "...",
-  "highlights": ["...", "..."],
-  "attendance": 3000
+  "upcoming": false,
+  "description": "Kurze Beschreibung der Edition.",
+  "bands": ["band-slug-1", "band-slug-2"]
 }
 ```
 
-**Plakatbild** unter `public/images/historie/{jahr}.jpg` (oder `.png`) ablegen.
-Das Bild wird automatisch in der Timeline angezeigt.
+Plakatbild unter `public/images/historie/2027.jpg` (oder `.png`) ablegen.
 
 ---
 
-### 5. Galerie aktualisieren
+### 7. AGB, Jugendschutz & Awareness prüfen
 
-Datei: `src/data/gallery.json`
+Diese Seiten enthalten rechtlich relevante Texte und müssen vor jedem Festival auf Aktualität geprüft werden. Es gibt keine zentralen Datendateien – alle Änderungen direkt in der jeweiligen `.astro`-Datei vornehmen.
 
-Neues Jahr hinzufügen:
+| Seite | Datei | Was prüfen |
+|---|---|---|
+| AGB | `src/pages/agb.astro` | Datum, Veranstalter, Eventfrog-Konditionen, Ticketpreise |
+| Jugendschutz | `src/pages/jugendschutz.astro` | Alkohol-/Tabakregeln, Bändchen-System, Kontaktdaten |
+| Awareness | `src/pages/awareness.astro` | Awareness-Wort eintragen, Kontaktmöglichkeiten, Teamstruktur |
+
+**Awareness-Wort** setzen (jährlich neu):
+```html
+<!-- In src/pages/awareness.astro den Platzhalter ersetzen: -->
+<p class="font-heading text-2xl text-primary mb-2">Euer Awareness-Wort 2027</p>
+```
+
+---
+
+### 8. Partner aktualisieren
+
+**Datei:** `src/data/partners.json`
+
+- Neue Partner hinzufügen (`"tier": "kooperation"` oder `"tier": "partner"`)
+- Nicht mehr aktive Partner entfernen oder auf inaktiv setzen
+- Logos unter `public/images/partners/{id}.jpg` ablegen
+
+---
+
+### 9. FAQ aktualisieren
+
+**Datei:** `src/data/faq.json`
+
+- Datum in der Antwort auf "Wann findet das Festival statt?" aktualisieren
+- Neue Fragen zu Änderungen (neue Location, neues Ticketing, etc.) ergänzen
+- Veraltete Antworten korrigieren
+
+---
+
+### 10. Galerie ergänzen (nach dem Festival)
+
+**Datei:** `src/data/gallery.json`
+
 ```json
 {
   "year": 2027,
@@ -158,95 +256,22 @@ Neues Jahr hinzufügen:
 }
 ```
 
-**Vorschaubilder** unter `public/images/gallery/2027/1.jpg` und `2.jpg` ablegen.
-Ordner vorher anlegen: `public/images/gallery/2027/`
-
----
-
-### 6. CI-Wechsel (jährliche neue Optik)
-
-Nur **5 Dateien** müssen angepasst werden:
-
-| Datei | Was ändern |
-|---|---|
-| `src/styles/theme.css` | Farben (`--color-primary`, `--color-secondary` etc.), Gradienten und `@font-face`-Blöcke |
-| `tailwind.config.mjs` | Font-Namen falls Schrift wechselt |
-| `public/fonts/` | Neue woff2-Dateien ablegen (latin + latin-ext), alte ersetzen |
-| `public/images/Logo.png` | Neues Logo einsetzen (gleicher Dateiname!) |
-| `public/favicon.svg` | Neues Favicon einsetzen (Vektordatei, gleicher Dateiname!) |
-
-**Farben** in `theme.css`:
-```css
---color-primary:   #c5138d;   /* Hauptfarbe (Akzent, Buttons, Badges) */
---color-secondary: #6fc29d;   /* Sekundärfarbe */
---color-dark:      #2c282a;   /* Dunkler Hintergrund */
---color-black:     #000000;   /* Seitenhintergrund */
-```
-
-**Fonts wechseln** – die Fonts sind selbst-gehostet (kein Google Fonts Request):
-1. Neue woff2-Dateien unter `public/fonts/` ablegen (latin + latin-ext je Font)
-2. In `src/styles/theme.css` die `@font-face`-Blöcke am Dateiende anpassen
-3. In `src/layouts/BaseLayout.astro` die `<link rel="preload">` Pfade aktualisieren
-
----
-
-### 7. Tickets aktualisieren
-
-Datei: `src/pages/tickets.astro`
-
-Wenn der Vorverkauf startet: den Eventfrog-Platzhalter-Block durch den echten Einbettungscode ersetzen.
-
-Datei: `src/data/site.json`
-
-```json
-"ticketsUrl": "https://eventfrog.de/..."   ← echte VVK-URL eintragen
-```
-
----
-
-### 8. Partner aktualisieren
-
-Datei: `src/data/partners.json`
-
-- Neue Partner hinzufügen (Tier: `"kooperation"` oder `"partner"`)
-- Nicht mehr aktive Partner entfernen
-- Logos unter `public/images/partners/{id}.svg` ablegen
-
----
-
-### 9. FAQ aktualisieren
-
-Datei: `src/data/faq.json`
-
-- Datum in der Antwort auf "Wann findet das Festival statt?" aktualisieren
-- Neue Fragen ergänzen falls nötig
-
----
-
-### 10. Awareness-Wort setzen
-
-Datei: `src/pages/awareness.astro`
-
-Den Platzhalter-Block mit dem aktuellen Awareness-Wort befüllen:
-```html
-<p class="font-heading text-2xl text-primary mb-2">Euer Awareness-Wort 2027</p>
-```
+Vorschaubilder unter `public/images/gallery/2027/1.jpg` und `2.jpg` ablegen.
 
 ---
 
 ### 11. SEO & AI-Dateien aktualisieren
 
-Nach jedem Festivalwechsel diese Dateien prüfen:
+Nach dem Festivalwechsel diese Dateien prüfen:
 
-| Datei | Was prüfen |
+| Datei | Was aktualisieren |
 |---|---|
-| `public/sitemap.xml` | Alle Seiten vorhanden? |
-| `public/llms.txt` | Lineup, Datum, Bands aktuell? |
-| `public/llms-full.txt` | Alle Infos zum neuen Festival ergänzen |
-| `public/ai.txt` | `Updated`-Datum aktualisieren |
-| `public/.well-known/security.txt` | `Expires`-Datum aktualisieren (jährlich verlängern) |
-| `src/pages/index.astro` | JSON-LD Event-Schema: Datum, Bands, Ort aktualisieren |
-| `src/layouts/BaseLayout.astro` | Organization-Schema: nur bei Adress-/Kontaktänderungen |
+| `public/llms.txt` | Lineup, Datum, nächste Edition |
+| `public/llms-full.txt` | Vergangene und nächste Edition, technische Infos |
+| `public/ai.txt` | `Updated`-Datum auf aktuelles Datum setzen |
+| `public/.well-known/security.txt` | `Expires`-Datum um ein Jahr verlängern |
+| `src/pages/index.astro` | JSON-LD MusicEvent-Schema: Datum, Bands, Ort |
+| `src/layouts/BaseLayout.astro` | Organization-Schema: nur bei Adress- oder Kontaktänderungen |
 
 ---
 
