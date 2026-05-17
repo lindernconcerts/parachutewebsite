@@ -29,7 +29,7 @@
     "bio": "Alienated aus Lindern waren eine der Stammbands der frühen Osterrock-Ära und hatten beim Festival immer ein Heimspiel. Schneller, melodischer Punkrock mit Lokalkolorit.",
     "links": { "website": "", "spotify": "https://open.spotify.com/intl-de/artist/2CVhk4jfkzkgfUS8cbxqbV", "instagram": "https://www.instagram.com/alienated667", "facebook": "https://www.facebook.com/alienatedrocks", "youtube": "" },
     "parachuteFestivals": [2002],
-    "headliner": false,
+    "headliner": true,
     "active": false
   },
   {
@@ -106,7 +106,7 @@
     "bio": "Boozed liefern schnellen, dreckigen Highspeed-Rock n Roll - laut, rotzig und immer mit Vollgas. Die Band spielte gleich zweimal beim Osterrock und hinterließ beide Male einen bleibenden Eindruck.",
     "links": { "website": "https://laut.de/Boozed", "spotify": "", "instagram": "https://www.instagram.com/boozed_official/", "facebook": "https://www.facebook.com/boozedrocks", "youtube": "https://www.youtube.com/@BOOZEDROCKS" },
     "parachuteFestivals": [2004, 2018],
-    "headliner": false,
+    "headliner": true,
     "active": true
   },
   {
@@ -304,7 +304,7 @@
     "bio": "Die Ghouls sind eine Misfits-Coverband, die Hallen in Horror-Punk-Partys verwandeln. Klassiker werden lautstark mitgesungen - schweisstreibend, dunkel und punktgenau.",
     "links": { "website": "", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
     "parachuteFestivals": [2004],
-    "headliner": false,
+    "headliner": true,
     "active": false
   },
   {
@@ -392,7 +392,7 @@
     "bio": "In Your Honor sind eine Foo Fighters Tribute-Band, die authentische Live-Erlebnisse des amerikanischen Originals auf deutsche Bühnen bringt. Sie standen zweimal beim Parachute Festival auf der Bühne.",
     "links": { "website": "https://www.inyourhonor.be/", "spotify": "", "instagram": "https://www.instagram.com/inyourhonorfoofighterstribute/", "facebook": "https://www.facebook.com/inyourhonortributeband/", "youtube": "https://www.youtube.com/channel/UCqJA8RVS66F3lly5lA15ZmA" },
     "parachuteFestivals": [2022, 2025],
-    "headliner": false,
+    "headliner": true,
     "active": true
   },
   {
@@ -452,13 +452,13 @@
   },
   {
     "id": "motorblock",
-    "name": "Moterblock",
+    "name": "Motörblock",
     "genre": ["Rock", "Metal"],
     "image": "/images/bands/motorblock.jpg",
-    "bio": "Motorblock standen 2010 beim Osterrock auf der Bühne und sorgten mit schwerem Sound für ordentlich Lautstaerke. Rock und Metal aus einem Guss.",
+    "bio": "Motörblock standen 2010 beim Osterrock auf der Bühne und sorgten mit schwerem Sound für ordentlich Lautstaerke. Rock und Metal aus einem Guss.",
     "links": { "website": "https://motorblock-music.de/", "spotify": "https://open.spotify.com/intl-de/artist/66lTDa1XVGFBbw5v2jPIDH", "instagram": "https://www.instagram.com/motorblockrock/", "facebook": "https://www.facebook.com/motorblock/?locale=de_DE", "youtube": "https://www.youtube.com/@motorblockrock" },
     "parachuteFestivals": [2010],
-    "headliner": false,
+    "headliner": true,
     "active": false
   },
   {
@@ -502,7 +502,7 @@
     "bio": "Ohrbooten aus Berlin verschmolzen seit 2003 Reggae, Ragga und Hip-Hop zu ihrem eigenen Sound. Mit lebendiger Bühnenpräsenz und europaweiten Touren prägten sie die Szene nachhaltig.",
     "links": { "website": "http://www.ohrbooten.de/", "spotify": "https://open.spotify.com/artist/06sVMzmcw141RgryE8TuMj", "instagram": "https://www.instagram.com/ohrbooten/", "facebook": "https://www.facebook.com/ohrbooten/", "youtube": "https://www.youtube.com/@ohrbootenTV" },
     "parachuteFestivals": [2013],
-    "headliner": false,
+    "headliner": true,
     "active": false
   },
   {
@@ -596,7 +596,7 @@
   {
     "id": "subbotnik",
     "name": "SuBBotnik",
-    "genre": ["Rock", "Punk"],
+    "genre": ["Rap", "Punk"],
     "image": "/images/bands/subbotnik.jpg",
     "bio": "SuBBotnik spielten beim ersten Parachute Festival 2019 und brachten einen rohen, energiegeladenen Sound auf den Schützenplatz. Eine Band, die direkt anpackt und keine Umwege macht.",
     "links": { "website": "http://subbotnik.info/", "spotify": "https://open.spotify.com/intl-de/artist/3O8MBUgt7hMHzipnJgyW5z", "instagram": "http://www.instagram.com/subbotnikhro/", "facebook": "https://www.facebook.com/subbotnikhro/?locale=de_DE", "youtube": "http://youtube.com/c/subbotnik" },
@@ -711,7 +711,7 @@
     "bio": "Turbine Weststadt eröffneten 2012 die Osterrock-Festivalnacht mit einem energiegeladenen Rock-Set. Eine Band, die direkt Dampf macht.",
     "links": { "website": "https://www.backstagepro.de/turbine-weststadt", "spotify": "https://soundcloud.com/turbineweststadt", "instagram": "", "facebook": "", "youtube": "https://www.youtube.com/watch?v=c3pI-9Lhdwc" },
     "parachuteFestivals": [2012],
-    "headliner": false,
+    "headliner": true,
     "active": false
   },
   {

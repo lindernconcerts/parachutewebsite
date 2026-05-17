@@ -10,21 +10,21 @@
     "id": "papa-fuego",
     "name": "Papa Fuego",
     "logo": "/images/partners/papa-fuego.png",
-    "url": "https://papafuego.de/",
+    "url": "",
     "tier": "kooperation"
   },
   {
     "id": "getraenkehof-moeller",
     "name": "Getränkehof Möller",
     "logo": "/images/partners/getraenkehof-moeller.jpg",
-    "url": "https://www.instagram.com/getraenkehof_moeller/",
+    "url": "",
     "tier": "kooperation"
   },
   {
     "id": "partyfly",
     "name": "Partyfly",
     "logo": "/images/partners/partyfly.jpg",
-    "url": "https://www.partyfly.de/",
+    "url": "",
     "tier": "kooperation"
   },
   {
@@ -38,7 +38,7 @@
     "id": "tewes-dachdeckerbetrieb",
     "name": "Tewes Dachdeckerbetrieb GmbH",
     "logo": "/images/partners/tewes-dachdeckerbetrieb.png",
-    "url": "https://tewes-dach.de/",
+    "url": "",
     "tier": "kooperation"
   },
   {
@@ -52,398 +52,384 @@
     "id": "jaegermeister",
     "name": "Jägermeister",
     "logo": "/images/partners/jaegermeister.png",
-    "url": "https://de.jagermeister.com/",
+    "url": "",
     "tier": "kooperation"
   },
   {
     "id": "hans-gehlenborg",
     "name": "Hans Gehlenborg GmbH",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/hans-gehlenborg.png",
+    "url": "https://www.moebel-gehlenborg.de/",
     "tier": "partner"
   },
   {
     "id": "schuetzenverein-lindern",
     "name": "Schützenverein der Gemeinde Lindern e.V.",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/schuetzenverein-lindern.png",
+    "url": "https://www.schuetzenverein-lindern.de/",
     "tier": "partner"
   },
   {
     "id": "hubert-bahlmann",
     "name": "Hubert Bahlmann GmbH & Co.",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/hubert-bahlmann.png",
+    "url": "https://www.bahlmann-kalb.com/",
     "tier": "partner"
   },
   {
     "id": "fahrschule-niehoff",
     "name": "Fahrschule Timm Niehoff",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/placeholder.jpg",
+    "url": "https://fahrschulefinder.de/10299-fahrschule-timm-niehoff-3",
     "tier": "partner"
   },
   {
     "id": "bernhard-luebbers",
     "name": "Bernhard Lübbers Lohnunternehmen",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/bernhard-luebbers.png",
+    "url": "https://lu-luebbers.de/",
     "tier": "partner"
   },
   {
     "id": "adl-baumanagement",
     "name": "ADL-Baumanagement",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/adl-baumanagement.jpg",
+    "url": "https://www.adl-bau.com/",
     "tier": "partner"
   },
   {
     "id": "allianz-lueken",
     "name": "Allianz Lüken",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/allianz-lueken.jpg",
+    "url": "https://vertretung.allianz.de/agentur.lueken/",
     "tier": "partner"
   },
   {
     "id": "bedoga-lindern",
     "name": "BeDogA Lindern",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/bedoga-lindern.jpg",
+    "url": "https://www.bedoga.de/",
     "tier": "partner"
   },
   {
     "id": "beko-wohnungsbau",
     "name": "Beko-Wohnungsbau GmbH & Co KG",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/beko-wohnungsbau.png",
+    "url": "https://beko-wohnungsbau.de/",
     "tier": "partner"
   },
   {
     "id": "gartenservice-lueken",
     "name": "Gartenservice Lüken",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/gartenservice-lueken.jpg",
+    "url": "https://www.lueken-gartenservice.de/",
     "tier": "partner"
   },
   {
     "id": "biermann-lindern",
     "name": "Biermann Lindern",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/biermann-lindern.png",
+    "url": "https://biermann-technik.de/",
     "tier": "partner"
   },
   {
     "id": "brundiers-lindern",
-    "name": "Brundiers Lindern",
-    "logo": "",
-    "url": "",
+    "name": "Gerhard Brundiers GmbH",
+    "logo": "/images/partners/brundiers-lindern.jpg",
+    "url": "https://www.instagram.com/brundiers_lindern/",
     "tier": "partner"
   },
   {
     "id": "brinker",
-    "name": "Brinker GmbH & Co. KG",
-    "logo": "",
-    "url": "",
+    "name": "Brinker & Janßen GmbH & Co. KG",
+    "logo": "/images/partners/brinker.webp",
+    "url": "https://brinker-heizung.de/",
     "tier": "partner"
   },
   {
     "id": "therapiezentrum-burrichter",
     "name": "Therapiezentrum Burrichter",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/therapiezentrum-burrichter.jpg",
+    "url": "https://www.tzbuli.de/",
     "tier": "partner"
   },
   {
     "id": "epm-elektrotechnik",
     "name": "EPM Elektrotechnik",
-    "logo": "",
+    "logo": "/images/partners/epm-elektrotechnik.png",
     "url": "",
     "tier": "partner"
   },
   {
     "id": "fischer-fenster-tueren",
-    "name": "Fischer Fenster- und Türenwerk",
-    "logo": "",
-    "url": "",
+    "name": "Fischer Fenstertechnik GmbH & Co. KG",
+    "logo": "/images/partners/fischer-fenster-tueren.png",
+    "url": "https://www.fischerfenster.com/",
     "tier": "partner"
   },
   {
     "id": "gerdes-haustechnik",
     "name": "W. Gerdes Haustechnik GmbH & Co.",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/gerdes-haustechnik.png",
+    "url": "https://www.dein-heizungsbauer.de/profil/w-gerdes-haustechnik/",
     "tier": "partner"
   },
   {
     "id": "gerd-glasa",
     "name": "Gerd Glasa",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/gerd-glasa.png",
+    "url": "https://glasabau-lindern.de/",
     "tier": "partner"
   },
   {
     "id": "physioproaxis-goetting",
     "name": "Physioproaxis Anke Götting",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/physioproaxis-goetting.png",
+    "url": "https://www.doctolib.de/physiotherapie/lindern-oldenburg/anke-goetting",
     "tier": "partner"
   },
   {
     "id": "hj-agrartechnik",
     "name": "H&J Agrartechnik",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/hj-agrartechnik.png",
+    "url": "https://hj-agrartechnik.de/",
     "tier": "partner"
   },
   {
     "id": "kh-thomas",
     "name": "K-H Thomas GmbH",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/kh-thomas.png",
+    "url": "http://www.khthomas.de/",
     "tier": "partner"
   },
   {
     "id": "autokorte",
     "name": "AUTOteam Korte GmbH & Co. KG",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/autokorte.jpeg",
+    "url": "https://kfz-korte.chayns.site/",
     "tier": "partner"
   },
   {
     "id": "kraft-curing",
     "name": "Kraft Curing",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/kraft-curing.png",
+    "url": "https://www.kraftcuring.com/de/",
     "tier": "partner"
   },
   {
     "id": "meyers-kiosk",
     "name": "Meyer's Kiosk Lindern",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/meyers-kiosk.jpg",
+    "url": "https://www.instagram.com/meyerskiosk/",
     "tier": "partner"
   },
   {
     "id": "niemann-foerdertechnik",
     "name": "Niemann Anlagenbau und Fördertechnik GmbH",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/niemann-foerdertechnik.jpg",
+    "url": "https://www.mnfoerdersysteme.de/",
     "tier": "partner"
   },
   {
     "id": "pl-schaedlingsbekaempfung",
     "name": "P&L Schädlingsbekämpfungsservice GmbH & Co. KG",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/pl-schaedlingsbekaempfung.png",
+    "url": "https://www.sbs-lindern.de/",
     "tier": "partner"
   },
   {
     "id": "pflegeberatung-moorkamp",
     "name": "Pflegeberatung Moorkamp",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/pflegeberatung-moorkamp.jpg",
+    "url": "https://pflegeberatung-moorkamp.de/",
     "tier": "partner"
   },
   {
     "id": "malerbetrieb-pleiter",
     "name": "Malerbetrieb Pleiter Lindern",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/malerbetrieb-pleiter.png",
+    "url": "https://www.malerei-pleiter.de/",
     "tier": "partner"
   },
   {
     "id": "august-raker",
     "name": "August Raker Landhandel",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/placeholder.jpg",
+    "url": "https://www.gelbeseiten.de/gsbiz/8defbd7a-9df4-4104-9d8b-4f505917cad5",
     "tier": "partner"
   },
   {
     "id": "tischlerei-remmers",
-    "name": "Tischlerei Remmers",
-    "logo": "",
-    "url": "",
+    "name": "Remmers Tischlerei GmbH",
+    "logo": "/images/partners/tischlerei-remmers.png",
+    "url": "https://www.tischlerei-remmers.de/",
     "tier": "partner"
   },
   {
     "id": "rode-bedachungen",
     "name": "Meisterbetrieb Rode Bedachungen",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/rode-bedachungen.jpg",
+    "url": "https://rode-bedachungen.de/",
     "tier": "partner"
   },
   {
-    "id": "friseursalon-hoommen",
-    "name": "Friseursalon Hoommen",
-    "logo": "",
-    "url": "",
+    "id": "friseursalon-hoemmen",
+    "name": "Friseursalon Hömmen",
+    "logo": "/images/partners/friseursalon-hoemmen.jpg",
+    "url": "https://www.facebook.com/salonhoemmen/?locale=de_DE",
     "tier": "partner"
   },
   {
     "id": "hubert-tellmann",
-    "name": "Hubert Tellmann Autohaus",
-    "logo": "",
-    "url": "",
+    "name": "Hubert Tellmann Kfz-Werkstatt",
+    "logo": "/images/partners/hubert-tellmann.jpg",
+    "url": "https://www.auto-werkstatt.de/lindern/hubert-tellmann-kfz-reparaturen-aUM13N",
     "tier": "partner"
   },
   {
     "id": "manfred-thien",
     "name": "Manfred Thien Lindern",
-    "logo": "",
+    "logo": "/images/partners/placeholder.jpg",
     "url": "",
     "tier": "partner"
   },
   {
     "id": "ingenieurbüro-glaser",
     "name": "Ingenieurbüro Timo Glaser",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/ingenieurbüro-glaser.jpg",
+    "url": "http://ing-glasa.de/",
     "tier": "partner"
   },
   {
     "id": "westermann-lindern",
-    "name": "Westermann Lindern",
-    "logo": "",
-    "url": "",
+    "name": "Westermann Elektro GmbH",
+    "logo": "/images/partners/placeholder.jpg",
+    "url": "https://www.elektriker.org/lindern/westermann-elektro-gmbh-aULw6h",
     "tier": "partner"
   },
   {
     "id": "gz-metall-design",
     "name": "GZ metall design GmbH & Co. KG",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/gz-metall-design.png",
+    "url": "https://www.gz-metall-design.de/",
     "tier": "partner"
   },
   {
     "id": "tischlerei-mueller",
     "name": "Tischlerei Müller",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/tischlerei-mueller.jpg",
+    "url": "https://tischlerei-mueller.design/",
     "tier": "partner"
   },
   {
     "id": "stahlkonzept",
     "name": "Stahlkonzept GmbH & Co KG",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/stahlkonzept.png",
+    "url": "https://stahlkonzept.com/",
     "tier": "partner"
   },
   {
     "id": "schuhhaus-wilken",
     "name": "Schuhhaus Wilken",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/schuhhaus-wilken.jpg",
+    "url": "https://www.instagram.com/schuhhaus.wilken/",
     "tier": "partner"
   },
   {
     "id": "fanari",
     "name": "FANARI GmbH",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/fanari.png",
+    "url": "https://www.fanari.de/",
     "tier": "partner"
   },
   {
     "id": "thomas-gerdes-solar",
     "name": "Thomas Gerdes Solartechnik",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/thomas-gerdes-solar.png",
+    "url": "https://www.geplant-tdl.de/",
     "tier": "partner"
   },
   {
     "id": "stegemann-galabau",
     "name": "Stegemann Garten- und Landschaftsbau",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/stegemann-galabau.png",
+    "url": "https://stegemann.eu/",
     "tier": "partner"
   },
   {
     "id": "allianz-thyen-vrees",
     "name": "Allianz Thyen Vrees",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/allianz-lueken.jpg",
+    "url": "https://vertretung.allianz.de/agentur.thyen/",
     "tier": "partner"
   },
   {
     "id": "mdl-bauconsulting",
     "name": "MDL-Bauconsulting",
-    "logo": "",
-    "url": "",
-    "tier": "partner"
-  },
-  {
-    "id": "benjamin-lueken",
-    "name": "Benjamin Lüken",
-    "logo": "",
+    "logo": "/images/partners/placeholder.jpg",
     "url": "",
     "tier": "partner"
   },
   {
     "id": "kartoffel-eilers",
     "name": "Kartoffel Eilers",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/kartoffel-eilers.jpg",
+    "url": "https://www.linduri.de/frische-kartoffeln-aus-eigenanbau-direkt-ab-hof-kontaktlos-und-corona-konform/",
     "tier": "partner"
   },
   {
     "id": "landfuchs",
-    "name": "Landfuchs",
-    "logo": "",
-    "url": "",
-    "tier": "partner"
-  },
-  {
-    "id": "zajons",
-    "name": "Zajons",
-    "logo": "",
-    "url": "",
+    "name": "Hermann Remmers GmbH",
+    "logo": "/images/partners/landfuchs.png",
+    "url": "https://www.remmers-lindern.de/",
     "tier": "partner"
   },
   {
     "id": "schmidt-luedwig-galabau",
     "name": "Schmidt Luedwig Galabau",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/placeholder.jpg",
+    "url": "https://www.gartenbau.org/eisenheim/ludwig-schmidt-garten--und-landschaftsbau-aULnW8",
     "tier": "partner"
   },
   {
     "id": "quartmann-fotografie",
     "name": "Quartmann Fotografie",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/quartmann-fotografie.png",
+    "url": "https://www.jessica-quatmann.de/",
     "tier": "partner"
   },
   {
     "id": "don-pro",
     "name": "Don Pro",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/placeholder.jpg",
+    "url": "https://www.instagram.com/_donpro/",
     "tier": "partner"
   },
   {
     "id": "evo",
-    "name": "EVO",
-    "logo": "",
-    "url": "",
+    "name": "EVO-Nord GmbH",
+    "logo": "/images/partners/placeholder.jpg",
+    "url": "https://branchenbuch.meinestadt.de/lindern-oldenburg/company/15186763",
     "tier": "partner"
   },
   {
     "id": "np-markt",
     "name": "NP-Markt",
-    "logo": "",
-    "url": "",
+    "logo": "/images/partners/np-markt.webp",
+    "url": "https://www.edeka.de/maerkte/802313/",
     "tier": "partner"
   },
   {
     "id": "heissmangel-lindern",
     "name": "Heissmangel Lindern",
-    "logo": "",
+    "logo": "/images/partners/placeholder.jpg",
     "url": "",
     "tier": "partner"
   },
   {
     "id": "hermann-niermann",
     "name": "Hermann Niermann Lindern",
-    "logo": "",
+    "logo": "/images/partners/hermann-niermann.jpeg",
     "url": "",
     "tier": "partner"
   }
