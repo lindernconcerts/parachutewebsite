@@ -2,9 +2,13 @@
 import PageLayout from '@/layouts/PageLayout.astro';
 import Hero from '@/components/home/Hero.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
+import bandsData from '@/data/bands.json';
 
-const lineup2026 = [
+const bandsById = new Map(bandsData.map(b => [b.id, b]));
+
+const lineup2026Raw = [
   {
+    id: 'rogers',
     name: 'Rogers',
     role: 'Headliner',
     genre: 'Punkrock',
@@ -19,6 +23,7 @@ const lineup2026 = [
     highlight: true,
   },
   {
+    id: 'farewell-spit',
     name: 'Farewell Spit',
     role: 'Support',
     genre: 'Rock / Metal',
@@ -30,6 +35,7 @@ const lineup2026 = [
     highlight: false,
   },
   {
+    id: 'liebe-3000',
     name: 'Liebe 3000',
     role: 'Support',
     genre: 'Pop / Rock',
@@ -41,6 +47,7 @@ const lineup2026 = [
     highlight: false,
   },
   {
+    id: 'drauf',
     name: 'DRAUF',
     role: 'Support',
     genre: 'Punk Rock',
@@ -52,6 +59,11 @@ const lineup2026 = [
     highlight: false,
   },
 ];
+
+const lineup2026 = lineup2026Raw.map(band => ({
+  ...band,
+  links: bandsById.get(band.id)?.links ?? band.links,
+}));
 ---
 
 <PageLayout
