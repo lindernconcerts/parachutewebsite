@@ -735,5 +735,49 @@
     "parachuteFestivals": [2020],
     "headliner": false,
     "active": false
+  },
+  {
+    "id": "livin-milk",
+    "name": "Livin' Milk",
+    "genre": ["Rock"],
+    "image": "/images/bands/livin-milk.jpg",
+    "bio": "Livin' Milk ist eine deutsche Rockband, die sich auf energiegeladene Songs mit starkem Beat und melodiösen Refrains spezialisiert hat.",
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
+    "parachuteFestivals": [2003],
+    "headliner": true,
+    "active": false
+  },
+  {
+    "id": "rock-o-diles",
+    "name": "Rock o diles",
+    "genre": ["Rock"],
+    "image": "/images/bands/Rock-o-Diles.jpg",
+    "bio": "",
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
+    "parachuteFestivals": [2003],
+    "headliner": false,
+    "active": false
+  },
+  {
+    "id": "dead-beats",
+    "name": "Dead Beats",
+    "genre": ["Rock"],
+    "image": "/images/bands/dead-beats.jpg",
+    "bio": "",
+    "links": { "website": "", "spotify": "", "instagram": "", "facebook": "", "youtube": "" },
+    "parachuteFestivals": [2003],
+    "headliner": false,
+    "active": false
+  },
+  {
+    "id": "einsturz",
+    "name": "Einsturz",
+    "genre": ["Rock", "Punk Rock"],
+    "image": "/images/bands/einsturz.png",
+    "bio": "Die Band Einsturz aus Oldenburg spielte 2003 beim Osterrock und sorgte mit ihrem kraftvollen Rocksound für eine explosive Atmosphäre. Eine Band, die mit voller Energie auf der Bühne steht und das Publikum mitreißt.",
+    "links": { "website": "https://www.einsturz.com/", "spotify": "https://open.spotify.com/intl-de/artist/2b1zd7FT6lgvxAZknK9JJO", "instagram": "https://www.instagram.com/einsturz_punkrock/", "facebook": "", "youtube": "https://www.youtube.com/@einsturzband4809" },
+    "parachuteFestivals": [2003],
+    "headliner": false,
+    "active": false
   }
 ]
